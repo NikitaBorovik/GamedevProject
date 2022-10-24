@@ -7,15 +7,16 @@ namespace App
 {
     public class StateMachine
     {
-        public State CurrentState { get; private set; }
+        public IState CurrentState { get; private set; }
 
-        public void Initialize(State startingState)
+
+        public void Initialize(IState startingState)
         {
             CurrentState = startingState;
             startingState.Enter();
         }
 
-        public void ChangeState(State newState)
+        public void ChangeState(IState newState)
         {
             CurrentState.Exit();
 
