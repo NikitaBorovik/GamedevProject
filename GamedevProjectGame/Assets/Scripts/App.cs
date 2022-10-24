@@ -19,14 +19,8 @@ namespace App
         private ObjectsContainer objectsContainer;
         [SerializeField]
         private GameObject enemySpawner;
+        [SerializeField]
+        private GameObject player;
 
-        void Start()
-        {
-
-        }
-        void Update()
-        {
-
-        }
     }
 }

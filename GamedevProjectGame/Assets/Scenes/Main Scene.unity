@@ -144,6 +144,8 @@ MonoBehaviour:
   inputSystem: {fileID: 318710906}
   waveSystem: {fileID: 1030826531}
   objectsContainer: {fileID: 922307730}
+  enemySpawner: {fileID: 1815204854319204986}
+  player: {fileID: 1815204854319204987}
 --- !u!1 &318710904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3099086894814371452, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
@@ -246,6 +248,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+--- !u!1 &1815204854319204986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6783799345222740139, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1815204854319204987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1815204855165322255, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3099086894580218372
 PrefabInstance:
   m_ObjectHideFlags: 0
