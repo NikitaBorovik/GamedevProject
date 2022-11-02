@@ -5,7 +5,8 @@ using App.World;
 using App.Systems.EnemySpawning;
 using App.Systems.Input;
 using App.Systems.Wave;
-using App.World.Entity.Player;
+using App.World.Entity.Player.PlayerComponents;
+
 namespace App
 {
     public class App : MonoBehaviour
