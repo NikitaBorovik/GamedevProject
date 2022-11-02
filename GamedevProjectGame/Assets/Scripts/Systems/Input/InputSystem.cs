@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using App.World.Entity.Player;
+using App.World.Entity.Player.PlayerComponents;
 
 namespace App.Systems.Input
 {
@@ -22,6 +22,7 @@ namespace App.Systems.Input
         {
             HandleAimInput();
             HandleMoveInput();
+            HandleShootInput();
         }
         public void Init(Camera mainCamera,Player player)
         {
@@ -56,8 +57,7 @@ namespace App.Systems.Input
             float aimAngle = GetDirectionAngle();
             float cursorPos = UnityEngine.Input.mousePosition.x;
             float playerPosInScreen = mainCamera.WorldToScreenPoint(player.PlayerTransform.position).x;
-            player.Aim.AimWeaponWithMouse(player.WeaponAnchor, aimAngle, playerPosInScreen, cursorPos);
-            player.AnimatorController.SetAimAnimationParams(player.PAnimator, playerPosInScreen, cursorPos);
+            player.AimEvent.CallAimEvent(aimAngle,playerPosInScreen,cursorPos);
         }
         private void HandleMoveInput()
         {
@@ -70,13 +70,19 @@ namespace App.Systems.Input
             
             if (movingDirection == Vector2.zero)
             {
-                player.AnimatorController.SetIdleAnimationParams(player.PAnimator);
-                player.Mover.Move(player.RBody, movingDirection, 0);
+                player.StandEvent.CallStandEvent();
+               
             }
             else
             {
-                player.Mover.Move(player.RBody, movingDirection, player.MovementSpeed);
-                player.AnimatorController.SetMovementAnimationParams(player.PAnimator);
+                player.MovementEvent.CallMovementEvent(movingDirection,player.MovementSpeed);
+            }
+        }
+        private void HandleShootInput()
+        {
+            if (UnityEngine.Input.GetMouseButton(0))
+            {
+                player.Weapon.ShootEvent.CallShootEvent();
             }
         }
     }
