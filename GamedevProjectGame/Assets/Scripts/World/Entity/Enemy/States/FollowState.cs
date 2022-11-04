@@ -9,17 +9,28 @@ namespace World.Entity.Enemy.States
 
         public FollowState(BaseEnemy baseEnemy, StateMachine stateMachine) : base(baseEnemy, stateMachine) { }
 
-        public void Enter()
+        public override void Enter()
         {
-            //
+            
         }
 
-        public void Update() 
-        { 
-            baseEnemy.MyRigidbody.velocity = (baseEnemy.Target.position - baseEnemy.transform.position).normalized * baseEnemy.EnemyData.speed;
+        public override void Update() 
+        {
+            if ((baseEnemy.Target.position - baseEnemy.transform.position).magnitude <= baseEnemy.EnemyData.attackRange)
+            {
+                //Debug.Log("Attacking");
+                stateMachine.ChangeState(baseEnemy.AttackState);
+            }
+            else
+            {
+                baseEnemy.MyRigidbody.velocity = (baseEnemy.Target.position - baseEnemy.transform.position).normalized * baseEnemy.EnemyData.speed;
+            }
         }
 
-        public void Exit() { }
+        public override void Exit() 
+        {
+            baseEnemy.MyRigidbody.velocity = Vector2.zero;
+        }
     }
 }
 

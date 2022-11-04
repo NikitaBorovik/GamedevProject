@@ -11,6 +11,7 @@ namespace World.Entity.Enemy
         public float damage;
         public float timeBetweenAttacks;
         public float moneyDropChance;
+        public float attackRange;
         public int minMoneyDrop;
         public int maxMoneyDrop;
     }

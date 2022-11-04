@@ -14,6 +14,11 @@ namespace World.Entity.Enemy.States
             this.baseEnemy = baseEnemy;
             this.stateMachine = stateMachine;
         }
+        public virtual void Enter() { }
+
+        public virtual void Update() { }
+
+        public virtual void Exit() { }
     }
 }
 
