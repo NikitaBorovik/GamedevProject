@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3718496072317461167}
   - component: {fileID: 5739291457665358033}
+  - component: {fileID: 375968406}
+  - component: {fileID: 5923363926577829519}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e2074d272cb72874cae40cb404f60b22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e0cb92b8f8d4724d9717b71833f62b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,6 +87,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &375968406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632855254469951434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ef263f0c70a14408ae37b777528304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootEvent: {fileID: 5923363926577829519}
+  shootPosition: {fileID: 7721640599223079083}
+  bulletPrefab: {fileID: 6699174986344805492, guid: a4119d5bcfeba9741b3450aff3ec77d0, type: 3}
+  coolDown: 0.2
+--- !u!114 &5923363926577829519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632855254469951434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e6d8253334b6344801ee13e72a05d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3444930492655001372
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3444930492655001372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0714285, y: 0.17857142, z: 0}
+  m_LocalPosition: {x: 2.225, y: 0.145, z: 0}
   m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
