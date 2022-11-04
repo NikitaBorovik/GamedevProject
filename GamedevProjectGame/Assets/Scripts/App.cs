@@ -5,6 +5,8 @@ using App.World;
 using App.Systems.EnemySpawning;
 using App.Systems.Input;
 using App.Systems.Wave;
+using App.World.Entity.Player.PlayerComponents;
+
 namespace App
 {
     public class App : MonoBehaviour
@@ -20,7 +22,11 @@ namespace App
         [SerializeField]
         private GameObject enemySpawner;
         [SerializeField]
-        private GameObject player;
+        private Camera mainCamera;
+        private void Start()
+        {
+            inputSystem.Init(mainCamera,objectsContainer.Player.GetComponent<Player>());
+        }
 
     }
 }
