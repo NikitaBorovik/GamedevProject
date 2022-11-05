@@ -1,27 +1,40 @@
 using App.World.Entity.Player.Events;
 using App.World.Entity.Player.Weapons;
 using UnityEngine;
-
+using World.Entity;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
-
-    public class Player : MonoBehaviour
+    #region Required
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Transform))]
+    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(PlayerAnimationsController))]
+    [RequireComponent(typeof(Movement))]
+    [RequireComponent(typeof(Aim))]
+    [RequireComponent(typeof(Stand))]
+    #endregion
+    public class Player : MonoBehaviour,IKillable
     {
-        #region Fields
-        [SerializeField]
+        #region Components
         private Transform playerTransform;
-        [SerializeField]
         private Animator pAnimator;
+        private Health health;
+        [SerializeField]
+        private PlayerDataSO playerData;
+        #endregion
+
+        #region Weapon
         [SerializeField]
         private Transform shootPosition;
         [SerializeField]
         private Transform weaponAnchor;
         [SerializeField]
-        private float movementSpeed;
-        [SerializeField]
         private GameObject curWeaponObj;
         private Weapon weapon;
+        #endregion
+
+        #region Events
         [SerializeField]
         private AimEvent aimEvent;
         [SerializeField]
@@ -30,22 +43,40 @@ namespace App.World.Entity.Player.PlayerComponents
         private MovementEvent movementEvent;
         #endregion
 
+        #region Parameters
+        private float movementSpeed;
+        private int money;
+        #endregion
+
         #region Properties
         public Transform ShootPosition { get => shootPosition; }
         public Animator PAnimator { get => pAnimator; }
         public Transform PlayerTransform { get => playerTransform;}
         public Transform WeaponAnchor { get => weaponAnchor;}
-        public AimEvent AimEvent { get => aimEvent; set => aimEvent = value; }
-        public StandEvent StandEvent { get => standEvent; set => standEvent = value; }
-        public MovementEvent MovementEvent { get => movementEvent; set => movementEvent = value; }
+        public AimEvent AimEvent { get => aimEvent;}
+        public StandEvent StandEvent { get => standEvent;}
+        public MovementEvent MovementEvent { get => movementEvent;}
         public float MovementSpeed { get => movementSpeed;}
         public Weapon Weapon { get => weapon;}
+        public int Money { get => money; set => money = value; }
         #endregion
         private void Awake()
         {
-            weapon = curWeaponObj.GetComponent<Weapon>();
+            Init();
         }
-        
+        private void Init()
+        {
+            playerTransform = GetComponent<Transform>();
+            pAnimator = GetComponent<Animator>();
+            health = GetComponent<Health>();
+            weapon = curWeaponObj.GetComponent<Weapon>();
+            movementSpeed = playerData.speed;
+            health.MaxHealth = playerData.maxHealth;
+        }
+        public void Die()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 
