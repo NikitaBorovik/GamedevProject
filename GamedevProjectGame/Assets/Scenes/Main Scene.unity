@@ -148,6 +148,7 @@ MonoBehaviour:
   enemySpawningSystem: {fileID: 3099086894580218374}
   inputSystem: {fileID: 318710906}
   waveSystem: {fileID: 1030826531}
+  objectPool: {fileID: 3099086894580218376}
   objectsContainer: {fileID: 922307730}
   enemySpawner: {fileID: 1815204854319204986}
   mainCamera: {fileID: 48387180}
@@ -304,6 +305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1706747020484091123, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3099086894498719712, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -378,6 +383,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3099086894580218373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51eb1cb6e8b58e5439e15c1661d89851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3099086894580218376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2915703829557336426, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+  m_PrefabInstance: {fileID: 3099086894580218372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51eb1cb6e8b58e5439e15c1661d89851, type: 3}

@@ -15,6 +15,6 @@ public class EnemyIniter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy.Init(target);
+        enemy.Init(target.position,target);
     }
 }

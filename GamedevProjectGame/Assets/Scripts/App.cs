@@ -18,6 +18,8 @@ namespace App
         [SerializeField]
         private WaveSystem waveSystem;
         [SerializeField]
+        private ObjectPool objectPool;
+        [SerializeField]
         private ObjectsContainer objectsContainer;
         [SerializeField]
         private GameObject enemySpawner;

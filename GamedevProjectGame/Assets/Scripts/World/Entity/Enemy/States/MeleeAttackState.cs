@@ -7,10 +7,7 @@ namespace World.Entity.Enemy.States
 {
     public class MeleeAttackState : BaseEnemyState
     {
-        public MeleeAttackState(MeleeEnemy baseEnemy, StateMachine stateMachine) : base(baseEnemy, stateMachine) 
-        {
-            this.baseEnemy = baseEnemy;
-        }
+        public MeleeAttackState(MeleeEnemy baseEnemy, StateMachine stateMachine) : base(baseEnemy, stateMachine) { }
 
         public override void Enter()
         {

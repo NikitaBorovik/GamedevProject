@@ -1,4 +1,5 @@
 using App;
+using App.Systems.EnemySpawning;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,18 @@ using World.Entity.Enemy.States;
 
 namespace World.Entity.Enemy
 {
-    public class BaseEnemy : MonoBehaviour, IKillable
+    public class BaseEnemy : MonoBehaviour, IKillable, IObjectPoolItem
     {
         private bool initialised;
         private Transform target;
         private FollowState followState;
+        private SpawningState spawningState;
+        private ObjectPool objectPool;
 
         [SerializeField]
         private Rigidbody2D myRigidbody;
+        [SerializeField]
+        private Health health;
         [SerializeField]
         protected EnemyData enemyData;
 
@@ -26,11 +31,14 @@ namespace World.Entity.Enemy
         public FollowState FollowState => followState;
         public BaseEnemyState AttackState => attackState;
 
+        public string PoolObjectType => throw new System.NotImplementedException();
+
         public virtual void Awake()
         {
             initialised = false;
             stateMachine = new StateMachine();
             followState = new FollowState(this, stateMachine);
+            spawningState = new SpawningState(this, stateMachine);
         }
 
         void Update()
@@ -39,17 +47,29 @@ namespace World.Entity.Enemy
                 stateMachine.CurrentState.Update();
         }
 
-        public void Init(Transform target)
+        public void Init(Vector3 position,Transform target)
         {
             this.target = target;
+            transform.position = position;
+            health.HealToMax();
             initialised = true;
-            stateMachine.Initialize(FollowState);
+            stateMachine.Initialize(spawningState);
         }
 
         public void Die()
         {
-            //TODO: change to getting back into object pool
-            Destroy(gameObject);
+            objectPool.ReturnToPool(this);
+        }
+
+        public void GetFromPool(ObjectPool pool)
+        {
+            objectPool = pool;
+            gameObject.SetActive(true);
+        }
+
+        public void ReturnToPool()
+        {
+            gameObject.SetActive(false);
         }
     }
 }
