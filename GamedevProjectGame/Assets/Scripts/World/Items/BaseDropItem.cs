@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseDropItem : MonoBehaviour
+public abstract class BaseDropItem : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
-    private bool shouldFall = true;
 
     private void Awake()
     {
