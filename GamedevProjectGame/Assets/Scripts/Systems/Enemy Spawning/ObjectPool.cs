@@ -9,6 +9,7 @@ namespace App.Systems.EnemySpawning
         string PoolObjectType { get; }
         void GetFromPool(ObjectPool pool);
         void ReturnToPool();
+        GameObject GetGameObject();
     }
 
     public class ObjectPool : MonoBehaviour

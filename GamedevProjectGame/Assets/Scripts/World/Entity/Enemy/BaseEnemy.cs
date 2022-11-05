@@ -7,7 +7,7 @@ using World.Entity.Enemy.States;
 
 namespace World.Entity.Enemy
 {
-    public class BaseEnemy : MonoBehaviour, IKillable, IObjectPoolItem
+    public abstract class BaseEnemy : MonoBehaviour, IKillable, IObjectPoolItem
     {
         private bool initialised;
         private Transform target;
@@ -31,7 +31,7 @@ namespace World.Entity.Enemy
         public FollowState FollowState => followState;
         public BaseEnemyState AttackState => attackState;
 
-        public string PoolObjectType => throw new System.NotImplementedException();
+        public virtual string PoolObjectType => enemyData.type;
 
         public virtual void Awake()
         {
@@ -70,6 +70,11 @@ namespace World.Entity.Enemy
         public void ReturnToPool()
         {
             gameObject.SetActive(false);
+        }
+
+        public GameObject GetGameObject()
+        {
+            return(gameObject);
         }
     }
 }

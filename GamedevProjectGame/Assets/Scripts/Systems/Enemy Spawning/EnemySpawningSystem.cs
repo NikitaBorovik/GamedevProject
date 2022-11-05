@@ -1,21 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using World.Entity.Enemy;
 
 namespace App.Systems.EnemySpawning
 {
     public class EnemySpawningSystem : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        private ObjectPool objectPool;
+        private Transform enemyTarget;
 
+        [SerializeField]
+        private Transform bottomLeftBound;
+        [SerializeField]
+        private Transform topRightBound;
+        public void Init(ObjectPool objectPool,Transform enemyTarget)
+        {
+            this.objectPool = objectPool;
+            this.enemyTarget = enemyTarget;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SpawnEnemy(GameObject enemy)
         {
-
+            BaseEnemy baseEnemy = enemy.GetComponent<BaseEnemy>();
+            if (baseEnemy == null)
+            {
+                Debug.Log("Error, trying to create enemy, but gameobject doesn't contain BaseEnemy script");
+                return;
+            }
+            Vector3 position = new Vector3();
+            position.x = Random.Range(bottomLeftBound.position.x, topRightBound.position.x);
+            position.y = Random.Range(bottomLeftBound.position.y, topRightBound.position.y);
+            position.z = 0;
+            baseEnemy = objectPool.GetObjectFromPool(baseEnemy.PoolObjectType, enemy, position).GetGameObject().GetComponent<BaseEnemy>();
+            if(baseEnemy == null)
+            {
+                Debug.Log("Error, took enemy out of object pool, but didn't find BaseEnemy script on it");
+                return;
+            }
+            baseEnemy.Init(position, enemyTarget);
         }
     }
 }
