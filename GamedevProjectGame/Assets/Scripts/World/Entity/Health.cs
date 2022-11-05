@@ -8,12 +8,13 @@ namespace World.Entity
     {
         private float currentHealth;
 
-        [SerializeField]
         private float maxHealth;
+
+        public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
         public void Awake()
         {
-            currentHealth = maxHealth;
+            currentHealth = MaxHealth;
         }
 
         public void TakeDamage(float damage)
@@ -29,18 +30,18 @@ namespace World.Entity
         public void Heal(float amount)
         {
             currentHealth += amount;
-            if(currentHealth > maxHealth)
-                currentHealth = maxHealth;
+            if(currentHealth > MaxHealth)
+                currentHealth = MaxHealth;
         }
 
         public void HealToMax()
         {
-            currentHealth = maxHealth;
+            currentHealth = MaxHealth;
         }
 
         public void ChangeMaxHealth(float amount)
         {
-            maxHealth += amount;
+            MaxHealth += amount;
         }
     }
 }
