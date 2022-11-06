@@ -1,5 +1,6 @@
 using App;
 using App.Systems.EnemySpawning;
+using App.Systems.Wave;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace World.Entity.Enemy
         private FollowState followState;
         private SpawningState spawningState;
         private ObjectPool objectPool;
+        private IWaveSystem waveSystem;
 
         [SerializeField]
         private Rigidbody2D myRigidbody;
@@ -47,9 +49,10 @@ namespace World.Entity.Enemy
                 stateMachine.CurrentState.Update();
         }
 
-        public void Init(Vector3 position,Transform target)
+        public void Init(Vector3 position,Transform target, IWaveSystem waveSystem)
         {
             this.target = target;
+            this.waveSystem = waveSystem;
             transform.position = position;
             health.HealToMax();
             initialised = true;
@@ -58,6 +61,7 @@ namespace World.Entity.Enemy
 
         public void Die()
         {
+            waveSystem.ReportKilled(EnemyData.type);
             objectPool.ReturnToPool(this);
         }
 
