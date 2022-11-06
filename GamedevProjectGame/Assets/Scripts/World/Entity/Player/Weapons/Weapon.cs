@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace App.World.Entity.Player.Weapons
 {
-    public class Weapon : MonoBehaviour, IWeapon
+    public abstract class Weapon : MonoBehaviour
     {
         [SerializeField]
         private ShootEvent shootEvent;
         [SerializeField]
-        private Transform shootPosition;
+        protected Transform shootPosition;
+        protected GameObject bulletPrefab;
+        protected float coolDown;
         [SerializeField]
-        private GameObject bulletPrefab;
-        [SerializeField]
-        private float coolDown;
-        private float timeFromCoolDown;
+        private WeaponSO data;
+        protected float timeFromCoolDown;
+        private float damage;
 
+        private void Awake()
+        {
+            damage = data.damage;
+            coolDown = data.FireRate;
+            bulletPrefab = data.bullet;
+        }
         public ShootEvent ShootEvent { get => shootEvent; }
 
         private void OnEnable()
@@ -35,19 +42,9 @@ namespace App.World.Entity.Player.Weapons
         {
             timeFromCoolDown += Time.deltaTime;
         }
-        public void Shoot(ShootEvent ev)
-        {
-            Shoot();
-        }
-        public void Shoot()
-        {
-            if (timeFromCoolDown > coolDown)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bullet.GetComponent<Bullet>().Speed;
-                timeFromCoolDown = 0.0f;
-            }
-        }
+        public abstract void Shoot(ShootEvent ev);
+        public abstract void Shoot();
+
 
     }
 }
