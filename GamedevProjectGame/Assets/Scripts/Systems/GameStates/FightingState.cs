@@ -16,6 +16,7 @@ public class FightingState : IState
     public void Enter()
     {
         Debug.Log("Fighting!!!");
+        waveSystem.StartWave();
     }
 
     public void Exit()
