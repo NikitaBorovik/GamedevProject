@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Basic Zombie
   m_EditorClassIdentifier: 
   type: Basic Zombie
-  speed: 1
+  dangerLevel: 5
+  speed: 3
   damage: 10
   timeBetweenAttacks: 1
   moneyDropChance: 0.2

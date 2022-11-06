@@ -308,9 +308,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: maxTimeBetweenSpawns
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: minTimeBetweenSpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5813351036652541608, guid: 99603ab6e54cc5649b8c0ba9d0738133, type: 3}
+      objectReference: {fileID: 5813351036652541612, guid: 99603ab6e54cc5649b8c0ba9d0738133, type: 3}
     - target: {fileID: 1706747020484091123, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_RootOrder
       value: 3

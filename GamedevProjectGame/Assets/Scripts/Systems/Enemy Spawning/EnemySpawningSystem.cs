@@ -1,3 +1,4 @@
+using App.Systems.Wave;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ namespace App.Systems.EnemySpawning
 {
     public class EnemySpawningSystem : MonoBehaviour
     {
+        private IWaveSystem waveSystem;
         private ObjectPool objectPool;
         private Transform enemyTarget;
 
@@ -14,8 +16,9 @@ namespace App.Systems.EnemySpawning
         private Transform bottomLeftBound;
         [SerializeField]
         private Transform topRightBound;
-        public void Init(ObjectPool objectPool,Transform enemyTarget)
+        public void Init(IWaveSystem waveSystem,ObjectPool objectPool,Transform enemyTarget)
         {
+            this.waveSystem = waveSystem;
             this.objectPool = objectPool;
             this.enemyTarget = enemyTarget;
         }
@@ -38,7 +41,7 @@ namespace App.Systems.EnemySpawning
                 Debug.Log("Error, took enemy out of object pool, but didn't find BaseEnemy script on it");
                 return;
             }
-            baseEnemy.Init(position, enemyTarget);
+            baseEnemy.Init(position, enemyTarget,waveSystem);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace App
         private void Start()
         {
             inputSystem.Init(mainCamera,objectsContainer.Player.GetComponent<Player>());
-            enemySpawningSystem.Init(objectPool,objectsContainer.Player.transform);
+            enemySpawningSystem.Init(waveSystem,objectPool,objectsContainer.Player.transform);
             waveSystem.Init(enemySpawningSystem);
         }
 
