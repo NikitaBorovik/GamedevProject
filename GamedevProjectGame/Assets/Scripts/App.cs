@@ -18,6 +18,8 @@ namespace App
         [SerializeField]
         private WaveSystem waveSystem;
         [SerializeField]
+        private GameStatesSystem gameStatesSystem;
+        [SerializeField]
         private ObjectPool objectPool;
         [SerializeField]
         private ObjectsContainer objectsContainer;
@@ -30,6 +32,7 @@ namespace App
             inputSystem.Init(mainCamera,objectsContainer.Player.GetComponent<Player>());
             enemySpawningSystem.Init(objectPool,objectsContainer.Player.transform);
             waveSystem.Init(enemySpawningSystem);
+            gameStatesSystem.Init(waveSystem,objectsContainer.Gates.GetComponent<Gates>());
         }
 
     }
