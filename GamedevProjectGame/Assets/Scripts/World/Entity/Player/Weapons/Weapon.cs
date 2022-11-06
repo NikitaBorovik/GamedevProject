@@ -14,12 +14,14 @@ namespace App.World.Entity.Player.Weapons
         [SerializeField]
         private WeaponSO data;
         protected float timeFromCoolDown;
-        private float damage;
+        protected float damage;
+        protected float bulletFlySpeed;
 
         private void Awake()
         {
             damage = data.damage;
-            coolDown = data.FireRate;
+            coolDown = data.coolDown;
+            bulletFlySpeed = data.bulletFlySpeed;
             bulletPrefab = data.bullet;
         }
         public ShootEvent ShootEvent { get => shootEvent; }
@@ -42,7 +44,10 @@ namespace App.World.Entity.Player.Weapons
         {
             timeFromCoolDown += Time.deltaTime;
         }
-        public abstract void Shoot(ShootEvent ev);
+        public void Shoot(ShootEvent ev)
+        {
+            Shoot();
+        }
         public abstract void Shoot();
 
 

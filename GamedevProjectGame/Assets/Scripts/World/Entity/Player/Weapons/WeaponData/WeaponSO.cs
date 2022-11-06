@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponSO : ScriptableObject
 {
     public float damage;
-    public float FireRate;
+    public float coolDown;
+    public float bulletFlySpeed;
     public GameObject bullet;
 }
