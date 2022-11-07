@@ -2,6 +2,7 @@ using App.World.Entity.Player.Events;
 using App.World.Entity.Player.Weapons;
 using UnityEngine;
 using World.Entity;
+using App.Upgrades;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -14,7 +15,7 @@ namespace App.World.Entity.Player.PlayerComponents
     [RequireComponent(typeof(Aim))]
     [RequireComponent(typeof(Stand))]
     #endregion
-    public class Player : MonoBehaviour,IKillable
+    public class Player : MonoBehaviour,IKillable, IUpgradable
     {
         #region Components
         private Transform playerTransform;

@@ -16,6 +16,7 @@ namespace App.World.Entity.Player.Weapons
         private float timeFromCoolDown;
 
         public ShootEvent ShootEvent { get => shootEvent; }
+        public float Cooldown { get => coolDown; set => coolDown = value; }
 
         private void OnEnable()
         {
