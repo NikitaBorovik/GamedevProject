@@ -13,6 +13,7 @@ namespace App.Upgrades
         #region MonoBehaviour Methods
         private void Awake()
         {
+            upgrades = new List<IUpgrade>();
             upgradableEntity = GetComponent<IUpgradable>();
         }
 
