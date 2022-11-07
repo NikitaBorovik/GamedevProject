@@ -1,5 +1,4 @@
 ﻿using App.World.Entity.Player.PlayerComponents;
-using System;
 using UnityEngine;
 
 namespace App.Upgrades.ConcreteUpgrades
@@ -7,19 +6,41 @@ namespace App.Upgrades.ConcreteUpgrades
     [CreateAssetMenu(fileName = "HPRegenRateUp", menuName = "Scriptable Objects/Upgrades/HPRegenRateUpgrade")]
     public class HPRegenRateUpgrade : ScriptableObject, IUpgrade
     {
+        #region Serialized Fields
         [Min(0.0f)]
-        [SerializeField] private float cooldownMultiplier;
+        [SerializeField] private float hpRegenRateAddent;
+        #endregion
+
+        #region Non-serialized Fields
+        private float timeCounter  = 0.0f;
+        private const float period = 1.0f;
+        private bool isEnabled     = false;
+        #endregion
 
         public void Enable(Player upgradable)
         {
-            upgradable.Weapon.Cooldown *= cooldownMultiplier;
+            isEnabled = true;
         }
 
-        public void Update(Player upgradable) { }
+        public void Update(Player upgradable) 
+        {
+            if (!isEnabled) return;
+
+            var health = upgradable.Health;
+            if (timeCounter > period)
+            {
+                health.Heal(hpRegenRateAddent);
+                timeCounter = 0f;
+            }
+            else
+            {
+                timeCounter += Time.deltaTime;
+            }
+        }
 
         public void Disable(Player upgradable)
         {
-            upgradable.Weapon.Cooldown /= cooldownMultiplier;
+            isEnabled = false;
         }
     }
 }

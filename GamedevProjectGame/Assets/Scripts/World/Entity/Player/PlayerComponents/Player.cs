@@ -60,7 +60,9 @@ namespace App.World.Entity.Player.PlayerComponents
         public float MovementSpeed { get => movementSpeed;}
         public Weapon Weapon { get => weapon;}
         public int Money { get => money; set => money = value; }
+        public Health Health { get => health; set => health = value; }
         #endregion
+
         private void Awake()
         {
             Init();
