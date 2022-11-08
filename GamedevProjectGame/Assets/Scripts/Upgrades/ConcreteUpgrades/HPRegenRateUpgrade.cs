@@ -4,7 +4,7 @@ using UnityEngine;
 namespace App.Upgrades.ConcreteUpgrades
 {
     [CreateAssetMenu(fileName = "HPRegenRateUp", menuName = "Scriptable Objects/Upgrades/HPRegenRateUpgrade")]
-    public class HPRegenRateUpgrade : ScriptableObject, IUpgrade
+    public class HPRegenRateUpgrade : BaseUpgrade
     {
         #region Serialized Fields
         [Min(0.0f)]
@@ -17,13 +17,13 @@ namespace App.Upgrades.ConcreteUpgrades
         private bool isEnabled     = false;
         #endregion
 
-        public void Enable(Player upgradable)
+        public override void Enable(Player upgradable)
         {
             if (isEnabled) return;
             isEnabled = true;
         }
 
-        public void UpdateUpgrade(Player upgradable) 
+        public override void UpdateUpgrade(Player upgradable) 
         {
             if (!isEnabled) return;
 
@@ -39,7 +39,7 @@ namespace App.Upgrades.ConcreteUpgrades
             }
         }
 
-        public void Disable(Player upgradable)
+        public override void Disable(Player upgradable)
         {
             if (!isEnabled) return;
             isEnabled = false;
