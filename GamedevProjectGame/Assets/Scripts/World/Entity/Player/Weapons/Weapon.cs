@@ -25,6 +25,7 @@ namespace App.World.Entity.Player.Weapons
             bulletPrefab = data.bullet;
         }
         public ShootEvent ShootEvent { get => shootEvent; }
+        public float Cooldown { get => coolDown; set => coolDown = value; }
 
         private void OnEnable()
         {
