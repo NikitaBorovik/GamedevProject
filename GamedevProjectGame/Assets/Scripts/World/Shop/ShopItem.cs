@@ -1,38 +1,51 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using App.Upgrades;
 using App.World;
 using App.World.Entity.Player.PlayerComponents;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ShopItem : MonoBehaviour
 {
     [SerializeField]
-    private bool bActive = false;
-
-    [SerializeField]
     private ObjectsContainer container;
 
+    [SerializeField] 
+    private List<BaseUpgrade> upgrades;
+
+    private BaseUpgrade currentUpgrade;
+
     private Player player;
+
+    // TODO remove
+    private int price;
+
+    private void SetRandomUpgrade()
+    {
+        currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
+    }
 
     private void Awake()
     {
         player = container.Player.GetComponent<Player>();
+        SetRandomUpgrade();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        bActive = true;
+       
     }
 
     private void OnTriggerExit(Collider other)
     {
-        bActive = false;
+        
     }
 
-    public void TryBuy()
+    public void TryBuy() // on click && overlap
     {
-        if (bActive /* && enough money */)
+        if (player.Money >= price)
         {
             Buy();
         }
@@ -44,6 +57,8 @@ public class ShopItem : MonoBehaviour
 
     private void Buy()
     {
-        
+        player.Money -= price;
+        player.GetComponent<UpgradeManager>().AddUpgrade(currentUpgrade);
+        SetRandomUpgrade();
     }
 }
