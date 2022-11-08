@@ -5,26 +5,15 @@ namespace App.World.Entity.Player.Weapons
 {
     public class Bullet : MonoBehaviour
     {
-        [SerializeField]
-        private float baseDamage;
-        [SerializeField]
-        private float speed;
-        public float Speed { get => speed; }
-
+        private float damage;
+        
         private void OnTriggerEnter2D(Collider2D collision)
         {
 
         }
-        // Start is called before the first frame update
-        void Start()
+        public void Init(float damage)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            this.damage = damage;
         }
     }
 }
