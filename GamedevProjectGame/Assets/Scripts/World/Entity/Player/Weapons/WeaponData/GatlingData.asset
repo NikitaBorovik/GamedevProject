@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GatlingData
   m_EditorClassIdentifier: 
   damage: 5
-  FireRate: 5
+  coolDown: 0.2
+  bulletFlySpeed: 20
   bullet: {fileID: 6699174986344805492, guid: a4119d5bcfeba9741b3450aff3ec77d0, type: 3}
