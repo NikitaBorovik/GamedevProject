@@ -19,10 +19,11 @@ namespace App.Upgrades.ConcreteUpgrades
 
         public void Enable(Player upgradable)
         {
+            if (isEnabled) return;
             isEnabled = true;
         }
 
-        public void Update(Player upgradable) 
+        public void UpdateUpgrade(Player upgradable) 
         {
             if (!isEnabled) return;
 
@@ -40,6 +41,7 @@ namespace App.Upgrades.ConcreteUpgrades
 
         public void Disable(Player upgradable)
         {
+            if (!isEnabled) return;
             isEnabled = false;
         }
     }

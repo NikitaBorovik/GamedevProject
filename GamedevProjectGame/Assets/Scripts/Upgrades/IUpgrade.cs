@@ -23,7 +23,7 @@ namespace App.Upgrades
         }
 
         void Enable(Player upgradable);
-        void Update(Player upgradable);
+        void UpdateUpgrade(Player upgradable);
         void Disable(Player upgradable);
 
         //void Enable(Enemy); ...

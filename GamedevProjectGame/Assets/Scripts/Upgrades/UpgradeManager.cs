@@ -29,6 +29,12 @@ namespace App.Upgrades
         public void UpdateAll() => upgrades.ForEach(u => upgradableEntity.UpdateUpgrade(u));
 
         public void DisableAll() => upgrades.ForEach(u => upgradableEntity.DisableUpgrade(u));
+
+        public void AddUpgrade(IUpgrade upgrade)
+        {
+            upgrades.Add(upgrade);
+            upgradableEntity.EnableUpgrade(upgrade);
+        }
         #endregion
     }
 }

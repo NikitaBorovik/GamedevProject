@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d941bea30f4e5b4fbd02fad6fed617c, type: 3}
   m_Name: 0.5WpnCooldownUp
   m_EditorClassIdentifier: 
-  cooldownMultiplier: 0
+  cooldownMultiplier: 0.5

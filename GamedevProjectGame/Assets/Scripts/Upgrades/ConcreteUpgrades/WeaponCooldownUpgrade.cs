@@ -9,16 +9,21 @@ namespace App.Upgrades.ConcreteUpgrades
     {
         [Range(0f, 1f)]
         [SerializeField] private float cooldownMultiplier;
+        private bool isEnabled;
 
         public void Enable(Player upgradable)
         {
+            if (isEnabled) return;
+            isEnabled = true;
             upgradable.Weapon.Cooldown *= cooldownMultiplier;
         }
 
-        public void Update(Player upgradable) {}
+        public void UpdateUpgrade(Player upgradable) {}
 
         public void Disable(Player upgradable)
         {
+            if (!isEnabled) return;
+            isEnabled = false;
             upgradable.Weapon.Cooldown /= cooldownMultiplier;
         }
     }
