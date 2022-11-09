@@ -16,6 +16,7 @@ namespace App.Upgrades.ConcreteUpgrades
             if (isEnabled) return;
             isEnabled = true;
             upgradable.Weapon.Cooldown *= cooldownMultiplier;
+            Debug.Log(upgradable.Weapon.Cooldown);
         }
 
         public override void UpdateUpgrade(Player upgradable) {}

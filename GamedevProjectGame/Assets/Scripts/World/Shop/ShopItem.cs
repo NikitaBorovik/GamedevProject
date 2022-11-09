@@ -15,13 +15,24 @@ public class ShopItem : MonoBehaviour
     [SerializeField] 
     private List<BaseUpgrade> upgrades;
 
+    [SerializeField]
+    private Shop shop;
+
     private BaseUpgrade currentUpgrade;
 
     private Player player;
 
+    private float minTimeFromBuy = 0.1f;
+
+    float timeFromBuy = 0f;
+
     // TODO remove
     private int price;
 
+    private void Update()
+    {
+        timeFromBuy += Time.deltaTime;
+    }
     private void SetRandomUpgrade()
     {
         currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
@@ -33,19 +44,21 @@ public class ShopItem : MonoBehaviour
         SetRandomUpgrade();
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        Debug.Log("Entered Trigger!");
+        shop.SellEvent.OnSell += this.TryBuy;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Exit Trigger!");
+        shop.SellEvent.OnSell -= this.TryBuy;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void TryBuy(SellEvent ev) // on click && overlap
     {
-        
-    }
-
-    public void TryBuy() // on click && overlap
-    {
-        if (player.Money >= price)
+        if (player.Money >= price && timeFromBuy >= minTimeFromBuy)
         {
             Buy();
         }
@@ -53,6 +66,7 @@ public class ShopItem : MonoBehaviour
         {
             //FailSound();
         }
+        timeFromBuy = 0;
     }
 
     private void Buy()

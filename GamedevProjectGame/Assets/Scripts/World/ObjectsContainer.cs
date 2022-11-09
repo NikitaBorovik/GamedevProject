@@ -10,8 +10,11 @@ namespace App.World
         private GameObject player;
         [SerializeField]
         private GameObject gates;
+        [SerializeField]
+        private GameObject shop;
         public GameObject Player { get => player; }
         public GameObject Gates { get => gates;}
+        public GameObject Shop { get => shop;}
     }
 }
 

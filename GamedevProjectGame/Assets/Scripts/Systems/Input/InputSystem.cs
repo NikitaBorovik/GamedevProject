@@ -10,7 +10,9 @@ namespace App.Systems.Input
         
         private Camera mainCamera;
         private Player player;
+        private Shop shop;
         
+
         // Start is called before the first frame update
         void Start()
         {
@@ -23,11 +25,13 @@ namespace App.Systems.Input
             HandleAimInput();
             HandleMoveInput();
             HandleShootInput();
+            HandleBuyInput();
         }
-        public void Init(Camera mainCamera,Player player)
+        public void Init(Camera mainCamera,Player player,Shop shop)
         {
             this.mainCamera = mainCamera;
             this.player = player;
+            this.shop = shop;
         }
 
         private Vector3 GetMousePositionInWorld() 
@@ -83,6 +87,16 @@ namespace App.Systems.Input
             if (UnityEngine.Input.GetMouseButton(0))
             {
                 player.Weapon.ShootEvent.CallShootEvent();
+            }
+        }
+
+        private void HandleBuyInput()
+        {
+            
+            if(UnityEngine.Input.GetKeyDown(KeyCode.E))
+            {
+                
+                shop.SellEvent.CallSellEvent();
             }
         }
     }

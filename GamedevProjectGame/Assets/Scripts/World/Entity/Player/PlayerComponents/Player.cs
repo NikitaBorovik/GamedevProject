@@ -15,7 +15,7 @@ namespace App.World.Entity.Player.PlayerComponents
     [RequireComponent(typeof(Aim))]
     [RequireComponent(typeof(Stand))]
     #endregion
-    public class Player : MonoBehaviour,IKillable, IUpgradable
+    public class Player : MonoBehaviour , IKillable, IUpgradable
     {
         #region Components
         private Transform playerTransform;

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class BaseUpgrade : ScriptableObject, IUpgrade
 {
+    
     public abstract void Disable(Player upgradable);
 
 

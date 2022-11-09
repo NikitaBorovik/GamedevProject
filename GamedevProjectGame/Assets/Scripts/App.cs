@@ -29,7 +29,7 @@ namespace App
         private Camera mainCamera;
         private void Start()
         {
-            inputSystem.Init(mainCamera,objectsContainer.Player.GetComponent<Player>());
+            inputSystem.Init(mainCamera,objectsContainer.Player.GetComponent<Player>(),objectsContainer.Shop.GetComponent<Shop>());
             enemySpawningSystem.Init(waveSystem,objectPool,objectsContainer.Player.transform);
             waveSystem.Init(enemySpawningSystem);
             gameStatesSystem.Init(waveSystem,objectsContainer.Gates.GetComponent<Gates>());

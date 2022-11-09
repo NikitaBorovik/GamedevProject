@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using App.World.Entity.Player.PlayerComponents;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.Upgrades
@@ -6,7 +7,7 @@ namespace App.Upgrades
     public class UpgradeManager : MonoBehaviour
     {
         #region Fields
-        [SerializeField]
+        [SerializeReference]
         private List<BaseUpgrade> upgrades;
         private IUpgradable upgradableEntity;
         #endregion
@@ -34,6 +35,7 @@ namespace App.Upgrades
         public void AddUpgrade(BaseUpgrade upgrade)
         {
             upgrades.Add(upgrade);
+            //upgrade.Enable(upgradableEntity as Player);
             upgradableEntity.EnableUpgrade(upgrade);
         }
         #endregion

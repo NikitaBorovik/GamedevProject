@@ -10,7 +10,7 @@ namespace App.Upgrades
             Debug.LogWarning($"There's no method-visitor for: { upgradable.GetType().Name }. " +
                 $"Add one or check the correctness of {GetType().Name}.");
         }
-        void Update(IUpgradable upgradable)
+        void UpdateUpgrade(IUpgradable upgradable)
         {
             Debug.LogWarning($"There's no method-visitor for: { upgradable.GetType().Name }. " +
                 $"Add one or check the correctness of {GetType().Name}.");
