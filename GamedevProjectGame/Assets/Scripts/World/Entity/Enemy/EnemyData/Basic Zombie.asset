@@ -18,7 +18,7 @@ MonoBehaviour:
   damage: 10
   timeBetweenAttacks: 1
   moneyDropChance: 0.2
-  attackRange: 1
+  attackRange: 2
   spawnAnimationDuration: 1
   minMoneyDrop: 1
   maxMoneyDrop: 3

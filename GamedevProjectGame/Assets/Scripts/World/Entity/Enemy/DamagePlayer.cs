@@ -17,7 +17,7 @@ public class DamagePlayer : MonoBehaviour
         if (collisionHealth != null)
         {
             collisionHealth.TakeDamage(damage);
-            Debug.Log("Player hit");
+            Debug.Log($"Player hit {collisionHealth.CurrentHealth}/{collisionHealth.MaxHealth}");
         }  
         else
             Debug.Log("Error: Trying to damage target without Health component");

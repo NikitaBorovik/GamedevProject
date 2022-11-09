@@ -7,9 +7,10 @@ namespace World.Entity
     public class Health : MonoBehaviour
     {
         private float currentHealth;
-
+        [SerializeField]
         private float maxHealth;
 
+        public float CurrentHealth => currentHealth;
         public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
         public void Awake()
