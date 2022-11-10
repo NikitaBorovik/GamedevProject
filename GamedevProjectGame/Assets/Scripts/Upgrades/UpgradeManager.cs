@@ -10,7 +10,6 @@ namespace App.Upgrades
     public class UpgradeManager : MonoBehaviour
     {
         #region Fields
-        [SerializeReference]
         private List<BaseUpgrade> upgrades;
         private IUpgradable upgradableEntity;
         #endregion
