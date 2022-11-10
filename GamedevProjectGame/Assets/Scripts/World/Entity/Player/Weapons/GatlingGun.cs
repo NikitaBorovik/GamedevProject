@@ -10,7 +10,16 @@ public class GatlingGun : Weapon
     {
         if (timeFromCoolDown > coolDown)
         {
-            GameObject bullet = Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
+            Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
+            if(bulletScript == null)
+            {
+                Debug.Log("Trying to shoot bullet that doesn't contain Bullet script");
+                return;
+            }
+            GameObject bullet = objectPool.GetObjectFromPool(bulletScript.PoolObjectType, bulletPrefab, shootPosition.position).GetGameObject();
+            bullet.transform.rotation = shootPosition.rotation;
+            bullet.transform.position = shootPosition.position;
+            //Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
             bullet.GetComponent<Bullet>().Init(damage);
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
             timeFromCoolDown = 0.0f;

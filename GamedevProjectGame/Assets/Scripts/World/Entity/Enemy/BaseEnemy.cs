@@ -49,7 +49,7 @@ namespace World.Entity.Enemy
                 stateMachine.CurrentState.Update();
         }
 
-        public void Init(Vector3 position,Transform target, IWaveSystem waveSystem)
+        public virtual void Init(Vector3 position,Transform target, IWaveSystem waveSystem)
         {
             this.target = target;
             this.waveSystem = waveSystem;

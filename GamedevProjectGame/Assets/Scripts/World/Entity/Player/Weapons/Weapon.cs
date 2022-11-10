@@ -1,3 +1,4 @@
+using App.Systems.EnemySpawning;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace App.World.Entity.Player.Weapons
         protected float coolDown;
         [SerializeField]
         private WeaponSO data;
+        protected ObjectPool objectPool;
         protected float timeFromCoolDown;
         protected float damage;
         protected float bulletFlySpeed;
@@ -23,6 +25,7 @@ namespace App.World.Entity.Player.Weapons
             coolDown = data.coolDown;
             bulletFlySpeed = data.bulletFlySpeed;
             bulletPrefab = data.bullet;
+            objectPool = FindObjectOfType<ObjectPool>();
         }
         public ShootEvent ShootEvent { get => shootEvent; }
         public float Cooldown { get => coolDown; set => coolDown = value; }
