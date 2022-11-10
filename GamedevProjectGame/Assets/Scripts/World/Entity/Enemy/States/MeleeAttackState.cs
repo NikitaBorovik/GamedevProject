@@ -11,6 +11,7 @@ namespace World.Entity.Enemy.States
 
         public override void Enter()
         {
+            baseEnemy.MyRigidbody.mass *= 1000;
             baseEnemy.StartCoroutine(Attack((baseEnemy.Target.position - baseEnemy.transform.position).normalized));
         }
 
@@ -21,7 +22,7 @@ namespace World.Entity.Enemy.States
 
         public override void Exit()
         {
-            
+            baseEnemy.MyRigidbody.mass /= 1000;
         }
 
         private IEnumerator Attack(Vector3 direction)

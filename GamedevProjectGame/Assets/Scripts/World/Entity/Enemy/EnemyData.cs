@@ -17,6 +17,7 @@ namespace World.Entity.Enemy
         public float spawnAnimationDuration;
         public int minMoneyDrop;
         public int maxMoneyDrop;
+        public MoneyDropItem moneyPrefab;
     }
 }
 
