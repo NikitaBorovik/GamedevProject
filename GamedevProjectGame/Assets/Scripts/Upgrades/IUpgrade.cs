@@ -7,18 +7,18 @@ namespace App.Upgrades
     {
         void Enable(IUpgradable upgradable)
         {
-            Debug.LogWarning($"There's no method-visitor for: { upgradable.GetType().Name }. " +
+            Debug.LogWarning($"There's no method-visitor taking: { upgradable.GetType().Name } param. " +
                 $"Add one or check the correctness of {GetType().Name}.");
         }
         void UpdateUpgrade(IUpgradable upgradable)
         {
-            Debug.LogWarning($"There's no method-visitor for: { upgradable.GetType().Name }. " +
+            Debug.LogWarning($"There's no method-visitor taking: { upgradable.GetType().Name } param. " +
                 $"Add one or check the correctness of {GetType().Name}.");
         }
 
         void Disable(IUpgradable upgradable)
         {
-            Debug.LogWarning($"There's no method-visitor for: { upgradable.GetType().Name }. " +
+            Debug.LogWarning($"There's no method-visitor taking: { upgradable.GetType().Name } param. " +
                 $"Add one or check the correctness of {GetType().Name}.");
         }
 

@@ -35,7 +35,6 @@ namespace App.Upgrades
         public void AddUpgrade(BaseUpgrade upgrade)
         {
             upgrades.Add(upgrade);
-            //upgrade.Enable(upgradableEntity as Player);
             upgradableEntity.EnableUpgrade(upgrade);
         }
         #endregion
