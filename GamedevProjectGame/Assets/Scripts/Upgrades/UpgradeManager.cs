@@ -1,6 +1,9 @@
-﻿using App.World.Entity.Player.PlayerComponents;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+
+using App.Upgrades.ConcreteUpgrades;
+
 
 namespace App.Upgrades
 {
