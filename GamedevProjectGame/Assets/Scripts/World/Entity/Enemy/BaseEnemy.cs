@@ -1,8 +1,6 @@
 using App;
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using World.Entity.Enemy.States;
 
@@ -61,8 +59,22 @@ namespace World.Entity.Enemy
 
         public void Die()
         {
+            DropMoney();
             waveSystem.ReportKilled(EnemyData.type);
             objectPool.ReturnToPool(this);
+        }
+
+        private void DropMoney()
+        {
+            if(Random.value <= enemyData.moneyDropChance)
+            {
+                int count = Random.Range(enemyData.minMoneyDrop,enemyData.maxMoneyDrop + 1);
+                for(int i=0;i<count;i++)
+                {
+                    GameObject money = objectPool.GetObjectFromPool(enemyData.moneyPrefab.PoolObjectType, enemyData.moneyPrefab.gameObject, transform.position).GetGameObject();
+                    money.GetComponent<MoneyDropItem>().Init(transform.position);
+                }
+            }
         }
 
         public void GetFromPool(ObjectPool pool)
