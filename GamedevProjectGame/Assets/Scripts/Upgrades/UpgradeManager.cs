@@ -1,6 +1,9 @@
-﻿using App.World.Entity.Player.PlayerComponents;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+
+using App.Upgrades.ConcreteUpgrades;
+
 
 namespace App.Upgrades
 {
@@ -35,7 +38,6 @@ namespace App.Upgrades
         public void AddUpgrade(BaseUpgrade upgrade)
         {
             upgrades.Add(upgrade);
-            //upgrade.Enable(upgradableEntity as Player);
             upgradableEntity.EnableUpgrade(upgrade);
         }
         #endregion

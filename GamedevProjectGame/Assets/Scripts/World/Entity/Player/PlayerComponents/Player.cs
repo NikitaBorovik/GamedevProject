@@ -80,6 +80,21 @@ namespace App.World.Entity.Player.PlayerComponents
         {
             throw new System.NotImplementedException();
         }
+
+        public void EnableUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.Enable(this);
+        }
+
+        public void UpdateUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.UpdateUpgrade(this);
+        }
+
+        public void DisableUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.Disable(this);
+        }
     }
 }
 

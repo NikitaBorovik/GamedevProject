@@ -72,7 +72,8 @@ public class ShopItem : MonoBehaviour
     private void Buy()
     {
         player.Money -= price;
-        player.GetComponent<UpgradeManager>().AddUpgrade(currentUpgrade);
+        var upgrade = Instantiate(currentUpgrade);
+        player.GetComponent<UpgradeManager>().AddUpgrade(upgrade);
         SetRandomUpgrade();
     }
 }
