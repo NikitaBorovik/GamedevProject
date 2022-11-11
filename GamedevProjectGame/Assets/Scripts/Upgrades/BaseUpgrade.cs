@@ -5,7 +5,16 @@ namespace App.Upgrades
 {
     public abstract class BaseUpgrade : ScriptableObject
     {
+        #region Serialized Fields
+        [Min(0f)]
+        [SerializeField] private int cost;
+        [TextArea]
+        [SerializeField] private string desctiption;
+        #endregion
+
         #region Properties
+        public int Cost => cost;
+        public string Desctiption => desctiption;
         public bool IsEnabled { get; private set; } = false;
         #endregion
 

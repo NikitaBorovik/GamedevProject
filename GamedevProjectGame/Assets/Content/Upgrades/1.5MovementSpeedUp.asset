@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d941bea30f4e5b4fbd02fad6fed617c, type: 3}
-  m_Name: 0.5WpnCooldownUp
+  m_Script: {fileID: 11500000, guid: c70d591fde7881948bed75122209036f, type: 3}
+  m_Name: 1.5MovementSpeedUp
   m_EditorClassIdentifier: 
-  cost: 50
-  desctiption: 'Increases damage applied by each shot of an upgradable object''s
-    weapon. '
-  cooldownMultiplier: 0.5
+  cost: 30
+  desctiption: Lets you fly with a speed of attacking wild owl!
+  speedMultiplier: 1.5

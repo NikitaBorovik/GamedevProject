@@ -57,7 +57,7 @@ namespace App.World.Entity.Player.PlayerComponents
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
-        public float MovementSpeed { get => movementSpeed;}
+        public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public Weapon Weapon { get => weapon;}
         public int Money { get => money; set => money = value; }
         public Health Health { get => health; set => health = value; }
