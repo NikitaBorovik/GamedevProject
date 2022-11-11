@@ -14,19 +14,13 @@ namespace App.Upgrades.ConcreteUpgrades
         #region Non-serialized Fields
         private float timeCounter  = 0.0f;
         private const float period = 1.0f;
-        private bool isEnabled     = false;
         #endregion
 
-        public override void Enable(Player upgradable)
-        {
-            if (isEnabled) return;
-            isEnabled = true;
-        }
+        #region Overriden methods
+        protected override void Upgrade(Player upgradable) {}
 
-        public override void UpdateUpgrade(Player upgradable) 
+        protected override void UpdateIfEnabled(Player upgradable) 
         {
-            if (!isEnabled) return;
-
             var health = upgradable.Health;
             if (timeCounter > period)
             {
@@ -39,10 +33,8 @@ namespace App.Upgrades.ConcreteUpgrades
             }
         }
 
-        public override void Disable(Player upgradable)
-        {
-            if (!isEnabled) return;
-            isEnabled = false;
-        }
+        protected override void Degrade(Player upgradable) {}
+
+        #endregion
     }
 }

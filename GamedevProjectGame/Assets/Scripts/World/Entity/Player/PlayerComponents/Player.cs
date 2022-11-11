@@ -3,6 +3,7 @@ using App.World.Entity.Player.Weapons;
 using UnityEngine;
 using World.Entity;
 using App.Upgrades;
+using UnityEngine.SceneManagement;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -15,7 +16,7 @@ namespace App.World.Entity.Player.PlayerComponents
     [RequireComponent(typeof(Aim))]
     [RequireComponent(typeof(Stand))]
     #endregion
-    public class Player : MonoBehaviour,IKillable, IUpgradable
+    public class Player : MonoBehaviour , IKillable, IUpgradable
     {
         #region Components
         private Transform playerTransform;
@@ -46,7 +47,7 @@ namespace App.World.Entity.Player.PlayerComponents
 
         #region Parameters
         private float movementSpeed;
-        private int money;
+        private int money = 100000;
         #endregion
 
         #region Properties
@@ -57,7 +58,7 @@ namespace App.World.Entity.Player.PlayerComponents
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
-        public float MovementSpeed { get => movementSpeed;}
+        public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public Weapon Weapon { get => weapon;}
         public int Money { get => money; set => money = value; }
         public Health Health { get => health; set => health = value; }
@@ -78,7 +79,22 @@ namespace App.World.Entity.Player.PlayerComponents
         }
         public void Die()
         {
-            throw new System.NotImplementedException();
+            SceneManager.LoadScene("Main Scene");
+        }
+
+        public void EnableUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.Enable(this);
+        }
+
+        public void UpdateUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.UpdateUpgrade(this);
+        }
+
+        public void DisableUpgrade(BaseUpgrade upgrade)
+        {
+            upgrade.Disable(this);
         }
     }
 }

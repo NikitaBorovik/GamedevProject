@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+
+using App.Upgrades.ConcreteUpgrades;
+
+
 namespace App.Upgrades
 {
     public class UpgradeManager : MonoBehaviour
     {
         #region Fields
-        [SerializeField]
         private List<BaseUpgrade> upgrades;
         private IUpgradable upgradableEntity;
         #endregion

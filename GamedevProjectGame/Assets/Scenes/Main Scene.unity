@@ -128,11 +128,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6560107190100513550, guid: d0a5baac97747624cbd6df7ba0432968, type: 3}
   m_PrefabInstance: {fileID: 6560107191128117520}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &911580808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8732471205887472893, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-  m_PrefabInstance: {fileID: 1815204854319204985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &922307730 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 922307730, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
@@ -190,10 +185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1282159208716065911, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 1667882560066533237, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1815204854696216296, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -242,21 +237,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: World
       objectReference: {fileID: 0}
-    - target: {fileID: 6600256392583536042, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7171714944629421496, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: exitChecker
+    - target: {fileID: 3013505546476011433, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 911580808}
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 5894225091230415239, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 8260383515385663230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
---- !u!1 &1815204854319204986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6783799345222740139, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-  m_PrefabInstance: {fileID: 1815204854319204985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3099086894580218372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,23 +265,11 @@ PrefabInstance:
     - target: {fileID: 87006693, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: enemySpawner
       value: 
-      objectReference: {fileID: 1815204854319204986}
+      objectReference: {fileID: 0}
     - target: {fileID: 87006693, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: objectsContainer
       value: 
       objectReference: {fileID: 922307730}
-    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
-      propertyPath: maxTimeBetweenSpawns
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
-      propertyPath: minTimeBetweenSpawns
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 5813351036652541612, guid: 99603ab6e54cc5649b8c0ba9d0738133, type: 3}
     - target: {fileID: 3099086894498719712, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_RootOrder
       value: 0

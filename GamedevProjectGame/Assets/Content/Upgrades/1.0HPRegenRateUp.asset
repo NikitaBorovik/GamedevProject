@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9431eb5e71e22e4dba2e94404345a21, type: 3}
   m_Name: 1.0HPRegenRateUp
   m_EditorClassIdentifier: 
-  hpRegenRateAddent: 2
+  cost: 20
+  desctiption: Increases upgradable object's hp regen rate by certain amount.
+  hpRegenRateAddent: 1

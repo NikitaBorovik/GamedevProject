@@ -3,6 +3,7 @@ using App.Systems.Wave;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class GameStatesSystem : MonoBehaviour
 {
@@ -13,14 +14,14 @@ public class GameStatesSystem : MonoBehaviour
     private RestingState restingState;
     private Gates gates;
     
-    public void Init(WaveSystem waveSystem,Gates gates)
+    public void Init(WaveSystem waveSystem,Gates gates,Light2D light)
     {
         this.waveSystem = waveSystem;
         this.gates = gates;
         gates.Init(this);
         gameStateMachine = new StateMachine();
-        fightingState = new FightingState(this, waveSystem);
-        restingState = new RestingState(this,gates);
+        fightingState = new FightingState(this, waveSystem, light);
+        restingState = new RestingState(this,gates,light);
         gameStateMachine.Initialize(restingState);
     }
     
@@ -31,5 +32,9 @@ public class GameStatesSystem : MonoBehaviour
     public void RestingState()
     {
         gameStateMachine.ChangeState(restingState);
+    }
+    private void Update()
+    {
+        gameStateMachine.CurrentState.Update();
     }
 }
