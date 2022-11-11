@@ -24,7 +24,6 @@ namespace App.Systems.Wave
 
         public void StartWave()
         {
-            Debug.Log("Wave started");
             StartCoroutine(Wave());
         }
 

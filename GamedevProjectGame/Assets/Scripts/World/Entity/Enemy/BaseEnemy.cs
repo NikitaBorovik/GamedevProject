@@ -52,6 +52,7 @@ namespace World.Entity.Enemy
             this.target = target;
             this.waveSystem = waveSystem;
             transform.position = position;
+            health.ChangeMaxHealth(enemyData.maxHealth);
             health.HealToMax();
             initialised = true;
             stateMachine.Initialize(spawningState);
@@ -59,6 +60,7 @@ namespace World.Entity.Enemy
 
         public void Die()
         {
+            StopAllCoroutines();
             DropMoney();
             waveSystem.ReportKilled(EnemyData.type);
             objectPool.ReturnToPool(this);

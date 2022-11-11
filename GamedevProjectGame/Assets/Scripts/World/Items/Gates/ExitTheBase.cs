@@ -15,6 +15,8 @@ public class ExitTheBase : MonoBehaviour
     }
     private void Exit()
     {
+        gameObject.SetActive(false);
+        Debug.Log("Exit the base");
         gameStatesSystem.FightingState();
     }
 }

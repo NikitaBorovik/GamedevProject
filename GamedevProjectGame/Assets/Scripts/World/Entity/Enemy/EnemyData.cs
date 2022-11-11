@@ -8,6 +8,7 @@ namespace World.Entity.Enemy
     public class EnemyData : ScriptableObject
     {
         public string type;
+        public int maxHealth;
         public int dangerLevel;
         public float speed;
         public float damage;

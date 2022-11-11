@@ -17,10 +17,11 @@ namespace App.World.Entity.Player.Weapons
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
-                Debug.Log("No Healt component on shot target");
+                Debug.Log("No Health component on shot target");
                 return;
             }
-            targetHealt.TakeDamage(damage);
+            if(targetHealt.CurrentHealth > 0)
+                targetHealt.TakeDamage(damage);
             objectPool.ReturnToPool(this);
         }
         public void Init(float damage)
