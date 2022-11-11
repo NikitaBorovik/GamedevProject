@@ -47,7 +47,7 @@ public class ShopItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered Trigger!");
+        Debug.Log($"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}");
         shop.SellEvent.OnSell += this.TryBuy;
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -58,20 +58,20 @@ public class ShopItem : MonoBehaviour
 
     public void TryBuy(SellEvent ev) // on click && overlap
     {
-        if (player.Money >= price && timeFromBuy >= minTimeFromBuy)
+        if (player.Money >= currentUpgrade.Cost && timeFromBuy >= minTimeFromBuy)
         {
             Buy();
         }
         else
         {
-            //FailSound();
+            Debug.Log("Not enough money!");
         }
         timeFromBuy = 0;
     }
 
     private void Buy()
     {
-        player.Money -= price;
+        player.Money -= currentUpgrade.Cost;
         var upgrade = Instantiate(currentUpgrade);
         player.GetComponent<UpgradeManager>().AddUpgrade(upgrade);
         SetRandomUpgrade();
