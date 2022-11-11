@@ -10,6 +10,7 @@ namespace App.Systems.Wave
     {
         private int waveNum = 1;
         private EnemySpawningSystem enemySpawningSystem;
+        private GameStatesSystem gameStatesSystem;
         private List<string> enemyTypes;
         private int enemiesAlive = 0;
         private int dangerLevelLeft;
@@ -27,9 +28,10 @@ namespace App.Systems.Wave
             StartCoroutine(Wave());
         }
 
-        public void Init(EnemySpawningSystem enemySpawningSystem)
+        public void Init(EnemySpawningSystem enemySpawningSystem, GameStatesSystem gameStatesSystem)
         {
-            this.enemySpawningSystem = enemySpawningSystem;;
+            this.enemySpawningSystem = enemySpawningSystem;
+            this.gameStatesSystem = gameStatesSystem;   
         }
 
         public IEnumerator Wave()
@@ -62,7 +64,7 @@ namespace App.Systems.Wave
         {
             Debug.Log("Wave ended");
             waveNum++;
-            //Notify GameState System that wave has ended
+            gameStatesSystem.RestingState();
         }
     }
 }

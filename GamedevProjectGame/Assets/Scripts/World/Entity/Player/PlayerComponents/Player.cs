@@ -3,6 +3,7 @@ using App.World.Entity.Player.Weapons;
 using UnityEngine;
 using World.Entity;
 using App.Upgrades;
+using UnityEngine.SceneManagement;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -78,7 +79,7 @@ namespace App.World.Entity.Player.PlayerComponents
         }
         public void Die()
         {
-            throw new System.NotImplementedException();
+            SceneManager.LoadScene("Main Scene");
         }
 
         public void EnableUpgrade(BaseUpgrade upgrade)

@@ -28,5 +28,6 @@ public class Gates : MonoBehaviour
     {
         m_SpriteRenderer.enabled = true;
         m_BoxCollider.enabled = true;
+        exitChecker.SetActive(false);
     }
 }

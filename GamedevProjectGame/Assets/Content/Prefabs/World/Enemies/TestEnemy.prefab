@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5813351036652541612}
   - component: {fileID: -1759537335943733263}
   - component: {fileID: 1739311045464252421}
+  - component: {fileID: 5360737082426628715}
   m_Layer: 7
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -57,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -149,11 +150,27 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.03, y: 1.64}
+  m_Direction: 0
+--- !u!70 &5360737082426628715
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813351036652541608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.49}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!1 &5813351037892824656
 GameObject:
@@ -166,7 +183,7 @@ GameObject:
   - component: {fileID: 5813351037892824659}
   - component: {fileID: 5813351037892824658}
   - component: {fileID: 13438331631192653}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
