@@ -24,8 +24,12 @@ namespace App.World.Entity.Player.Weapons
             bulletFlySpeed = data.bulletFlySpeed;
             bulletPrefab = data.bullet;
         }
+
         public ShootEvent ShootEvent { get => shootEvent; }
         public float Cooldown { get => coolDown; set => coolDown = value; }
+        public float Damage { get => damage; set => damage = value; }
+        public float BulletFlySpeed { get => bulletFlySpeed; set => bulletFlySpeed = value; }
+
 
         private void OnEnable()
         {
