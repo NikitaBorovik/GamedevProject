@@ -1,21 +1,38 @@
+using App.Systems.EnemySpawning;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace App.World.Entity.Player.Weapons
 {
-    public class Weapon : MonoBehaviour, IWeapon
+    public abstract class Weapon : MonoBehaviour
     {
         [SerializeField]
         private ShootEvent shootEvent;
         [SerializeField]
-        private Transform shootPosition;
+        protected Transform shootPosition;
+        protected GameObject bulletPrefab;
+        protected float coolDown;
         [SerializeField]
-        private GameObject bulletPrefab;
-        [SerializeField]
-        private float coolDown;
-        private float timeFromCoolDown;
+        private WeaponSO data;
+        protected ObjectPool objectPool;
+        protected float timeFromCoolDown;
+        protected float damage;
+        protected float bulletFlySpeed;
+
+        private void Awake()
+        {
+            damage = data.damage;
+            coolDown = data.coolDown;
+            bulletFlySpeed = data.bulletFlySpeed;
+            bulletPrefab = data.bullet;
+            objectPool = FindObjectOfType<ObjectPool>();
+        }
 
         public ShootEvent ShootEvent { get => shootEvent; }
+        public float Cooldown { get => coolDown; set => coolDown = value; }
+        public float Damage { get => damage; set => damage = value; }
+        public float BulletFlySpeed { get => bulletFlySpeed; set => bulletFlySpeed = value; }
+
 
         private void OnEnable()
         {
@@ -39,15 +56,8 @@ namespace App.World.Entity.Player.Weapons
         {
             Shoot();
         }
-        public void Shoot()
-        {
-            if (timeFromCoolDown > coolDown)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bullet.GetComponent<Bullet>().Speed;
-                timeFromCoolDown = 0.0f;
-            }
-        }
+        public abstract void Shoot();
+
 
     }
 }

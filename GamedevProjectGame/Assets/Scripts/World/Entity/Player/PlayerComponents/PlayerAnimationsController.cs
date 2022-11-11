@@ -4,9 +4,12 @@ namespace App.World.Entity.Player.PlayerComponents
 {
     public class PlayerAnimationsController : MonoBehaviour
     {
-        [SerializeField]
         private Player player;
 
+        private void Awake()
+        {
+            player = GetComponent<Player>();
+        }
         private void OnEnable()
         {
             player.StandEvent.OnStand += AnimateOnStand;

@@ -6,10 +6,10 @@ namespace App.Systems.EnemySpawning
 {
     public interface IObjectPoolItem
     {
-        ObjectPool objectPool { get; set; }
         string PoolObjectType { get; }
-        void GetFromPool(ObjectPool pool, Vector3 pos);
+        void GetFromPool(ObjectPool pool);
         void ReturnToPool();
+        GameObject GetGameObject();
     }
 
     public class ObjectPool : MonoBehaviour
@@ -29,17 +29,17 @@ namespace App.Systems.EnemySpawning
                 Queue<IObjectPoolItem> newObjectsQueue = new Queue<IObjectPoolItem>();
                 appObjectPool.Add(objectType, newObjectsQueue);
                 result = CreateObject(objectToInstantiate, pos, parent);
-                result.GetFromPool(this, pos);
+                result.GetFromPool(this);
                 return result;
             }
             if (appObjectPool[objectType].Count == 0)
             {
                 result = CreateObject(objectToInstantiate, pos, parent);
-                result.GetFromPool(this, pos);
+                result.GetFromPool(this);
                 return result;
             }
             result = appObjectPool[objectType].Dequeue();
-            result.GetFromPool(this, pos);
+            result.GetFromPool(this);
             return result;
         }
 
