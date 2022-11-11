@@ -11,15 +11,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Money
+  - Button
+  - Shop
+  - Bullet
+  - EnemyAtack
+  - Player Interactor
+  - Enemy Collider
   - 
   - 
   - 
