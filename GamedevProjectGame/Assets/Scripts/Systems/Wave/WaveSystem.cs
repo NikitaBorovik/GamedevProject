@@ -1,4 +1,5 @@
 using App.Systems.EnemySpawning;
+using App.Systems.GameStates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +50,7 @@ namespace App.Systems.Wave
 
         private int CalculateTotalDangerLevel(int waveNum)
         {
-            return waveNum * 50;
+            return (int)((1 + waveNum/10.0) * 145);
         }
 
         public void ReportKilled(string enemyType)

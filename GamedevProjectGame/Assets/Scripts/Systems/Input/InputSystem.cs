@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using App.World.Entity.Player.PlayerComponents;
+using App.World.Shop;
 
 namespace App.Systems.Input
 {

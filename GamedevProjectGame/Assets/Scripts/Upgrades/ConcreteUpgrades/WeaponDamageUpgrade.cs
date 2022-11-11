@@ -14,12 +14,12 @@ namespace App.Upgrades.ConcreteUpgrades
         #region Overriden Methods
         protected override void Upgrade(Player upgradable)
         {
-            upgradable.Weapon.Damage += damageAddent;
+            upgradable.Weapon.Damage *= damageAddent;
         }
 
         protected override void Degrade(Player upgradable)
         {
-            upgradable.Weapon.Damage -= damageAddent;
+            upgradable.Weapon.Damage /= damageAddent;
         }
 
         protected override void UpdateIfEnabled(Player upgradable) { }

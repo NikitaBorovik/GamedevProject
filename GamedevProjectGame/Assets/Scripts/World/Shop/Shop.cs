@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+namespace App.World.Shop
 {
-    [SerializeField]
-    private SellEvent sellEvent;
+    public class Shop : MonoBehaviour
+    {
+        [SerializeField]
+        private SellEvent sellEvent;
 
-    public SellEvent SellEvent { get => sellEvent;}
+        public SellEvent SellEvent { get => sellEvent; }
+    }
 }
+

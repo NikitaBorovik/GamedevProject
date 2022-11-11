@@ -7,73 +7,77 @@ using App.World.Entity.Player.PlayerComponents;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ShopItem : MonoBehaviour
+namespace App.World.Shop
 {
-    [SerializeField]
-    private ObjectsContainer container;
-
-    [SerializeField] 
-    private List<BaseUpgrade> upgrades;
-
-    [SerializeField]
-    private Shop shop;
-
-    private BaseUpgrade currentUpgrade;
-
-    private Player player;
-
-    private float minTimeFromBuy = 0.1f;
-
-    float timeFromBuy = 0f;
-
-    // TODO remove
-    private int price;
-
-    private void Update()
+    public class ShopItem : MonoBehaviour
     {
-        timeFromBuy += Time.deltaTime;
-    }
-    private void SetRandomUpgrade()
-    {
-        currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
-    }
+        [SerializeField]
+        private ObjectsContainer container;
 
-    private void Awake()
-    {
-        player = container.Player.GetComponent<Player>();
-        SetRandomUpgrade();
-    }
+        [SerializeField]
+        private List<BaseUpgrade> upgrades;
 
+        [SerializeField]
+        private Shop shop;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log($"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}");
-        shop.SellEvent.OnSell += this.TryBuy;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("Exit Trigger!");
-        shop.SellEvent.OnSell -= this.TryBuy;
-    }
+        private BaseUpgrade currentUpgrade;
 
-    public void TryBuy(SellEvent ev) // on click && overlap
-    {
-        if (player.Money >= currentUpgrade.Cost && timeFromBuy >= minTimeFromBuy)
+        private Player player;
+
+        private float minTimeFromBuy = 0.1f;
+
+        float timeFromBuy = 0f;
+
+        // TODO remove
+        private int price;
+
+        private void Update()
         {
-            Buy();
+            timeFromBuy += Time.deltaTime;
         }
-        else
+        private void SetRandomUpgrade()
         {
-            Debug.Log("Not enough money!");
+            currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
         }
-        timeFromBuy = 0;
-    }
 
-    private void Buy()
-    {
-        player.Money -= currentUpgrade.Cost;
-        var upgrade = Instantiate(currentUpgrade);
-        player.GetComponent<UpgradeManager>().AddUpgrade(upgrade);
-        SetRandomUpgrade();
+        private void Awake()
+        {
+            player = container.Player.GetComponent<Player>();
+            SetRandomUpgrade();
+        }
+
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log($"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}");
+            shop.SellEvent.OnSell += this.TryBuy;
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            Debug.Log("Exit Trigger!");
+            shop.SellEvent.OnSell -= this.TryBuy;
+        }
+
+        public void TryBuy(SellEvent ev) // on click && overlap
+        {
+            if (player.Money >= currentUpgrade.Cost && timeFromBuy >= minTimeFromBuy)
+            {
+                Buy();
+            }
+            else
+            {
+                Debug.Log("Not enough money!");
+            }
+            timeFromBuy = 0;
+        }
+
+        private void Buy()
+        {
+            player.Money -= currentUpgrade.Cost;
+            var upgrade = Instantiate(currentUpgrade);
+            player.GetComponent<UpgradeManager>().AddUpgrade(upgrade);
+            SetRandomUpgrade();
+        }
     }
 }
+

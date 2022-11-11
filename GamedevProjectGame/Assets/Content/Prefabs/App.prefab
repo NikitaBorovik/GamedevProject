@@ -108,6 +108,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Systems
       objectReference: {fileID: 0}
+    - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
+      propertyPath: maxTimeBetweenSpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
+      propertyPath: minTimeBetweenSpawns
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
 --- !u!114 &572984718101893810 stripped

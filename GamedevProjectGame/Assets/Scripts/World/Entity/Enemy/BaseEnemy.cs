@@ -1,6 +1,7 @@
 using App;
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
+using App.World.Items;
 using UnityEngine;
 using World.Entity.Enemy.States;
 
@@ -52,7 +53,7 @@ namespace World.Entity.Enemy
             this.target = target;
             this.waveSystem = waveSystem;
             transform.position = position;
-            health.ChangeMaxHealth(enemyData.maxHealth);
+            health.MaxHealth = enemyData.maxHealth;
             health.HealToMax();
             initialised = true;
             stateMachine.Initialize(spawningState);

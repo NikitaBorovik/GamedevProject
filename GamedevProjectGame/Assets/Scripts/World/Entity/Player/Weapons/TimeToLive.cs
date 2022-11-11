@@ -9,27 +9,33 @@ namespace App.World.Entity.Player.Weapons
         [SerializeField]
         private float timeToLive;
         private ObjectPool objectPool;
+        private float timeToLiveLeft;
+        private  IObjectPoolItem objectPoolItem;
         /*    [SerializeField]
             private float timeToLiveLeft;*/
         // Start is called before the first frame update
         public void Init()
         {
             objectPool = FindObjectOfType<ObjectPool>();
-            IObjectPoolItem objectPoolItem = GetComponent<IObjectPoolItem>();
+            objectPoolItem = GetComponent<IObjectPoolItem>();
             if (objectPoolItem == null)
                 Destroy(gameObject, timeToLive);
             else
-            {
-                StartCoroutine(destroyObjectPoolItem(timeToLive, objectPoolItem));
-                //Debug.Log("Returned to pool");
-            }
+                timeToLiveLeft = timeToLive;
                 
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if (objectPoolItem != null)
+            {
+                timeToLiveLeft -= Time.deltaTime;
+                if(timeToLiveLeft <= 0)
+                    objectPool.ReturnToPool(objectPoolItem);
+            }
+                
+            
         }
 
         private IEnumerator destroyObjectPoolItem(float delay,IObjectPoolItem item)

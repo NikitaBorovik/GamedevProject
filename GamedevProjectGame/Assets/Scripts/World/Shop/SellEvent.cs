@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SellEvent : MonoBehaviour
+namespace App.World.Shop
 {
-    public event Action<SellEvent> OnSell;
-
-    public void CallSellEvent()
+    public class SellEvent : MonoBehaviour
     {
-        OnSell?.Invoke(this);
+        public event Action<SellEvent> OnSell;
+
+        public void CallSellEvent()
+        {
+            OnSell?.Invoke(this);
+        }
     }
 }
+

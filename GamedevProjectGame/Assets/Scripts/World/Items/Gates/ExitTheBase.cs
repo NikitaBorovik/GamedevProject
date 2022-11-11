@@ -1,22 +1,27 @@
+using App.Systems.GameStates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitTheBase : MonoBehaviour
+namespace App.World.Items.Gates
 {
-    private GameStatesSystem gameStatesSystem;
-    public void Init(GameStatesSystem gameStatesSystem)
+    public class ExitTheBase : MonoBehaviour
     {
-        this.gameStatesSystem = gameStatesSystem;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Exit();
-    }
-    private void Exit()
-    {
-        gameObject.SetActive(false);
-        Debug.Log("Exit the base");
-        gameStatesSystem.FightingState();
+        private GameStatesSystem gameStatesSystem;
+        public void Init(GameStatesSystem gameStatesSystem)
+        {
+            this.gameStatesSystem = gameStatesSystem;
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Exit();
+        }
+        private void Exit()
+        {
+            gameObject.SetActive(false);
+            Debug.Log("Exit the base");
+            gameStatesSystem.FightingState();
+        }
     }
 }
+

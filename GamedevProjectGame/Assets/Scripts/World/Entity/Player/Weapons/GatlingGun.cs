@@ -4,25 +4,29 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GatlingGun : Weapon
+namespace App.World.Entity.Player.Weapons
 {
-    public override void Shoot()
+    public class GatlingGun : Weapon
     {
-        if (timeFromCoolDown > coolDown)
+        public override void Shoot()
         {
-            Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
-            if(bulletScript == null)
+            if (timeFromCoolDown > coolDown)
             {
-                Debug.Log("Trying to shoot bullet that doesn't contain Bullet script");
-                return;
+                Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
+                if (bulletScript == null)
+                {
+                    Debug.Log("Trying to shoot bullet that doesn't contain Bullet script");
+                    return;
+                }
+                GameObject bullet = objectPool.GetObjectFromPool(bulletScript.PoolObjectType, bulletPrefab, shootPosition.position).GetGameObject();
+                bullet.transform.rotation = shootPosition.rotation;
+                bullet.transform.position = shootPosition.position;
+                //Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
+                bullet.GetComponent<Bullet>().Init(damage);
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
+                timeFromCoolDown = 0.0f;
             }
-            GameObject bullet = objectPool.GetObjectFromPool(bulletScript.PoolObjectType, bulletPrefab, shootPosition.position).GetGameObject();
-            bullet.transform.rotation = shootPosition.rotation;
-            bullet.transform.position = shootPosition.position;
-            //Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
-            bullet.GetComponent<Bullet>().Init(damage);
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
-            timeFromCoolDown = 0.0f;
         }
     }
 }
+

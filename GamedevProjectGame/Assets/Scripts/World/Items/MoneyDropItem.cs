@@ -3,16 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoneyDropItem : BaseDropItem
+namespace App.World.Items
 {
-    [SerializeField]
-    private int price;
-
-    public override string PoolObjectType => "SmallMoney";
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class MoneyDropItem : BaseDropItem
     {
-        collision.gameObject.GetComponent<Player>().Money += price;
-        objectPool.ReturnToPool(this);
+        [SerializeField]
+        private int price;
+
+        public override string PoolObjectType => "SmallMoney";
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            collision.gameObject.GetComponent<Player>().Money += price;
+            objectPool.ReturnToPool(this);
+        }
     }
 }
+
