@@ -6,6 +6,7 @@ namespace World.Entity
 {
     public class Health : MonoBehaviour
     {
+        [SerializeField]
         private float currentHealth;
         [SerializeField]
         private float maxHealth;
