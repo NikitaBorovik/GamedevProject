@@ -77,14 +77,12 @@ namespace World.Entity.Enemy
         public void Die()
         {
             stateMachine.ChangeState(dieState);
-            health.enabled = false;
+            DropMoney();
         }
 
         public void DyingSequence()
         {
-            health.enabled = true;
             StopAllCoroutines();
-            DropMoney();
             waveSystem.ReportKilled(EnemyData.type);
             objectPool.ReturnToPool(this);
         }
