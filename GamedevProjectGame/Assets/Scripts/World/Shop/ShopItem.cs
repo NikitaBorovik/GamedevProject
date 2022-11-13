@@ -60,15 +60,18 @@ namespace App.World.Shop
 
         public void TryBuy(SellEvent ev) // on click && overlap
         {
-            if (player.Money >= currentUpgrade.Cost && timeFromBuy >= minTimeFromBuy)
+            if(timeFromBuy >= minTimeFromBuy)
             {
-                Buy();
+                if (player.Money >= currentUpgrade.Cost)
+                {
+                    Buy();
+                    timeFromBuy = 0;
+                }
+                else
+                {
+                    Debug.Log("Not enough money!");
+                }
             }
-            else
-            {
-                Debug.Log("Not enough money!");
-            }
-            timeFromBuy = 0;
         }
 
         private void Buy()

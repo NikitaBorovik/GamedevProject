@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 561290078337166449}
   - component: {fileID: 561290078337166450}
   m_Layer: 0
-  m_Name: ShopItemBox
+  m_Name: ShopItemPotionBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -848955857
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ee572696e6962654ca6749a12bc1d38f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b32fa00f0c4e5c543920a971de2a1b32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!61 &561290078337166449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.6466666, y: 1.94}
+    oldSize: {x: 0.8, y: 1.3666667}
     newSize: {x: 2.9, y: 2.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -126,7 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 0}
   upgrades:
-  - {fileID: 11400000, guid: 232d3ca2496eb244591da666d04102b6, type: 2}
-  - {fileID: 11400000, guid: 6d86ab24789504f4e9dd8182896de716, type: 2}
-  - {fileID: 11400000, guid: cd7aa865bab056945b187ff2295b74ae, type: 2}
+  - {fileID: 11400000, guid: 068bd7edc90ac5842ae8c2fd6a864e73, type: 2}
   shop: {fileID: 0}
