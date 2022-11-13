@@ -2,6 +2,7 @@ using App;
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
 using App.World.Items;
+using System.Collections.Generic;
 using UnityEngine;
 using World.Entity.Enemy.States;
 
@@ -26,7 +27,7 @@ namespace World.Entity.Enemy
         [SerializeField]
         protected EnemyData enemyData;
         [SerializeField]
-        protected Collider2D myCollider;
+        protected List<Collider2D> myColliders;
 
         protected StateMachine stateMachine;
         protected BaseEnemyState attackState;
@@ -37,7 +38,7 @@ namespace World.Entity.Enemy
         public FollowState FollowState => followState;
         public BaseEnemyState AttackState => attackState;
         public Animator Animator => animator;
-        public Collider2D MyCollider => myCollider;
+        public List<Collider2D> MyColliders => myColliders;
         public SpriteRenderer SpriteRenderer => spriteRenderer;
 
         public virtual string PoolObjectType => enemyData.type;
