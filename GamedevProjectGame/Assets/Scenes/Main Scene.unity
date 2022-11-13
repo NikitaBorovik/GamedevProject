@@ -386,6 +386,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: App
       objectReference: {fileID: 0}
+    - target: {fileID: 5277811390495044020, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277811390495044020, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939445329096551353, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939445329096551353, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.88
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
 --- !u!1001 &6560107191128117520
