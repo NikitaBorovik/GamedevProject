@@ -14,6 +14,8 @@ namespace App.World.Entity.Player.Weapons
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (!gameObject.activeSelf)
+                return;
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
