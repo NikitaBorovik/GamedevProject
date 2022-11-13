@@ -11,6 +11,7 @@ namespace World.Entity.Enemy.States
 
         public override void Enter()
         {
+            baseEnemy.Animator.SetBool("IsAttacking",true);
             baseEnemy.MyRigidbody.mass *= 1000;
             baseEnemy.StartCoroutine(Attack((baseEnemy.Target.position - baseEnemy.transform.position).normalized));
         }
@@ -22,6 +23,7 @@ namespace World.Entity.Enemy.States
 
         public override void Exit()
         {
+            baseEnemy.Animator.SetBool("IsAttacking", false);
             baseEnemy.MyRigidbody.mass /= 1000;
         }
 
