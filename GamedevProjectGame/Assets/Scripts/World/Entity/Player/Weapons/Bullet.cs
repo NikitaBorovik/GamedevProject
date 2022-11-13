@@ -14,14 +14,15 @@ namespace App.World.Entity.Player.Weapons
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (!gameObject.activeSelf)
+                return;
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
                 Debug.Log("No Health component on shot target");
                 return;
             }
-            if(targetHealt.CurrentHealth > 0)
-                targetHealt.TakeDamage(damage);
+            targetHealt.TakeDamage(damage);
             objectPool.ReturnToPool(this);
         }
         public void Init(float damage)

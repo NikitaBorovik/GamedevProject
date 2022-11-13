@@ -20,8 +20,8 @@ TagManager:
   - EnemyAtack
   - Player Interactor
   - Enemy Collider
-  - 
-  - 
+  - CameraConfiner
+  - WorldBorders
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2312220851
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entities
+    uniqueID: 3446011439
     locked: 0
