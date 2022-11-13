@@ -176,6 +176,7 @@ MonoBehaviour:
   myRigidbody: {fileID: 5813351036652541613}
   health: {fileID: -1759537335943733263}
   enemyData: {fileID: 11400000, guid: d9e336802d0cf46468eb1df61ba2a90d, type: 2}
+  myCollider: {fileID: 2487110017437610172}
   attack: {fileID: 13438331631192653}
 --- !u!114 &-1759537335943733263
 MonoBehaviour:

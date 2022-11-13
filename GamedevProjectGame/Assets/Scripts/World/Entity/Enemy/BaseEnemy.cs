@@ -13,8 +13,11 @@ namespace World.Entity.Enemy
         private Transform target;
         private FollowState followState;
         private SpawningState spawningState;
+        private DieState dieState;
         private ObjectPool objectPool;
         private IWaveSystem waveSystem;
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
 
         [SerializeField]
         private Rigidbody2D myRigidbody;
@@ -22,6 +25,8 @@ namespace World.Entity.Enemy
         private Health health;
         [SerializeField]
         protected EnemyData enemyData;
+        [SerializeField]
+        protected Collider2D myCollider;
 
         protected StateMachine stateMachine;
         protected BaseEnemyState attackState;
@@ -31,15 +36,21 @@ namespace World.Entity.Enemy
         public EnemyData EnemyData => enemyData;
         public FollowState FollowState => followState;
         public BaseEnemyState AttackState => attackState;
+        public Animator Animator => animator;
+        public Collider2D MyCollider => myCollider;
+        public SpriteRenderer SpriteRenderer => spriteRenderer;
 
         public virtual string PoolObjectType => enemyData.type;
 
         public virtual void Awake()
         {
             initialised = false;
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             stateMachine = new StateMachine();
             followState = new FollowState(this, stateMachine);
             spawningState = new SpawningState(this, stateMachine);
+            dieState = new DieState(this,stateMachine);
         }
 
         void Update()
@@ -56,11 +67,21 @@ namespace World.Entity.Enemy
             health.MaxHealth = enemyData.maxHealth;
             health.HealToMax();
             initialised = true;
-            stateMachine.Initialize(spawningState);
+            if(stateMachine.CurrentState == null)
+                stateMachine.Initialize(spawningState);
+            else
+                stateMachine.ChangeState(spawningState);
         }
 
         public void Die()
         {
+            stateMachine.ChangeState(dieState);
+            health.enabled = false;
+        }
+
+        public void DyingSequence()
+        {
+            health.enabled = true;
             StopAllCoroutines();
             DropMoney();
             waveSystem.ReportKilled(EnemyData.type);
