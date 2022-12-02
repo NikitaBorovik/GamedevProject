@@ -10,6 +10,7 @@ namespace App.World.Entity.Player.Weapons
         public float damage;
         public float coolDown;
         public float bulletFlySpeed;
+        public float bulletSpread;
         public GameObject bullet;
     }
 }
