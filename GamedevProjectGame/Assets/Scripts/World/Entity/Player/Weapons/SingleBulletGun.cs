@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace App.World.Entity.Player.Weapons
 {
-    public class GatlingGun : Weapon
+    public class SingleBulletGun : Weapon
     {
         public override void Shoot()
         {

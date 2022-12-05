@@ -19,6 +19,7 @@ namespace App.World.Entity.Player.Weapons
         protected float damage;
         protected float bulletFlySpeed;
         protected float bulletSpread;
+        protected int bulletCount;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace App.World.Entity.Player.Weapons
             bulletPrefab = data.bullet;
             bulletSpread = data.bulletSpread;
             objectPool = FindObjectOfType<ObjectPool>();
+            bulletCount = data.bulletCount;
         }
 
         public ShootEvent ShootEvent { get => shootEvent; }
