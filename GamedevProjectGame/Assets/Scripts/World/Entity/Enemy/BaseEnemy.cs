@@ -76,8 +76,11 @@ namespace World.Entity.Enemy
 
         public void Die()
         {
-            stateMachine.ChangeState(dieState);
-            DropMoney();
+            if(stateMachine.CurrentState != dieState)
+            {
+                stateMachine.ChangeState(dieState);
+                DropMoney();
+            }
         }
 
         public void DyingSequence()

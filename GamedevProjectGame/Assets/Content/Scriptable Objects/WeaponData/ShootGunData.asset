@@ -15,5 +15,6 @@ MonoBehaviour:
   damage: 20
   coolDown: 0.5
   bulletFlySpeed: 33
-  bulletSpread: 2
+  bulletSpread: 15
   bullet: {fileID: 6699174986344805492, guid: a4119d5bcfeba9741b3450aff3ec77d0, type: 3}
+  bulletCount: 5
