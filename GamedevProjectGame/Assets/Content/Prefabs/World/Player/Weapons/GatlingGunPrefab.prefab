@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3718496072317461167}
   - component: {fileID: 5739291457665358033}
   - component: {fileID: 5923363926577829519}
-  - component: {fileID: 7912208756594323807}
+  - component: {fileID: 2972497428752517309}
   m_Layer: 0
   m_Name: GatlingGunPrefab
   m_TagString: Untagged
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -848955857
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5e0cb92b8f8d4724d9717b71833f62b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6d8253334b6344801ee13e72a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7912208756594323807
+--- !u!114 &2972497428752517309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2632855254469951434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3377c5f586eba04f85c22e7257444cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c888f2fc3f78184ea2439bf743338d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootEvent: {fileID: 5923363926577829519}

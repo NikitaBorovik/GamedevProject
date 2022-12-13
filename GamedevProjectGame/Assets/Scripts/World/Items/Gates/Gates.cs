@@ -8,10 +8,10 @@ namespace App.World.Items.Gates
     public class Gates : MonoBehaviour
     {
         private BoxCollider2D m_BoxCollider;
-        private SpriteRenderer m_SpriteRenderer;
         private GameStatesSystem gameStatesSystem;
         [SerializeField]
         private GameObject exitChecker;
+        private Animator m_Animator;
 
 
         public void Init(GameStatesSystem gameStatesSystem)
@@ -19,19 +19,17 @@ namespace App.World.Items.Gates
             this.gameStatesSystem = gameStatesSystem;
             exitChecker.GetComponent<ExitTheBase>().Init(gameStatesSystem);
             m_BoxCollider = GetComponent<BoxCollider2D>();
-            m_SpriteRenderer = GetComponent<SpriteRenderer>();
+            m_Animator = GetComponent<Animator>();
         }
         public void Open()
         {
-            m_SpriteRenderer.enabled = false;
-            m_BoxCollider.enabled = false;
             exitChecker.SetActive(false);
+            m_Animator.SetBool("IsOpen", true);
         }
         public void Close()
         {
-            m_SpriteRenderer.enabled = true;
-            m_BoxCollider.enabled = true;
             exitChecker.SetActive(false);
+            m_Animator.SetBool("IsOpen", false);
         }
     }
 }

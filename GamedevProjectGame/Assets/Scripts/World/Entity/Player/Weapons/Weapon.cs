@@ -18,6 +18,8 @@ namespace App.World.Entity.Player.Weapons
         protected float timeFromCoolDown;
         protected float damage;
         protected float bulletFlySpeed;
+        protected float bulletSpread;
+        protected int bulletCount;
 
         private void Awake()
         {
@@ -25,7 +27,9 @@ namespace App.World.Entity.Player.Weapons
             coolDown = data.coolDown;
             bulletFlySpeed = data.bulletFlySpeed;
             bulletPrefab = data.bullet;
+            bulletSpread = data.bulletSpread;
             objectPool = FindObjectOfType<ObjectPool>();
+            bulletCount = data.bulletCount;
         }
 
         public ShootEvent ShootEvent { get => shootEvent; }
@@ -48,7 +52,7 @@ namespace App.World.Entity.Player.Weapons
             timeFromCoolDown = coolDown;
 
         }
-        void Update()
+        protected void Update()
         {
             timeFromCoolDown += Time.deltaTime;
         }
