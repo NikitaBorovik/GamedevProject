@@ -6,11 +6,12 @@ using UnityEngine;
 
 namespace App.World.Entity.Player.Weapons
 {
-    public class MullBulletGun : Weapon
+    public class BulletGun : Weapon
     {
-
+        bool isShooting = false;
         public override void Shoot()
         {
+            isShooting = true;
             if (timeFromCoolDown > coolDown)
             {
                 Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
@@ -32,6 +33,22 @@ namespace App.World.Entity.Player.Weapons
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
                 }
                 timeFromCoolDown = 0.0f;
+            }
+        }
+
+        new void Update()
+        {
+            base.Update();
+            if (isShooting)
+            {
+                var emission = GetComponentInChildren<ParticleSystem>().emission;
+                emission.rateOverTime = 100;
+                isShooting = false;
+            }
+            else
+            {
+                var emission = GetComponentInChildren<ParticleSystem>().emission;
+                emission.rateOverTime = 0;
             }
         }
     }

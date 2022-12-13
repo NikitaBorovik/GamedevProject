@@ -216,6 +216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231bfa7992d451242af67eb01ea50964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1010564414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6172550251984799000, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1176389158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1875833982014450297, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1211051391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +624,14 @@ PrefabInstance:
       propertyPath: money
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: curWeaponObj
+      value: 
+      objectReference: {fileID: 1010564414}
+    - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: shootPosition
+      value: 
+      objectReference: {fileID: 1176389158}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
 --- !u!1001 &3099086894580218372

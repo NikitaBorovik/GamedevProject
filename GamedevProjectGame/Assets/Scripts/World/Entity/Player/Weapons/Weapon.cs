@@ -52,7 +52,7 @@ namespace App.World.Entity.Player.Weapons
             timeFromCoolDown = coolDown;
 
         }
-        void Update()
+        protected void Update()
         {
             timeFromCoolDown += Time.deltaTime;
         }

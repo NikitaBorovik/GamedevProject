@@ -486,9 +486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: beda13e0646a47f44ab0572fe9fbd498, type: 2}
-  shootPosition: {fileID: 6436645120273252349}
+  shootPosition: {fileID: 0}
   weaponAnchor: {fileID: 2742779675602075462}
-  curWeaponObj: {fileID: 1653540638299115676}
+  curWeaponObj: {fileID: 0}
   aimEvent: {fileID: -1549838980822176894}
   standEvent: {fileID: 2098125619001022077}
   movementEvent: {fileID: 4796191828594616004}
@@ -601,11 +601,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 135541116507557369}
+  - {fileID: 133563076841485749}
   m_Father: {fileID: 2742779675602075462}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3637582026532351830
+--- !u!1001 &3620967290257037082
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -614,7 +614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2632855254469951434, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
       propertyPath: m_Name
-      value: ShootGun
+      value: ShotGun
       objectReference: {fileID: 0}
     - target: {fileID: 3718496072317461167, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
       propertyPath: m_RootOrder
@@ -662,18 +662,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
---- !u!4 &135541116507557369 stripped
+--- !u!4 &133563076841485749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3718496072317461167, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
-  m_PrefabInstance: {fileID: 3637582026532351830}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1653540638299115676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2632855254469951434, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
-  m_PrefabInstance: {fileID: 3637582026532351830}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6436645120273252349 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7721640599223079083, guid: d3c05471bce31da4a852fd59c81b499f, type: 3}
-  m_PrefabInstance: {fileID: 3637582026532351830}
+  m_PrefabInstance: {fileID: 3620967290257037082}
   m_PrefabAsset: {fileID: 0}
