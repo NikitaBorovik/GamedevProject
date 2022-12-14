@@ -34,6 +34,8 @@ namespace App.World.Entity.Player.PlayerComponents
         [SerializeField]
         private GameObject curWeaponObj;
         private Weapon weapon;
+        [SerializeField]
+        private Transform weaponPoint;
         #endregion
 
         #region Events
@@ -47,11 +49,11 @@ namespace App.World.Entity.Player.PlayerComponents
 
         #region Parameters
         private float movementSpeed;
-        private int money;
+        private int money = 1000;
         #endregion
 
         #region Properties
-        public Transform ShootPosition { get => shootPosition; }
+        public Transform ShootPosition { get => shootPosition; set => shootPosition = value; }
         public Animator PAnimator { get => pAnimator; }
         public Transform PlayerTransform { get => playerTransform;}
         public Transform WeaponAnchor { get => weaponAnchor;}
@@ -59,9 +61,11 @@ namespace App.World.Entity.Player.PlayerComponents
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
-        public Weapon Weapon { get => weapon;}
+        public Weapon Weapon { get => weapon; set => weapon = value; }
         public int Money { get => money; set => money = value; }
         public Health Health { get => health; set => health = value; }
+        public GameObject CurWeaponObj { get => curWeaponObj; set => curWeaponObj = value; }
+        public Transform WeaponPoint { get => weaponPoint; set => weaponPoint = value; }
         #endregion
 
         private void Awake()
@@ -73,7 +77,7 @@ namespace App.World.Entity.Player.PlayerComponents
             playerTransform = GetComponent<Transform>();
             pAnimator = GetComponent<Animator>();
             health = GetComponent<Health>();
-            weapon = curWeaponObj.GetComponent<Weapon>();
+            weapon = CurWeaponObj.GetComponent<Weapon>();
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
         }

@@ -4,68 +4,50 @@ using System.Collections.Generic;
 using App.Upgrades;
 using App.World;
 using App.World.Entity.Player.PlayerComponents;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace App.World.Shop
 {
-    public class ShopItem : MonoBehaviour
+    public class UpgradeShopItem : BaseShopItem
     {
-        [SerializeField]
-        private ObjectsContainer container;
 
         [SerializeField]
         private List<BaseUpgrade> upgrades;
 
-        [SerializeField]
-        private Shop shop;
-
         private BaseUpgrade currentUpgrade;
 
-        private Player player;
-
-        private float minTimeFromBuy = 0.1f;
-
-        float timeFromBuy = 0f;
-
-        // TODO remove
-        private int price;
-
-        private void Update()
-        {
-            timeFromBuy += Time.deltaTime;
-        }
         private void SetRandomUpgrade()
         {
             currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
         }
 
-        private void Awake()
+        private new void Awake()
         {
-            player = container.Player.GetComponent<Player>();
+            base.Awake();
             SetRandomUpgrade();
         }
-
-
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected override void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log($"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}");
-            shop.SellEvent.OnSell += this.TryBuy;
+            base.OnTriggerEnter2D(collision);
+            merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}";
+
         }
-        private void OnTriggerExit2D(Collider2D collision)
+        protected override void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("Exit Trigger!");
-            shop.SellEvent.OnSell -= this.TryBuy;
+            base.OnTriggerExit2D(collision);
+            
         }
-
-        public void TryBuy(SellEvent ev) // on click && overlap
+        public override void TryBuy(SellEvent ev) // on click && overlap
         {
-            if(timeFromBuy >= minTimeFromBuy)
+            if (timeFromBuy >= minTimeFromBuy)
             {
                 if (player.Money >= currentUpgrade.Cost)
                 {
                     Buy();
                     timeFromBuy = 0;
+                    merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}";
                 }
                 else
                 {
@@ -74,7 +56,7 @@ namespace App.World.Shop
             }
         }
 
-        private void Buy()
+        public override void Buy()
         {
             player.Money -= currentUpgrade.Cost;
             var upgrade = Instantiate(currentUpgrade);

@@ -12,7 +12,11 @@ namespace App.World.Entity.Player.Weapons
         public float bulletFlySpeed;
         public float bulletSpread;
         public GameObject bullet;
+        public GameObject weaponPrefab;
+        public Sprite weaponSpriteForShop;
         public int bulletCount;
+        public int cost;
+        public string description;
     }
 }
 

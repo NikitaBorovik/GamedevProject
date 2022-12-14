@@ -8,10 +8,10 @@ namespace App.World.Entity.Player.Weapons
 {
     public class BulletGun : Weapon
     {
-        bool isShooting = false;
+        
+        
         public override void Shoot()
         {
-            isShooting = true;
             if (timeFromCoolDown > coolDown)
             {
                 Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
@@ -23,11 +23,11 @@ namespace App.World.Entity.Player.Weapons
                 for (int i = 0; i < bulletCount; i++)
                 {
                     float spread = Random.Range(-bulletSpread, bulletSpread);
-                    Quaternion rotation = Quaternion.Euler(shootPosition.eulerAngles.x, shootPosition.eulerAngles.y, shootPosition.eulerAngles.z + spread);
-                    GameObject bullet = objectPool.GetObjectFromPool(bulletScript.PoolObjectType, bulletPrefab, shootPosition.position).GetGameObject();
+                    Quaternion rotation = Quaternion.Euler(ShootPosition.eulerAngles.x, ShootPosition.eulerAngles.y, ShootPosition.eulerAngles.z + spread);
+                    GameObject bullet = objectPool.GetObjectFromPool(bulletScript.PoolObjectType, bulletPrefab, ShootPosition.position).GetGameObject();
                     // bullet.transform.rotation = shootPosition.rotation;
                     bullet.transform.rotation = rotation;
-                    bullet.transform.position = shootPosition.position;
+                    bullet.transform.position = ShootPosition.position;
                     //Instantiate(bulletPrefab, shootPosition.position, shootPosition.rotation);
                     bullet.GetComponent<Bullet>().Init(damage);
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
@@ -36,21 +36,21 @@ namespace App.World.Entity.Player.Weapons
             }
         }
 
-        new void Update()
-        {
-            base.Update();
-            if (isShooting)
-            {
-                var emission = GetComponentInChildren<ParticleSystem>().emission;
-                emission.rateOverTime = 100;
-                isShooting = false;
-            }
-            else
-            {
-                var emission = GetComponentInChildren<ParticleSystem>().emission;
-                emission.rateOverTime = 0;
-            }
-        }
+        //new void Update()
+        //{
+        //    base.Update();
+        //    if (isShooting)
+        //    {
+        //        var emission = GetComponentInChildren<ParticleSystem>().emission;
+        //        emission.rateOverTime = 6000;
+        //        isShooting = false;
+        //    }
+        //    else
+        //    {
+        //        var emission = GetComponentInChildren<ParticleSystem>().emission;
+        //        emission.rateOverTime = 0;
+        //    }
+        //}
     }
 }
 
