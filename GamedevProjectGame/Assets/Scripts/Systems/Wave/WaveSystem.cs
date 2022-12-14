@@ -12,9 +12,10 @@ namespace App.Systems.Wave
         private int waveNum = 1;
         private EnemySpawningSystem enemySpawningSystem;
         private GameStatesSystem gameStatesSystem;
-        private List<string> enemyTypes;
         private int enemiesAlive = 0;
         private int dangerLevelLeft;
+        private int totalDangerLevel = 200;
+        private List<BaseEnemy> allowedEnemies = new List<BaseEnemy>();
 
         [SerializeField]
         private float minTimeBetweenSpawns;
@@ -25,6 +26,7 @@ namespace App.Systems.Wave
 
         public void StartWave()
         {
+            allowedEnemies = enemies.FindAll(e => e.EnemyData.firstSpawningWave >= waveNum);
             StartCoroutine(Wave());
         }
 
@@ -36,21 +38,32 @@ namespace App.Systems.Wave
 
         public IEnumerator Wave()
         {
-            dangerLevelLeft = CalculateTotalDangerLevel(waveNum);
+            dangerLevelLeft = totalDangerLevel;
             while(dangerLevelLeft > 0)
             {
-                int enemyIndex = Random.Range(0, enemies.Count);
-                BaseEnemy randomEnemy = enemies[enemyIndex];
-                enemySpawningSystem.SpawnEnemy(randomEnemy.gameObject);
-                dangerLevelLeft -= randomEnemy.EnemyData.dangerLevel;
-                enemiesAlive++;
+                SpawnSubWave();
                 yield return new WaitForSeconds(Random.Range(minTimeBetweenSpawns,maxTimeBetweenSpawns));
             }
         }
 
-        private int CalculateTotalDangerLevel(int waveNum)
+        private void SpawnSubWave()
         {
-            return (int)((1 + waveNum/10.0) * 145);
+            int dangerDiff = (int)(totalDangerLevel * 0.1);
+            int startingDangerLevel = dangerLevelLeft;
+            while(dangerLevelLeft > startingDangerLevel - dangerDiff)
+            {
+                int enemyIndex = Random.Range(0, allowedEnemies.Count);
+                Debug.Log(allowedEnemies.Count);
+                BaseEnemy randomEnemy = allowedEnemies[enemyIndex];
+                enemySpawningSystem.SpawnEnemy(randomEnemy.gameObject);
+                dangerLevelLeft -= randomEnemy.EnemyData.dangerLevel;
+                enemiesAlive++;
+            }
+        }
+
+        private void CalculateNextDangerLevel()
+        {
+            totalDangerLevel = (int)(totalDangerLevel * 1.2);
         }
 
         public void ReportKilled(string enemyType)
@@ -64,6 +77,7 @@ namespace App.Systems.Wave
         {
             Debug.Log("Wave ended");
             waveNum++;
+            CalculateNextDangerLevel();
             gameStatesSystem.RestingState();
         }
     }

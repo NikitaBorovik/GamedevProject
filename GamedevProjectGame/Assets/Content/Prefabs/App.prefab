@@ -110,11 +110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
       propertyPath: maxTimeBetweenSpawns
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
       propertyPath: minTimeBetweenSpawns
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
