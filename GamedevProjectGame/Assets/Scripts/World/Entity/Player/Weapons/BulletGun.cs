@@ -9,10 +9,9 @@ namespace App.World.Entity.Player.Weapons
     public class BulletGun : Weapon
     {
         
-        bool isShooting = false;
+        
         public override void Shoot()
         {
-            isShooting = true;
             if (timeFromCoolDown > coolDown)
             {
                 Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
