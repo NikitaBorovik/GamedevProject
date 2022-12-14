@@ -15,6 +15,7 @@ MonoBehaviour:
   type: Small Zombie
   maxHealth: 12
   dangerLevel: 3
+  firstSpawningWave: 1
   speed: 7
   damage: 7
   timeBetweenAttacks: 1

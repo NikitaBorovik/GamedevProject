@@ -15,6 +15,7 @@ MonoBehaviour:
   type: Fast Ghoul
   maxHealth: 50
   dangerLevel: 12
+  firstSpawningWave: 3
   speed: 7
   damage: 12
   timeBetweenAttacks: 1

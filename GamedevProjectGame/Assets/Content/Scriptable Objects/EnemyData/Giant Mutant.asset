@@ -15,6 +15,7 @@ MonoBehaviour:
   type: Giant Mutant
   maxHealth: 250
   dangerLevel: 40
+  firstSpawningWave: 5
   speed: 3
   damage: 20
   timeBetweenAttacks: 3
