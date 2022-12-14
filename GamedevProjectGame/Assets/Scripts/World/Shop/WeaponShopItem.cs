@@ -47,14 +47,11 @@ namespace App.World.Shops
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
             base.OnTriggerEnter2D(collision);
-            Debug.Log($"Press E to buy for {currentWeapon.cost} bones : {currentWeapon.description}");
             merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentWeapon.cost} bones : {currentWeapon.description}";
         }
         protected override void OnTriggerExit2D(Collider2D collision)
         {
             base.OnTriggerExit2D(collision);
-            Debug.Log("Exit Trigger!");
-
         }
         public override void TryBuy(SellEvent ev) // on click && overlap
         {
@@ -64,6 +61,7 @@ namespace App.World.Shops
                 {
                     Buy();
                     timeFromBuy = 0;
+                    merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentWeapon.cost} bones : {currentWeapon.description}";
                 }
                 else
                 {
@@ -75,11 +73,13 @@ namespace App.World.Shops
         public override void Buy()
         {
             player.Money -= currentWeapon.cost;
+            player.GetComponent<UpgradeManager>().DisableAll();
             GameObject.Destroy(player.CurWeaponObj);
             player.CurWeaponObj = Instantiate(currentWeapon.weaponPrefab, player.WeaponPoint.position, Quaternion.identity, player.WeaponPoint);
             player.CurWeaponObj.transform.rotation = player.WeaponPoint.rotation;
             player.Weapon = player.CurWeaponObj.GetComponent<Weapon>();
             player.ShootPosition = player.Weapon.ShootPosition;
+            player.GetComponent<UpgradeManager>().EnableAll();
             SetRandomWeapon();
         }
 

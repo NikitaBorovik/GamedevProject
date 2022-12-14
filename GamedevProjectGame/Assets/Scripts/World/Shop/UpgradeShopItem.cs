@@ -31,14 +31,12 @@ namespace App.World.Shop
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
             base.OnTriggerEnter2D(collision);
-            Debug.Log($"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}");
             merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}";
 
         }
         protected override void OnTriggerExit2D(Collider2D collision)
         {
             base.OnTriggerExit2D(collision);
-            Debug.Log("Exit Trigger!");
             
         }
         public override void TryBuy(SellEvent ev) // on click && overlap
@@ -49,6 +47,7 @@ namespace App.World.Shop
                 {
                     Buy();
                     timeFromBuy = 0;
+                    merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentUpgrade.Cost} bones :{currentUpgrade.Desctiption}";
                 }
                 else
                 {

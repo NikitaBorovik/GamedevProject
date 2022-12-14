@@ -49,7 +49,7 @@ namespace App.World.Entity.Player.PlayerComponents
 
         #region Parameters
         private float movementSpeed;
-        private int money;
+        private int money = 1000;
         #endregion
 
         #region Properties
