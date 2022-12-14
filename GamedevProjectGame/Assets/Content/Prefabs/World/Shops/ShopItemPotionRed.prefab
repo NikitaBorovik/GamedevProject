@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 561290078337166448}
   - component: {fileID: 561290078337166449}
   - component: {fileID: 561290078337166450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShopItemPotionRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 0}
+  shop: {fileID: 0}
   upgrades:
   - {fileID: 11400000, guid: cac2c201de0828241814ea42d0f1a880, type: 2}
-  shop: {fileID: 0}
