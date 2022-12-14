@@ -116,6 +116,7 @@ MonoBehaviour:
   shootEvent: {fileID: 5923363926577829519}
   shootPosition: {fileID: 7721640599223079083}
   data: {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}
+  damageZone: {fileID: 5292521426724702303}
 --- !u!1 &3444930492655001372
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,13 +158,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4861946414026154705}
   - component: {fileID: 2311641668409105267}
-  m_Layer: 0
+  - component: {fileID: 5292521426724702303}
+  m_Layer: 11
   m_Name: DamageZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4861946414026154705
 Transform:
   m_ObjectHideFlags: 0
@@ -186,7 +188,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6791229988688559435}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -209,6 +211,18 @@ PolygonCollider2D:
       - {x: -0.32414502, y: -0.3360157}
       - {x: 2.8519883, y: -0.59190154}
       - {x: 2.85857, y: 0.2702465}
+--- !u!114 &5292521426724702303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791229988688559435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b8360fd46b17442a39aad86cd96278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5558499103043278308
 PrefabInstance:
   m_ObjectHideFlags: 0

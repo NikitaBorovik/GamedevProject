@@ -33,7 +33,7 @@ namespace App.Systems.GameStates
 
         public void Update()
         {
-            Debug.Log("Fighting!!!");
+            //Debug.Log("Fighting!!!");
             if (globalLight.intensity > 0.5f)
             {
                 elapseTime += Time.deltaTime;

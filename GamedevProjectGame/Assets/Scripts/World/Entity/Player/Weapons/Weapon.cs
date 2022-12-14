@@ -21,7 +21,7 @@ namespace App.World.Entity.Player.Weapons
         protected float bulletSpread;
         protected int bulletCount;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             damage = Data.damage;
             coolDown = Data.coolDown;
