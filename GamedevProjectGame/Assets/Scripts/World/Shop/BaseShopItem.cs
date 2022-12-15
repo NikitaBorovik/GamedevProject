@@ -30,7 +30,7 @@ namespace App.World.Shop
             timeFromBuy += Time.deltaTime;
         }
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             player = container.Player.GetComponent<Player>();
         }

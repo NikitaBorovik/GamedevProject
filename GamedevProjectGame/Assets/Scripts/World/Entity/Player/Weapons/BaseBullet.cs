@@ -6,11 +6,11 @@ using World.Entity;
 
 namespace App.World.Entity.Player.Weapons
 {
-    public class Bullet : MonoBehaviour, IObjectPoolItem
+    public abstract class BaseBullet : MonoBehaviour, IObjectPoolItem
     {
-        private float damage;
-        private ObjectPool objectPool;
-        public string PoolObjectType => "GatlingBullet";
+        protected float damage;
+        public ObjectPool objectPool;
+        public virtual string PoolObjectType => "DefaultBullet";
 
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {
@@ -25,24 +25,24 @@ namespace App.World.Entity.Player.Weapons
             targetHealt.TakeDamage(damage);
             objectPool.ReturnToPool(this);
         }
-        public void Init(float damage)
+        public virtual void Init(float damage)
         {
             this.damage = damage;
             GetComponent<TimeToLive>().Init();
         }
 
-        public void GetFromPool(ObjectPool pool)
+        public virtual void GetFromPool(ObjectPool pool)
         {
             objectPool = pool;
             gameObject.SetActive(true);
         }
 
-        public void ReturnToPool()
+        public virtual void ReturnToPool()
         {
             gameObject.SetActive(false);
         }
 
-        public GameObject GetGameObject()
+        public virtual GameObject GetGameObject()
         {
             return (gameObject);
         }

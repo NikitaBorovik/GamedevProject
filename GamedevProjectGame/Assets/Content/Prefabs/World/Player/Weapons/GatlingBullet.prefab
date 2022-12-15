@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6699174986344805455}
-  - component: {fileID: 6699174986344805488}
   - component: {fileID: 6699174986344805489}
   - component: {fileID: 6699174986344805490}
   - component: {fileID: 6699174986344805491}
   - component: {fileID: 8749837139054543125}
+  - component: {fileID: 5259955078278900696}
   m_Layer: 11
-  m_Name: Bullet
+  m_Name: GatlingBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,18 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6699174986344805488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6699174986344805492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18673bb0e97d694e888f264c9eb0099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &6699174986344805489
 Rigidbody2D:
   serializedVersion: 4
@@ -150,3 +138,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 2
+--- !u!114 &5259955078278900696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699174986344805492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5e691e6c027d74fa32902facfe8785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

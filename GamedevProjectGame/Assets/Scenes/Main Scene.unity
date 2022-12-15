@@ -243,11 +243,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6560107190100513550, guid: d0a5baac97747624cbd6df7ba0432968, type: 3}
   m_PrefabInstance: {fileID: 6560107191128117520}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &238913642 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8561586423375355531, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-  m_PrefabInstance: {fileID: 1815204854319204985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &324922746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8140456115302064113, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
@@ -605,16 +600,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc451cc141c74fe418db782a231d8620, type: 3}
---- !u!1 &1684504419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4656439521837940678, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-  m_PrefabInstance: {fileID: 1815204854319204985}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1848932443 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1098878044088815783, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-  m_PrefabInstance: {fileID: 1815204854319204985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1998002594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6560107190100513548, guid: d0a5baac97747624cbd6df7ba0432968, type: 3}
@@ -790,18 +775,6 @@ PrefabInstance:
       propertyPath: money
       value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: weaponPoint
-      value: 
-      objectReference: {fileID: 238913642}
-    - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: curWeaponObj
-      value: 
-      objectReference: {fileID: 1684504419}
-    - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: shootPosition
-      value: 
-      objectReference: {fileID: 1848932443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
 --- !u!1001 &3099086894580218372

@@ -19,11 +19,6 @@ namespace App.World.Shops
 
         private WeaponSO currentWeapon;
 
-        private WeaponSO previousWeapon;
-
-
-
-        
         private void SetRandomWeapon()
         {
             do
@@ -35,10 +30,6 @@ namespace App.World.Shops
             } while (currentWeapon == player.Weapon.Data);
             spriteRenderer.sprite = currentWeapon.weaponSpriteForShop;
 
-        }
-        private new void Awake()
-        {
-            base.Awake();
         }
         private void Start()
         {
