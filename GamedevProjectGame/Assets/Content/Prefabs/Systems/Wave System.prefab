@@ -48,4 +48,5 @@ MonoBehaviour:
   maxTimeBetweenSubwaves: 7
   subWaveDangerPercentage: 0.1
   nextWaveDangerLevelMultiplier: 1.1
-  enemies: []
+  enemies:
+  - {fileID: 3262046780580474521, guid: f3c94c156829ba141afb6605c14cc15c, type: 3}

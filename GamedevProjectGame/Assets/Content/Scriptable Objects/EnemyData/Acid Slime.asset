@@ -18,10 +18,10 @@ MonoBehaviour:
   firstSpawningWave: 2
   speed: 5
   damage: 10
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.5
   moneyDropChance: 0.3
-  attackRange: 0
-  spawnAnimationDuration: 0
+  attackRange: 10
+  spawnAnimationDuration: 1
   minMoneyDrop: 2
   maxMoneyDrop: 3
   moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}

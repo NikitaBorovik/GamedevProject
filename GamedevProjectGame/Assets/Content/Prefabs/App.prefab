@@ -109,6 +109,10 @@ PrefabInstance:
       value: Systems
       objectReference: {fileID: 0}
     - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
       propertyPath: maxTimeBetweenSpawns
       value: 7
       objectReference: {fileID: 0}
@@ -119,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 5813351036652541612, guid: e383051e6d1e7e54e80106dd1589df05, type: 3}
+      objectReference: {fileID: 3262046780580474521, guid: f3c94c156829ba141afb6605c14cc15c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
 --- !u!114 &572984718101893810 stripped

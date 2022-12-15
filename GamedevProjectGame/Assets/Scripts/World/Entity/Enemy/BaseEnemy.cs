@@ -15,7 +15,6 @@ namespace World.Entity.Enemy
         private FollowState followState;
         private SpawningState spawningState;
         private DieState dieState;
-        private ObjectPool objectPool;
         private IWaveSystem waveSystem;
         private Animator animator;
         private SpriteRenderer spriteRenderer;
@@ -31,6 +30,7 @@ namespace World.Entity.Enemy
 
         protected StateMachine stateMachine;
         protected BaseEnemyState attackState;
+        protected ObjectPool objectPool;
 
         public Transform Target => target;
         public Rigidbody2D MyRigidbody => myRigidbody;

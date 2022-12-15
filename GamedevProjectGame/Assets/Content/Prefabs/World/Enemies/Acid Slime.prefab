@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5813351036652541610}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2487110017437610172
 CapsuleCollider2D:
@@ -59,10 +59,10 @@ GameObject:
   - component: {fileID: 5813351036652541610}
   - component: {fileID: 5813351036652541611}
   - component: {fileID: 5813351036652541613}
-  - component: {fileID: 5813351036652541612}
   - component: {fileID: -1759537335943733263}
   - component: {fileID: 6561132446275936185}
   - component: {fileID: -2645511092386897780}
+  - component: {fileID: 3262046780580474521}
   m_Layer: 7
   m_Name: Acid Slime
   m_TagString: Untagged
@@ -82,7 +82,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5813351037892824659}
   - {fileID: 6609588009472380898}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -160,25 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5813351036652541612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5813351036652541608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3770ffe8221954546bb36557f7968e73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidbody: {fileID: 5813351036652541613}
-  health: {fileID: -1759537335943733263}
-  enemyData: {fileID: 11400000, guid: 2b4e48636d158de4db28fde090ce27b9, type: 2}
-  myColliders:
-  - {fileID: 6561132446275936185}
-  - {fileID: 2487110017437610172}
-  attack: {fileID: 13438331631192653}
 --- !u!114 &-1759537335943733263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,79 +209,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &5813351037892824656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5813351037892824659}
-  - component: {fileID: 5813351037892824658}
-  - component: {fileID: 13438331631192653}
-  m_Layer: 12
-  m_Name: Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5813351037892824659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5813351037892824656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.732, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5813351036652541610}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &5813351037892824658
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5813351037892824656}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.43, y: 0.27}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2}
-    newSize: {x: 1.5, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6914034, y: -0.27858728}
-      - {x: 1.619307, y: -1.118727}
-      - {x: 1.8606112, y: -0.75151277}
-      - {x: 1.8956838, y: -0.26600882}
-      - {x: 1.8287642, y: 0.20490515}
-      - {x: 1.6689367, y: 0.53609097}
---- !u!114 &13438331631192653
+--- !u!114 &3262046780580474521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5813351037892824656}
+  m_GameObject: {fileID: 5813351036652541608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c5bb3dbe47d3e45a8e1f5d91ba4b70, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e46db51551b4fc42a0079aa8dc9bec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 5813351036652541613}
+  health: {fileID: -1759537335943733263}
+  enemyData: {fileID: 11400000, guid: 2b4e48636d158de4db28fde090ce27b9, type: 2}
+  myColliders:
+  - {fileID: 6561132446275936185}
+  - {fileID: 2487110017437610172}
+  projectile: {fileID: 5850122700903299285, guid: c643c06710e27f146a9324f7d26d01fa, type: 3}
