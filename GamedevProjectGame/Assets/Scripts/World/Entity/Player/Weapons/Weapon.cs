@@ -6,20 +6,31 @@ namespace App.World.Entity.Player.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
+        protected ObjectPool objectPool;
+        #region Serialized Fields
         [SerializeField]
         private ShootEvent shootEvent;
         [SerializeField]
         private Transform shootPosition;
-        protected GameObject bulletPrefab;
-        protected float coolDown;
         [SerializeField]
         private WeaponSO data;
-        protected ObjectPool objectPool;
+        #endregion
+
+        #region Sounds
+        private AudioSource audioSource;
+        [SerializeField]
+        private AudioClip shootSound;
+        #endregion
+
+        #region Parameters
         protected float timeFromCoolDown;
         protected float damage;
         protected float bulletFlySpeed;
         protected float bulletSpread;
         protected int bulletCount;
+        protected float coolDown;
+        protected GameObject bulletPrefab;
+        #endregion
 
         protected virtual void Awake()
         {
@@ -29,6 +40,8 @@ namespace App.World.Entity.Player.Weapons
             bulletPrefab = Data.bullet;
             bulletSpread = Data.bulletSpread;
             objectPool = FindObjectOfType<ObjectPool>();
+            audioSource = GetComponent<AudioSource>();
+            shootSound = Data.shootSound;
             bulletCount = Data.bulletCount;
         }
 

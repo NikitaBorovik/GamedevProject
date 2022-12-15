@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a763b430e943a8f4aa31ac03344b559d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba9fee30d8493e845a8a586084eda97a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dce55336b009014088f98982d76ee26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPool: {fileID: 0}
 --- !u!58 &6305364155479244320
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,6 +176,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6699174986344805455}
     m_Modifications:
+    - target: {fileID: 2677867989666930608, guid: 2cd741e70a4b370489a0295bd7ef94e3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2677867989666930609, guid: 2cd741e70a4b370489a0295bd7ef94e3, type: 3}
       propertyPath: m_Name
       value: Explosion

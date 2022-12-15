@@ -17,6 +17,7 @@ namespace App.World.Entity.Player.Weapons
         public int bulletCount;
         public int cost;
         public string description;
+        public AudioClip shootSound;
     }
 }
 
