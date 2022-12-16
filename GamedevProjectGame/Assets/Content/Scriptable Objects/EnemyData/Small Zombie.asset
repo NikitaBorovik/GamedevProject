@@ -20,8 +20,8 @@ MonoBehaviour:
   damage: 7
   timeBetweenAttacks: 1
   moneyDropChance: 0.1
-  attackRange: 0
-  spawnAnimationDuration: 0
+  attackRange: 0.65
+  spawnAnimationDuration: 1
   minMoneyDrop: 1
   maxMoneyDrop: 1
   moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}

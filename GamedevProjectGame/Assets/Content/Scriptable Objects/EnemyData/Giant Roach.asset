@@ -16,12 +16,12 @@ MonoBehaviour:
   maxHealth: 3
   dangerLevel: 2
   firstSpawningWave: 2
-  speed: 10
+  speed: 8
   damage: 5
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.3
   moneyDropChance: 0.05
-  attackRange: 0
-  spawnAnimationDuration: 0
+  attackRange: 0.9
+  spawnAnimationDuration: 1
   minMoneyDrop: 1
   maxMoneyDrop: 1
   moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}
