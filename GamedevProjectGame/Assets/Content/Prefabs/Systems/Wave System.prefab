@@ -44,3 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9490120b11f6742b042cf1d59cd006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTimeBetweenSubwaves: 5
+  maxTimeBetweenSubwaves: 7
+  subWaveDangerPercentage: 0.1
+  nextWaveDangerLevelMultiplier: 1.1
+  enemies:
+  - {fileID: 3262046780580474521, guid: f3c94c156829ba141afb6605c14cc15c, type: 3}
