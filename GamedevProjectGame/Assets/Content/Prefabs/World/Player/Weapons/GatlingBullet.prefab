@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6699174986344805490}
   - component: {fileID: 6699174986344805491}
   - component: {fileID: 8749837139054543125}
-  - component: {fileID: 5259955078278900696}
+  - component: {fileID: -2242627114711852575}
   m_Layer: 11
   m_Name: GatlingBullet
   m_TagString: Untagged
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.23
 --- !u!212 &6699174986344805491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 2
---- !u!114 &5259955078278900696
+--- !u!114 &-2242627114711852575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6699174986344805492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c5e691e6c027d74fa32902facfe8785, type: 3}
+  m_Script: {fileID: 11500000, guid: b18673bb0e97d694e888f264c9eb0099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolObjectType: GatlingBullet

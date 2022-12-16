@@ -474,6 +474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 0
+  blinkTime: 0.125
+  defaultMaterial: {fileID: 2100000, guid: a3495307d8bff0642b1df8e865746579, type: 2}
 --- !u!114 &3668509245797177036
 MonoBehaviour:
   m_ObjectHideFlags: 0

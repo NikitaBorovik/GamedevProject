@@ -11,6 +11,7 @@ namespace App.World.Entity.Player.Weapons
         public float coolDown;
         public float bulletFlySpeed;
         public float bulletSpread;
+        public int pearcingCount;
         public GameObject bullet;
         public GameObject weaponPrefab;
         public Sprite weaponSpriteForShop;

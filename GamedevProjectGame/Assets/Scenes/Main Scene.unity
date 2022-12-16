@@ -863,6 +863,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -848955857
       objectReference: {fileID: 0}
+    - target: {fileID: 3013505546476011433, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 3892307512201709897, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_SortMode
       value: 0
@@ -883,22 +887,6 @@ PrefabInstance:
       propertyPath: container
       value: 
       objectReference: {fileID: 922307730}
-    - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: weapons.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: weapons.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3ca667f6884df0b42a83f7ee5ac62ff5, type: 2}
-    - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: weapons.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 118d7b1a182fe6941a15678cd095d9fa, type: 2}
-    - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
-      propertyPath: weapons.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}
     - target: {fileID: 7202441517267576085, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: Loop
       value: 0

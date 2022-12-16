@@ -25,8 +25,6 @@ namespace App.World.Shops
             {
                 int randomIndex = Random.Range(0, weapons.Count);
                 currentWeapon = weapons[randomIndex];
-                Debug.Log($"Current weapon: {currentWeapon == null}");
-                Debug.Log($"Player: {player.Weapon == null}");
             } while (currentWeapon == player.Weapon.Data);
             spriteRenderer.sprite = currentWeapon.weaponSpriteForShop;
 

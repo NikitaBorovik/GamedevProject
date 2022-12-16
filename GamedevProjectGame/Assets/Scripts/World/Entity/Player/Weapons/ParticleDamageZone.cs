@@ -14,18 +14,12 @@ namespace App.World.Entity.Player.Weapons
             this.particleGun = particleGun;
         }
 
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
-
         public void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+            {
+                return;
+            }
             Health health = collision.GetComponent<Health>();
             if(health == null)
             {
@@ -37,6 +31,10 @@ namespace App.World.Entity.Player.Weapons
 
         public void OnTriggerExit2D(Collider2D collision)
         {
+            if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+            {
+                return;
+            }
             Health health = collision.GetComponent<Health>();
             if (health == null)
             {

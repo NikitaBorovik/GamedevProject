@@ -6,44 +6,59 @@ using World.Entity;
 
 namespace App.World.Entity.Player.Weapons
 {
-    public abstract class BaseBullet : MonoBehaviour, IObjectPoolItem
+    public class BaseBullet : MonoBehaviour, IObjectPoolItem
     {
         protected float damage;
+        protected float pearcingCount;
         protected ObjectPool objectPool;
-        public virtual string PoolObjectType => "DefaultBullet";
+        [SerializeField]
+        protected string poolObjectType;
+        public string PoolObjectType => poolObjectType;
 
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (!gameObject.activeSelf)
                 return;
+            if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+            {
+                objectPool.ReturnToPool(this);
+                return;
+            }
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
-               // Debug.Log("No Health component on shot target");
-               // Debug.Log(collision.gameObject.name);
                 return;
             }
             targetHealt.TakeDamage(damage);
-            objectPool.ReturnToPool(this);
+            if (pearcingCount > 0)
+            {
+                pearcingCount--;
+            }
+            else
+            {
+                objectPool.ReturnToPool(this);
+            }
+ 
         }
-        public virtual void Init(float damage)
+        public virtual void Init(float damage, int pearcingCount)
         {
             this.damage = damage;
+            this.pearcingCount = pearcingCount;
             GetComponent<TimeToLive>().Init();
         }
 
-        public virtual void GetFromPool(ObjectPool pool)
+        public void GetFromPool(ObjectPool pool)
         {
             objectPool = pool;
             gameObject.SetActive(true);
         }
 
-        public virtual void ReturnToPool()
+        public void ReturnToPool()
         {
             gameObject.SetActive(false);
         }
 
-        public virtual GameObject GetGameObject()
+        public GameObject GetGameObject()
         {
             return (gameObject);
         }

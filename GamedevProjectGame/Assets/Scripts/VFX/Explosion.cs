@@ -12,6 +12,7 @@ public class Explosion : MonoBehaviour, IObjectPoolItem
     private PolygonCollider2D damageZone;
     [SerializeField]
     private ParticleSystem explosionParticles;
+    private AudioSource explosionSound;
     public void GetFromPool(ObjectPool pool)
     {
         this.pool = pool;
@@ -30,6 +31,7 @@ public class Explosion : MonoBehaviour, IObjectPoolItem
     {
         transform.position = pos;
         this.damage = damage;
+        explosionSound = GetComponent<AudioSource>();
         StartCoroutine(Explode(timeToLive));
         
     }
@@ -49,6 +51,7 @@ public class Explosion : MonoBehaviour, IObjectPoolItem
     public IEnumerator Explode(float time)
     {
         explosionParticles.Play();
+        explosionSound.Play();
         yield return new WaitForSeconds(time);
         pool.ReturnToPool(this);
     }

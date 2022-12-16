@@ -29,6 +29,7 @@ namespace App.World.Entity.Player.Weapons
         protected float bulletSpread;
         protected int bulletCount;
         protected float coolDown;
+        private int pearcingCount;
         protected GameObject bulletPrefab;
         #endregion
 
@@ -43,6 +44,7 @@ namespace App.World.Entity.Player.Weapons
             audioSource = GetComponent<AudioSource>();
             shootSound = Data.shootSound;
             bulletCount = Data.bulletCount;
+            pearcingCount = Data.pearcingCount;
         }
 
         public ShootEvent ShootEvent { get => shootEvent; }
@@ -51,6 +53,7 @@ namespace App.World.Entity.Player.Weapons
         public float BulletFlySpeed { get => bulletFlySpeed; set => bulletFlySpeed = value; }
         public Transform ShootPosition { get => shootPosition; set => shootPosition = value; }
         public WeaponSO Data { get => data; set => data = value; }
+        protected int PearcingCount { get => pearcingCount; set => pearcingCount = value; }
 
         private void OnEnable()
         {

@@ -73,7 +73,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.23
 --- !u!212 &6699174986344805491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dce55336b009014088f98982d76ee26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolObjectType: Grenade
   explosion: {fileID: 2689475735514971949, guid: 47a3b1663b68c4c4398f0eea665c9ea4, type: 3}
 --- !u!82 &37318831027337898
 AudioSource:

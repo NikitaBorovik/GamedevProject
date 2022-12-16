@@ -73,7 +73,6 @@ namespace App.Systems.GameStates
                 yield return null;
             }
             audioSource.Stop();
-            Debug.Log("Stop Music");
             yield break;
         }
     }
