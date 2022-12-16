@@ -32,12 +32,18 @@ namespace App.World.Entity.Player.Weapons
             base.Update();
             if (isShooting)
             {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = shootSound;
+                    audioSource.Play();
+                }
                 var emission = GetComponentInChildren<ParticleSystem>().emission;
                 emission.rateOverTime = 6000;
                 isShooting = false;
             }
             else
             {
+                audioSource.Stop();
                 var emission = GetComponentInChildren<ParticleSystem>().emission;
                 damageZone.gameObject.SetActive(false);
                 affectedEntities.Clear();

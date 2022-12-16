@@ -17,9 +17,9 @@ namespace App.World.Entity.Player.Weapons
         #endregion
 
         #region Sounds
-        private AudioSource audioSource;
+        protected AudioSource audioSource;
         [SerializeField]
-        private AudioClip shootSound;
+        protected AudioClip shootSound;
         #endregion
 
         #region Parameters

@@ -30,6 +30,7 @@ namespace App.World.Entity.Player.Weapons
                     bullet.GetComponent<BaseBullet>().Init(damage);
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletFlySpeed;
                 }
+                audioSource.PlayOneShot(shootSound);
                 timeFromCoolDown = 0.0f;
             }
         }
