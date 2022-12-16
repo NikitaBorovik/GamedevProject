@@ -898,7 +898,7 @@ PrefabInstance:
     - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: weapons.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: a0617ab2152b18c4db907ba44c736122, type: 2}
+      objectReference: {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}
     - target: {fileID: 7202441517267576085, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: Loop
       value: 0
@@ -960,6 +960,10 @@ PrefabInstance:
       propertyPath: objectsContainer
       value: 
       objectReference: {fileID: 922307730}
+    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3099086894498719712, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1023,7 +1027,7 @@ PrefabInstance:
     - target: {fileID: 6365209058583971333, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: fightingMusic
       value: 
-      objectReference: {fileID: 8300000, guid: ab867f2dada607d49b35aca9b8d3bc46, type: 3}
+      objectReference: {fileID: 8300000, guid: d106d1bac65b52846895433330ba232e, type: 3}
     - target: {fileID: 8939445329096551353, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.8

@@ -22,3 +22,4 @@ MonoBehaviour:
   bulletCount: 1
   cost: 150
   description: Sniper rifle does piupiu
+  shootSound: {fileID: 8300000, guid: 8c6961f332f8a6f40a625e00e37b917a, type: 3}

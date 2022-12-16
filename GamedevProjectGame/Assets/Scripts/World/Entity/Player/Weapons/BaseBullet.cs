@@ -9,7 +9,7 @@ namespace App.World.Entity.Player.Weapons
     public abstract class BaseBullet : MonoBehaviour, IObjectPoolItem
     {
         protected float damage;
-        public ObjectPool objectPool;
+        protected ObjectPool objectPool;
         public virtual string PoolObjectType => "DefaultBullet";
 
         public virtual void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +19,8 @@ namespace App.World.Entity.Player.Weapons
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
-                Debug.Log("No Health component on shot target");
+               // Debug.Log("No Health component on shot target");
+               // Debug.Log(collision.gameObject.name);
                 return;
             }
             targetHealt.TakeDamage(damage);

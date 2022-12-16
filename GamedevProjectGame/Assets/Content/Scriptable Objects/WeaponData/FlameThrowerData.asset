@@ -22,4 +22,4 @@ MonoBehaviour:
   bulletCount: 1
   cost: 0
   description: Burn your enemies
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 2b96f9bdb6bb73f4f8806f35a67efc99, type: 3}

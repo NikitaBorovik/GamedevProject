@@ -22,4 +22,4 @@ MonoBehaviour:
   bulletCount: 5
   cost: 100
   description: ShotGun does pufff
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 35be457935f90fa43a6690725c79085d, type: 3}

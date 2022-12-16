@@ -22,4 +22,4 @@ MonoBehaviour:
   bulletCount: 1
   cost: 70
   description: Meke hell in our wordl but funny
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: d58b88c19869cb048a392a47e434b523, type: 3}
