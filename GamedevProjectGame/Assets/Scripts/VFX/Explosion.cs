@@ -10,6 +10,7 @@ public class Explosion : MonoBehaviour, IObjectPoolItem
     private ObjectPool pool;
     private float damage;
     private PolygonCollider2D damageZone;
+    [SerializeField]
     private ParticleSystem explosionParticles;
     public void GetFromPool(ObjectPool pool)
     {
@@ -39,7 +40,7 @@ public class Explosion : MonoBehaviour, IObjectPoolItem
         Health targetHealt = collision.GetComponent<Health>();
         if (targetHealt == null)
         {
-            Debug.Log("No Health component on shot target");
+            Debug.Log("No Health component on explosion target");
             return;
         }
         targetHealt.TakeDamage(damage);

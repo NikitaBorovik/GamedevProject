@@ -21,8 +21,6 @@ namespace App.World.Entity.Player.Weapons
 
         private void Explode()
         {
-            Debug.Log("Explosion GO" + explosion.gameObject == null);
-            Debug.Log("Pool GO" + objectPool == null);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             var newExplosion = objectPool.GetObjectFromPool(explosion.PoolObjectType,explosion.gameObject,transform.position).GetGameObject();
             newExplosion.GetComponent<Explosion>().Init(transform.position, 1f, damage);
