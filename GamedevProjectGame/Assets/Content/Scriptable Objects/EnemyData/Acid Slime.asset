@@ -15,7 +15,7 @@ MonoBehaviour:
   type: Acid Slime
   maxHealth: 25
   dangerLevel: 8
-  firstSpawningWave: 2
+  firstSpawningWave: 1
   speed: 5
   damage: 10
   timeBetweenAttacks: 1.5

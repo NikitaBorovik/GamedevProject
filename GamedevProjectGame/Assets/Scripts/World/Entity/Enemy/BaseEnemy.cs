@@ -78,6 +78,7 @@ namespace World.Entity.Enemy
         {
             if(stateMachine.CurrentState != dieState)
             {
+                StopAllCoroutines();
                 stateMachine.ChangeState(dieState);
                 DropMoney();
             }
@@ -85,7 +86,6 @@ namespace World.Entity.Enemy
 
         public void DyingSequence()
         {
-            StopAllCoroutines();
             waveSystem.ReportKilled(EnemyData.type);
             objectPool.ReturnToPool(this);
         }
