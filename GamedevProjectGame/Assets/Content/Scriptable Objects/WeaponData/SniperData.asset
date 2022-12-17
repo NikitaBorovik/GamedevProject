@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   coolDown: 0.5
-  bulletFlySpeed: 33
+  bulletFlySpeed: 50
   bulletSpread: 2
-  bullet: {fileID: 6699174986344805492, guid: a4119d5bcfeba9741b3450aff3ec77d0, type: 3}
+  pearcingCount: 50
+  bullet: {fileID: 6699174986344805492, guid: 226c182bab73b9848a825e33bb95ab1c, type: 3}
   weaponPrefab: {fileID: 2632855254469951434, guid: 349711c92cfe20945bd469d066eb302c, type: 3}
-  weaponSpriteForShop: {fileID: 21300000, guid: 3a6fdb9640ba8d44e9e50a2a4125b5de, type: 3}
+  weaponSpriteForShop: {fileID: 21300000, guid: 5ae5d1a15ac4d8843905bcedef70793c, type: 3}
   bulletCount: 1
   cost: 150
   description: Sniper rifle does piupiu
+  shootSound: {fileID: 8300000, guid: 8c6961f332f8a6f40a625e00e37b917a, type: 3}

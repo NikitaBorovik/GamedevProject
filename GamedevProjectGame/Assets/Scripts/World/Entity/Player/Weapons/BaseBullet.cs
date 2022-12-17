@@ -6,28 +6,44 @@ using World.Entity;
 
 namespace App.World.Entity.Player.Weapons
 {
-    public class Bullet : MonoBehaviour, IObjectPoolItem
+    public class BaseBullet : MonoBehaviour, IObjectPoolItem
     {
-        private float damage;
-        private ObjectPool objectPool;
-        public string PoolObjectType => "GatlingBullet";
+        protected float damage;
+        protected float pearcingCount;
+        protected ObjectPool objectPool;
+        [SerializeField]
+        protected string poolObjectType;
+        public string PoolObjectType => poolObjectType;
 
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (!gameObject.activeSelf)
                 return;
+            if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+            {
+                objectPool.ReturnToPool(this);
+                return;
+            }
             Health targetHealt = collision.GetComponent<Health>();
             if (targetHealt == null)
             {
-                Debug.Log("No Health component on shot target");
                 return;
             }
             targetHealt.TakeDamage(damage);
-            objectPool.ReturnToPool(this);
+            if (pearcingCount > 0)
+            {
+                pearcingCount--;
+            }
+            else
+            {
+                objectPool.ReturnToPool(this);
+            }
+ 
         }
-        public void Init(float damage)
+        public virtual void Init(float damage, int pearcingCount)
         {
             this.damage = damage;
+            this.pearcingCount = pearcingCount;
             GetComponent<TimeToLive>().Init();
         }
 

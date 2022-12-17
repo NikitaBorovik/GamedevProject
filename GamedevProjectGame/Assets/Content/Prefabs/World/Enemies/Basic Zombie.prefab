@@ -193,6 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 10
+  blinkTime: 0.125
+  defaultMaterial: {fileID: 2100000, guid: a3495307d8bff0642b1df8e865746579, type: 2}
 --- !u!70 &6561132446275936185
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

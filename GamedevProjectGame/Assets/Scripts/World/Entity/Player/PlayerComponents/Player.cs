@@ -47,6 +47,12 @@ namespace App.World.Entity.Player.PlayerComponents
         private MovementEvent movementEvent;
         #endregion
 
+        #region Sounds
+        [SerializeField]
+        private AudioClip[] stepSounds;
+        private AudioSource audioSource;
+        #endregion
+
         #region Parameters
         private float movementSpeed;
         private int money = 1000;
@@ -78,6 +84,7 @@ namespace App.World.Entity.Player.PlayerComponents
             pAnimator = GetComponent<Animator>();
             health = GetComponent<Health>();
             weapon = CurWeaponObj.GetComponent<Weapon>();
+            audioSource = GetComponent<AudioSource>();
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
         }
@@ -99,6 +106,13 @@ namespace App.World.Entity.Player.PlayerComponents
         public void DisableUpgrade(BaseUpgrade upgrade)
         {
             upgrade.Disable(this);
+        }
+        public void MakeStepSound()
+        {
+            if(!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+            }
         }
     }
 }

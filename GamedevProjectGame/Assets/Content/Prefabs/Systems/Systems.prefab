@@ -258,10 +258,6 @@ PrefabInstance:
       propertyPath: minTimeBetweenSpawns
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5242756727788516444, guid: 6fa841759702dce4e8f26a988e273ce0, type: 3}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 5813351036652541612, guid: 99603ab6e54cc5649b8c0ba9d0738133, type: 3}
     - target: {fileID: 7220271838731695816, guid: 6fa841759702dce4e8f26a988e273ce0, type: 3}
       propertyPath: m_RootOrder
       value: 1

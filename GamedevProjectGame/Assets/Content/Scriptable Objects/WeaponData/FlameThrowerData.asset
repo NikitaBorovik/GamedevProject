@@ -18,7 +18,8 @@ MonoBehaviour:
   bulletSpread: 2
   bullet: {fileID: 0}
   weaponPrefab: {fileID: 2632855254469951434, guid: 1971d388161e3d342b5dd918a55420f6, type: 3}
-  weaponSpriteForShop: {fileID: 21300000, guid: 3a6fdb9640ba8d44e9e50a2a4125b5de, type: 3}
+  weaponSpriteForShop: {fileID: 21300000, guid: 988f2e06546c30440b5d375309f77899, type: 3}
   bulletCount: 1
   cost: 0
   description: Burn your enemies
+  shootSound: {fileID: 8300000, guid: 2b96f9bdb6bb73f4f8806f35a67efc99, type: 3}

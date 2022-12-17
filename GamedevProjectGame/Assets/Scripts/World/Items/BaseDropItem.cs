@@ -17,7 +17,7 @@ namespace App.World.Items
             rigidBody = GetComponent<Rigidbody2D>();
         }
 
-        public void Init(Vector3 position)
+        public virtual void Init(Vector3 position)
         {
             transform.position = position;
             Drop();

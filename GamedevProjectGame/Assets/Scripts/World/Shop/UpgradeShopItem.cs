@@ -22,8 +22,8 @@ namespace App.World.Shop
         {
             currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
         }
-
-        private new void Awake()
+        
+        protected override void Awake()
         {
             base.Awake();
             SetRandomUpgrade();

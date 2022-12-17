@@ -22,3 +22,4 @@ MonoBehaviour:
   bulletCount: 1
   cost: 70
   description: Gatling Gun does brrrrrrrr
+  shootSound: {fileID: 8300000, guid: 89c3a71ff39d58547b40bf6562215420, type: 3}

@@ -81,6 +81,7 @@ namespace App.Systems.Input
             else
             {
                 player.MovementEvent.CallMovementEvent(movingDirection,player.MovementSpeed);
+                player.MakeStepSound();
             }
         }
         private void HandleShootInput()

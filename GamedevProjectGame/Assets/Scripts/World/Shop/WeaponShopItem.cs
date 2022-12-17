@@ -19,26 +19,15 @@ namespace App.World.Shops
 
         private WeaponSO currentWeapon;
 
-        private WeaponSO previousWeapon;
-
-
-
-        
         private void SetRandomWeapon()
         {
             do
             {
                 int randomIndex = Random.Range(0, weapons.Count);
                 currentWeapon = weapons[randomIndex];
-                Debug.Log($"Current weapon: {currentWeapon == null}");
-                Debug.Log($"Player: {player.Weapon == null}");
             } while (currentWeapon == player.Weapon.Data);
             spriteRenderer.sprite = currentWeapon.weaponSpriteForShop;
 
-        }
-        private new void Awake()
-        {
-            base.Awake();
         }
         private void Start()
         {

@@ -126,8 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 0}
   shop: {fileID: 0}
+  merchantInfoField: {fileID: 0}
   weapons:
-  - {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}
+  - {fileID: 11400000, guid: a0617ab2152b18c4db907ba44c736122, type: 2}
+  - {fileID: 11400000, guid: 3ca667f6884df0b42a83f7ee5ac62ff5, type: 2}
   - {fileID: 11400000, guid: 118d7b1a182fe6941a15678cd095d9fa, type: 2}
+  - {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}
   - {fileID: 11400000, guid: b2c0e5047312c30489a0f5ff6dfc4b3f, type: 2}
   spriteRenderer: {fileID: 561290078337166448}
