@@ -14,6 +14,7 @@ namespace App.Systems.Wave
         private GameStatesSystem gameStatesSystem;
         private int enemiesAlive = 0;
         private int dangerLevelLeft;
+        [SerializeField]
         private int totalDangerLevel = 300;
         private List<BaseEnemy> allowedEnemies = new List<BaseEnemy>();
         private Dictionary<BaseEnemy, float> enemyWeights;

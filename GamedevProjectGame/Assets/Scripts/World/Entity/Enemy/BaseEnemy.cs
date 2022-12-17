@@ -128,10 +128,15 @@ namespace World.Entity.Enemy
         {
             objectPool = pool;
             gameObject.SetActive(true);
+            animator.Rebind();
         }
 
         public void ReturnToPool()
         {
+            //animator.CrossFade("Empty State", 0f);
+            //animator.Update(0f);
+            //animator.Update(0f);
+            //animator.Update(0f);
             gameObject.SetActive(false);
         }
 

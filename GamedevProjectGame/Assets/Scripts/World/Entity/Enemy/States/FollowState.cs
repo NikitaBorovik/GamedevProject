@@ -34,6 +34,8 @@ namespace World.Entity.Enemy.States
 
         private void SetMoveAnimationParams(float vx)
         {
+
+            //if(baseEnemy.transform.position.x > baseEnemy.Target.position.x)
             if (vx < 0)
             {
                 baseEnemy.Animator.SetBool("MovingRight", false);
