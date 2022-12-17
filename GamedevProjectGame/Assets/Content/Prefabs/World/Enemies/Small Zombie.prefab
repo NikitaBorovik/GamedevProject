@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 5813351036652541613}
   health: {fileID: -1759537335943733263}
-  gruntAudioSource: {fileID: 2788192522666684408}
+  audioSource: {fileID: 2788192522666684408}
   enemyData: {fileID: 11400000, guid: 0bbe7781a5186154cb77f5f151e48519, type: 2}
   myColliders:
   - {fileID: 6561132446275936185}

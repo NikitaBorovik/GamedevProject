@@ -24,6 +24,7 @@ namespace World.Entity.Enemy
         public float minTimeBetweenGrunts = 10f;
         public float maxTimeBetweenGrunts = 15f;
         public List<AudioClip> gruntSounds;
+        public List<AudioClip> attackSounds;
     }
 }
 

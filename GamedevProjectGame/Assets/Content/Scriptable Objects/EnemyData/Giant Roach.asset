@@ -31,3 +31,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3d34e38ff9ec8cb4096b528f43fab93d, type: 3}
   - {fileID: 8300000, guid: 0f9a8ab75ae7e2e4382894a0088f970d, type: 3}
   - {fileID: 8300000, guid: 536e4a3c06308e143baa35d3847665be, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 5f4ecfddf7fe0ff44999bce4d4b9c873, type: 3}

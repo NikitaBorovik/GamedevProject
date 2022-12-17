@@ -25,7 +25,7 @@ namespace World.Entity.Enemy
         [SerializeField]
         private Health health;
         [SerializeField]
-        private AudioSource gruntAudioSource;
+        private AudioSource audioSource;
         [SerializeField]
         protected EnemyData enemyData;
         [SerializeField]
@@ -43,6 +43,7 @@ namespace World.Entity.Enemy
         public Animator Animator => animator;
         public List<Collider2D> MyColliders => myColliders;
         public SpriteRenderer SpriteRenderer => spriteRenderer;
+        public AudioSource AudioSource => audioSource;
 
         public virtual string PoolObjectType => enemyData.type;
 
@@ -84,13 +85,13 @@ namespace World.Entity.Enemy
             float time = Random.Range(0, enemyData.maxTimeBetweenGrunts);
             yield return new WaitForSeconds(time);
             int index = Random.Range(0, enemyData.gruntSounds.Count);
-            gruntAudioSource.PlayOneShot(enemyData.gruntSounds[index]);
+            audioSource.PlayOneShot(enemyData.gruntSounds[index]);
             while (true)
             {
                 time = Random.Range(enemyData.minTimeBetweenGrunts,enemyData.maxTimeBetweenGrunts);
                 yield return new WaitForSeconds(time);
                 index = Random.Range(0,enemyData.gruntSounds.Count);
-                gruntAudioSource.PlayOneShot(enemyData.gruntSounds[index]);
+                audioSource.PlayOneShot(enemyData.gruntSounds[index]);
             }
             
         }

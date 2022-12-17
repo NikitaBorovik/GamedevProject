@@ -30,3 +30,5 @@ MonoBehaviour:
   gruntSounds:
   - {fileID: 8300000, guid: ac4a8e46934e28a42a46701c423ff00b, type: 3}
   - {fileID: 8300000, guid: ffb17e99dcbca044886f134eccf2d427, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 5f4ecfddf7fe0ff44999bce4d4b9c873, type: 3}
