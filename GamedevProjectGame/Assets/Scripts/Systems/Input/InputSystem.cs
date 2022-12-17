@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using App.World.Entity.Player.PlayerComponents;
 using App.World.Shop;
+using App.Systems.GameStates;
 
 namespace App.Systems.Input
 {
@@ -12,17 +11,15 @@ namespace App.Systems.Input
         private Camera mainCamera;
         private Player player;
         private Shop shop;
+        private bool isPaused;
+        private float prepauseTimeScale;
         
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
         void Update()
         {
+            HandlePauseInput();
+
+            if (isPaused) return;
+
             HandleAimInput();
             HandleMoveInput();
             HandleShootInput();
@@ -33,6 +30,24 @@ namespace App.Systems.Input
             this.mainCamera = mainCamera;
             this.player = player;
             this.shop = shop;
+            this.isPaused = false;
+            this.prepauseTimeScale = Time.timeScale;
+        }
+
+        private void HandlePauseInput()
+        {
+            if (!UnityEngine.Input.GetKeyDown(KeyCode.Escape)) return;
+            if(isPaused)
+            {
+                isPaused = false;
+                Time.timeScale = prepauseTimeScale;
+            }
+            else
+            {
+                prepauseTimeScale = Time.timeScale;
+                isPaused = true;
+                Time.timeScale = 0f;
+            }
         }
 
         private Vector3 GetMousePositionInWorld() 
