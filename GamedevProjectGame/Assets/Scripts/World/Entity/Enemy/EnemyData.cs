@@ -21,6 +21,9 @@ namespace World.Entity.Enemy
         public int minMoneyDrop;
         public int maxMoneyDrop;
         public MoneyDropItem moneyPrefab;
+        public float minTimeBetweenGrunts = 10f;
+        public float maxTimeBetweenGrunts = 15f;
+        public List<AudioClip> gruntSounds;
     }
 }
 

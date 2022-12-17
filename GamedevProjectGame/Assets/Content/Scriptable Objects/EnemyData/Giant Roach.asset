@@ -25,3 +25,9 @@ MonoBehaviour:
   minMoneyDrop: 1
   maxMoneyDrop: 1
   moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}
+  minTimeBetweenGrunts: 10
+  maxTimeBetweenGrunts: 15
+  gruntSounds:
+  - {fileID: 8300000, guid: 3d34e38ff9ec8cb4096b528f43fab93d, type: 3}
+  - {fileID: 8300000, guid: 0f9a8ab75ae7e2e4382894a0088f970d, type: 3}
+  - {fileID: 8300000, guid: 536e4a3c06308e143baa35d3847665be, type: 3}

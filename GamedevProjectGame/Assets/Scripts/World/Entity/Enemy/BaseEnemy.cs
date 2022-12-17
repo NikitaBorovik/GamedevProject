@@ -2,6 +2,7 @@ using App;
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
 using App.World.Items;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using World.Entity.Enemy.States;
@@ -23,6 +24,8 @@ namespace World.Entity.Enemy
         private Rigidbody2D myRigidbody;
         [SerializeField]
         private Health health;
+        [SerializeField]
+        private AudioSource gruntAudioSource;
         [SerializeField]
         protected EnemyData enemyData;
         [SerializeField]
@@ -72,6 +75,24 @@ namespace World.Entity.Enemy
                 stateMachine.Initialize(spawningState);
             else
                 stateMachine.ChangeState(spawningState);
+            if(enemyData.gruntSounds.Count > 0)
+                StartCoroutine(Grunt());
+        }
+
+        private IEnumerator Grunt()
+        {
+            float time = Random.Range(0, enemyData.maxTimeBetweenGrunts);
+            yield return new WaitForSeconds(time);
+            int index = Random.Range(0, enemyData.gruntSounds.Count);
+            gruntAudioSource.PlayOneShot(enemyData.gruntSounds[index]);
+            while (true)
+            {
+                time = Random.Range(enemyData.minTimeBetweenGrunts,enemyData.maxTimeBetweenGrunts);
+                yield return new WaitForSeconds(time);
+                index = Random.Range(0,enemyData.gruntSounds.Count);
+                gruntAudioSource.PlayOneShot(enemyData.gruntSounds[index]);
+            }
+            
         }
 
         public void Die()
