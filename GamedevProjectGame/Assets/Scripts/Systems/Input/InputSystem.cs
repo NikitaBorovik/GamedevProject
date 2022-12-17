@@ -11,43 +11,34 @@ namespace App.Systems.Input
         private Camera mainCamera;
         private Player player;
         private Shop shop;
-        private bool isPaused;
-        private float prepauseTimeScale;
-        
-        void Update()
+        private Pauser pauser;
+
+        private void Update()
         {
-            HandlePauseInput();
-
-            if (isPaused) return;
-
+            if (HandlePauseInput()) return;
             HandleAimInput();
             HandleMoveInput();
             HandleShootInput();
             HandleBuyInput();
         }
-        public void Init(Camera mainCamera,Player player,Shop shop)
+        public void Init(Camera mainCamera,Player player,Shop shop, Pauser pauser)
         {
             this.mainCamera = mainCamera;
             this.player = player;
             this.shop = shop;
-            this.isPaused = false;
-            this.prepauseTimeScale = Time.timeScale;
+            this.pauser = pauser;
         }
 
-        private void HandlePauseInput()
+        private bool HandlePauseInput()
         {
-            if (!UnityEngine.Input.GetKeyDown(KeyCode.Escape)) return;
-            if(isPaused)
-            {
-                isPaused = false;
-                Time.timeScale = prepauseTimeScale;
-            }
+            if (!UnityEngine.Input.GetKeyDown(KeyCode.Escape)) return false;
+
+            if(pauser.IsPaused)
+                pauser.Unpause();
             else
-            {
-                prepauseTimeScale = Time.timeScale;
-                isPaused = true;
-                Time.timeScale = 0f;
-            }
+                pauser.Pause();
+
+            return pauser.IsPaused;
         }
 
         private Vector3 GetMousePositionInWorld() 
