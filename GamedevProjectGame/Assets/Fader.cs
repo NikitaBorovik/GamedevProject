@@ -32,11 +32,15 @@ public class Fader : MonoBehaviour
 
     public IEnumerator FadeToSecondsCoroutine(float newAlpha, float seconds)
     {
+        var steps = seconds / Time.fixedDeltaTime;
         var speed = (newAlpha - Alpha) / seconds;
-        while(!Mathf.Approximately(newAlpha, Alpha))
+        for(; steps > 0; --steps)
         {
             Alpha = Alpha + speed * Time.fixedDeltaTime;
+            print(Alpha);
             yield return new WaitForFixedUpdate();
         }
+
+        Alpha = newAlpha;
     }
 }

@@ -26,6 +26,7 @@ public class DeathScreen : MonoBehaviour
     private void Awake()
     {
         score = 0;
+        fader.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -45,16 +46,18 @@ public class DeathScreen : MonoBehaviour
 
     public void ShowDeathScreen()
     {
-        StartCoroutine(ShowDeathScreenCoroutine(1f));
+        StartCoroutine(ShowDeathScreenCoroutine(5f));
     }
 
     public IEnumerator ShowDeathScreenCoroutine(float seconds)
     {
         RemoveAllOnEvent();
+        fader.gameObject.SetActive(true);
         float halfTime = seconds * 0.5f;
         yield return fader.FadeToSecondsCoroutine(1f, halfTime);
         deathScreenCanvas.SetActive(true);
         yield return fader.FadeToSecondsCoroutine(0f, halfTime);
+        fader.gameObject.SetActive(false);
     }
 
     public void HideDeathScreen()
