@@ -6,6 +6,10 @@ using World.Entity;
 public class DamagePlayer : MonoBehaviour
 {
     private float damage;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private List<AudioClip> hitSounds;
     public void Init(float damage)
     {
         this.damage = damage;
@@ -17,6 +21,8 @@ public class DamagePlayer : MonoBehaviour
         if (collisionHealth != null)
         {
             collisionHealth.TakeDamage(damage);
+            int index = Random.Range(0, hitSounds.Count);
+            audioSource.PlayOneShot(hitSounds[index]);
             Debug.Log($"Player hit {collisionHealth.CurrentHealth}/{collisionHealth.MaxHealth}");
         }  
         else
