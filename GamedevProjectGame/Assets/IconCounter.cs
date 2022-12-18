@@ -6,6 +6,7 @@ public class IconCounter : MonoBehaviour
 {
     [SerializeField] private CountUpdatedEvent countUpdatedEvent;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private string textPrefix;
     private int count;
 
     public int Count
@@ -16,7 +17,7 @@ public class IconCounter : MonoBehaviour
             if(value < 0)
                 throw new System.ArgumentOutOfRangeException("Count cannot be less then 0");
             count = value;
-            text.text = "x" + value.ToString();
+            text.text = textPrefix + value.ToString();
         }
     }
 
