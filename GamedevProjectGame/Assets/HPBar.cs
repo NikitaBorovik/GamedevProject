@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using App.World.Entity.Player.Events;
 
@@ -43,7 +41,7 @@ public class HPBar : MonoBehaviour
     }
 
     private void OnHPUpdate(HPUpdateEvent ev, HPUpdateEventArgs args)
-        => CurrentPercentage += args.deltaHP / (args.newHP + args.deltaHP);
+        => CurrentPercentage = args.newHP >= 0f ? args.newHP / args.maxHP : 0f;
 
     private void DisappearOnPlayersDeath(DieEvent ev) => container.SetActive(false);
 }

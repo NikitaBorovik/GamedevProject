@@ -6,5 +6,6 @@ namespace App.World.Entity.Player.Events
     {
         public float newHP;
         public float deltaHP;
+        public float maxHP;
     }
 }

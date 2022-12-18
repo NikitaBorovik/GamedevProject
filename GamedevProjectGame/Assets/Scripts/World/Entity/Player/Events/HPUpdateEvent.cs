@@ -7,9 +7,9 @@ namespace App.World.Entity.Player.Events
     {
         public event Action<HPUpdateEvent, HPUpdateEventArgs> OnHPUpdate;
 
-        public void CallHPUpdateEvent(float newHP, float deltaHP)
+        public void CallHPUpdateEvent(float newHP, float deltaHP, float maxHP)
         {
-            HPUpdateEventArgs args = new() { newHP = newHP, deltaHP = deltaHP };
+            HPUpdateEventArgs args = new() { newHP = newHP, deltaHP = deltaHP, maxHP = maxHP };
             OnHPUpdate?.Invoke(this, args);
         }
     }

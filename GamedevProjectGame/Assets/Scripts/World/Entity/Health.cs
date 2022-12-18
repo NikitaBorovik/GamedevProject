@@ -17,21 +17,21 @@ namespace World.Entity
             get => currentHealth;
             private set
             {
-                healthUpdateEvent.CallHPUpdateEvent(value, value - currentHealth);
+                healthUpdateEvent?.CallHPUpdateEvent(value, value - currentHealth, MaxHealth);
                 currentHealth = value;
             }
         }
-        public float MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public float MaxHealth { get; set; }
 
         public void Awake()
         {
-            currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public void TakeDamage(float damage)
         {
-            currentHealth -= damage;
-            if (currentHealth <= 0)
+            CurrentHealth -= damage;
+            if (CurrentHealth <= 0)
             {
                 IKillable baseScript = GetComponent<IKillable>();
                 baseScript.Die();
@@ -40,14 +40,14 @@ namespace World.Entity
 
         public void Heal(float amount)
         {
-            currentHealth += amount;
-            if(currentHealth > MaxHealth)
-                currentHealth = MaxHealth;
+            CurrentHealth += amount;
+            if(CurrentHealth > MaxHealth)
+                CurrentHealth = MaxHealth;
         }
 
         public void HealToMax()
         {
-            currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public void ChangeMaxHealth(float amount)
