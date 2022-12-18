@@ -221,6 +221,9 @@ GameObject:
   - component: {fileID: -1549838980822176894}
   - component: {fileID: 2098125619001022077}
   - component: {fileID: 4796191828594616004}
+  - component: {fileID: 7878043739031538611}
+  - component: {fileID: 3963659886847386946}
+  - component: {fileID: 623448336690932979}
   - component: {fileID: 7289278487202618475}
   - component: {fileID: 3668509245797177036}
   - component: {fileID: 4983798085251034614}
@@ -460,6 +463,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab44b7927b33db94998b9ecf21a2c4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7878043739031538611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507753712811452871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb0871152ae93a4fbc7495792b03a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3963659886847386946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507753712811452871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594a3b1678d10254ab9fe902a587dd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &623448336690932979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507753712811452871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e99102d390f934281b20e8ecff6a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7289278487202618475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +515,7 @@ MonoBehaviour:
   maxHealth: 0
   blinkTime: 0.125
   defaultMaterial: {fileID: 2100000, guid: a3495307d8bff0642b1df8e865746579, type: 2}
+  healthUpdateEvent: {fileID: 7878043739031538611}
 --- !u!114 &3668509245797177036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +542,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1eed30955c05bcf488421f9c7cc5bad9, type: 3}
   - {fileID: 8300000, guid: d97a6370a2737e14089facf0ec7704eb, type: 3}
   - {fileID: 8300000, guid: a4a46f317ba89984cbef9c070f9a0cf3, type: 3}
+  hpUpdateEvent: {fileID: 7878043739031538611}
+  dieEvent: {fileID: 3963659886847386946}
+  countUpdatedEvent: {fileID: 623448336690932979}
 --- !u!114 &4983798085251034614
 MonoBehaviour:
   m_ObjectHideFlags: 0

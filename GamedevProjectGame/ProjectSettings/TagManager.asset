@@ -47,6 +47,9 @@ TagManager:
   - name: Entities
     uniqueID: 3446011439
     locked: 0
-  - name: VFX
-    uniqueID: 3990223071
+  - name: UIBack
+    uniqueID: 3413077841
+    locked: 0
+  - name: UIFront
+    uniqueID: 1366111231
     locked: 0

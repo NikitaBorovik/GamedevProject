@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using App.World.Entity.Player.Events;
 
 namespace World.Entity
 {
@@ -17,9 +16,19 @@ namespace World.Entity
         private Dictionary<SpriteRenderer,Color> spriteRenderers;
         private List<SpriteRenderer> toDelete;
         private Coroutine blinkRoutine;
+        private HPUpdateEvent healthUpdateEvent;
 
-        public float CurrentHealth => currentHealth;
-        public float MaxHealth { get => maxHealth; set => maxHealth = value; }
+
+        public float CurrentHealth 
+        {
+            get => currentHealth;
+            private set
+            {
+                healthUpdateEvent?.CallHPUpdateEvent(value, value - currentHealth, MaxHealth);
+                currentHealth = value;
+            }
+        }
+        public float MaxHealth { get; set; }
 
         public void Awake()
         {
@@ -37,7 +46,7 @@ namespace World.Entity
         {
             currentHealth -= damage;
             Blink();
-            if (currentHealth <= 0)
+            if (CurrentHealth <= 0)
             {
                 IKillable baseScript = GetComponent<IKillable>();
                 baseScript.Die();
@@ -46,14 +55,14 @@ namespace World.Entity
 
         public void Heal(float amount)
         {
-            currentHealth += amount;
-            if(currentHealth > MaxHealth)
-                currentHealth = MaxHealth;
+            CurrentHealth += amount;
+            if(CurrentHealth > MaxHealth)
+                CurrentHealth = MaxHealth;
         }
 
         public void HealToMax()
         {
-            currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public void ChangeMaxHealth(float amount)

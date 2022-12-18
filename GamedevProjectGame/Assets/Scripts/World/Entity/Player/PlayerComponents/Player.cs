@@ -3,7 +3,7 @@ using App.World.Entity.Player.Weapons;
 using UnityEngine;
 using World.Entity;
 using App.Upgrades;
-using UnityEngine.SceneManagement;
+using App.World.UI.Events;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -45,6 +45,12 @@ namespace App.World.Entity.Player.PlayerComponents
         private StandEvent standEvent;
         [SerializeField]
         private MovementEvent movementEvent;
+        [SerializeField]
+        private HPUpdateEvent hpUpdateEvent;
+        [SerializeField]
+        private DieEvent dieEvent;
+        [SerializeField]
+        private CountUpdatedEvent countUpdatedEvent;
         #endregion
 
         #region Sounds
@@ -56,6 +62,8 @@ namespace App.World.Entity.Player.PlayerComponents
         #region Parameters
         private float movementSpeed;
         private int money = 1000;
+        private int money;
+        private bool isDead; //TODO replace with more global "game stop"
         #endregion
 
         #region Properties
@@ -66,9 +74,10 @@ namespace App.World.Entity.Player.PlayerComponents
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
+        public HPUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public Weapon Weapon { get => weapon; set => weapon = value; }
-        public int Money { get => money; set => money = value; }
+        public int Money { get => money; set { money = value; countUpdatedEvent.CallCountUpdatedEvent(value); } }
         public Health Health { get => health; set => health = value; }
         public GameObject CurWeaponObj { get => curWeaponObj; set => curWeaponObj = value; }
         public Transform WeaponPoint { get => weaponPoint; set => weaponPoint = value; }
@@ -87,10 +96,13 @@ namespace App.World.Entity.Player.PlayerComponents
             audioSource = GetComponent<AudioSource>();
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
+            isDead = false;
+            Money = 0;
         }
         public void Die()
         {
-            SceneManager.LoadScene("Main Scene");
+            if (isDead) return;
+            dieEvent.CallDieEvent();
         }
 
         public void EnableUpgrade(BaseUpgrade upgrade)
