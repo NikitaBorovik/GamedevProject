@@ -1,9 +1,11 @@
+using App.World.Entity.Player.Events;
 using UnityEngine;
 
 public class Pauser : MonoBehaviour
 {
     [SerializeField] private GameObject fade;
     [SerializeField] private Animator planksWithButtonsAnimator;
+    [SerializeField] private DieEvent playerDieEvent;
     private Animator fadeAnimator;
     private bool isPaused;
     private float prepauseTimeScale;
@@ -22,6 +24,16 @@ public class Pauser : MonoBehaviour
         fade.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        playerDieEvent.OnDied += StopGameEvent;
+    }
+
+    private void OnDisable()
+    {
+        playerDieEvent.OnDied -= StopGameEvent;
+    }
+
     public void Pause()
     {
         if (isPaused)
@@ -29,9 +41,7 @@ public class Pauser : MonoBehaviour
         fade.SetActive(true);
         planksWithButtonsAnimator.Play("AppearPlanksWithButtons");
         fadeAnimator.Play("Fade");
-        isPaused = true;
-        prepauseTimeScale = Time.timeScale;
-        Time.timeScale = 0f;
+        StopGame();
     }
 
     public void Unpause()
@@ -40,9 +50,22 @@ public class Pauser : MonoBehaviour
             throw new System.InvalidOperationException("Cannot unpause a not paused game.");
         planksWithButtonsAnimator.Play("DisappearPlanksWithButtons");
         fadeAnimator.Play("Unfade");
+        RenewGame();
+    }
+
+    private void StopGame()
+    {
+        isPaused = true;
+        prepauseTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
+    }
+
+    private void RenewGame()
+    {
         isPaused = false;
         Time.timeScale = prepauseTimeScale;
-        //fade.SetActive(false);
     }
+
+    private void StopGameEvent(DieEvent ev) => StopGame();
 
 }

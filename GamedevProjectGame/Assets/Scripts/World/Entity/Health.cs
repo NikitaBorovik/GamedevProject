@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using App.World.Entity.Player.Events;
 
 namespace World.Entity
 {
@@ -10,8 +9,18 @@ namespace World.Entity
         private float currentHealth;
         [SerializeField]
         private float maxHealth;
+        [SerializeField]
+        private HPUpdateEvent healthUpdateEvent;
 
-        public float CurrentHealth => currentHealth;
+        public float CurrentHealth 
+        {
+            get => currentHealth;
+            private set
+            {
+                healthUpdateEvent.CallHPUpdateEvent(value, value - currentHealth);
+                currentHealth = value;
+            }
+        }
         public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
         public void Awake()

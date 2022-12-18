@@ -43,6 +43,10 @@ namespace App.World.Entity.Player.PlayerComponents
         private StandEvent standEvent;
         [SerializeField]
         private MovementEvent movementEvent;
+        [SerializeField]
+        private HPUpdateEvent hpUpdateEvent;
+        [SerializeField]
+        private DieEvent dieEvent;
         #endregion
 
         #region Parameters
@@ -58,6 +62,7 @@ namespace App.World.Entity.Player.PlayerComponents
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
+        public HPUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public Weapon Weapon { get => weapon;}
         public int Money { get => money; set => money = value; }
@@ -79,7 +84,7 @@ namespace App.World.Entity.Player.PlayerComponents
         }
         public void Die()
         {
-            SceneManager.LoadScene("Main Scene");
+            dieEvent.CallDieEvent();
         }
 
         public void EnableUpgrade(BaseUpgrade upgrade)
