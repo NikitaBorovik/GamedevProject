@@ -249,9 +249,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 4795800579094863588, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639753249162365372, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
+      propertyPath: dieEvent
+      value: 
+      objectReference: {fileID: 1960542398}
     - target: {fileID: 6530608746636904388, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6530608746636904388, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,6 +338,17 @@ PolygonCollider2D:
       - {x: -35.2415, y: -26.330164}
       - {x: 36.117226, y: -26.58037}
       - {x: 36.440445, y: 30.78055}
+--- !u!114 &1960542398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8386114951158843530, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594a3b1678d10254ab9fe902a587dd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998002594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6560107190100513548, guid: d0a5baac97747624cbd6df7ba0432968, type: 3}
@@ -574,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550233710153932216, guid: ce003e7b00a3e0f40b9e3cc7f1c0c0e4, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1550233710153932216, guid: ce003e7b00a3e0f40b9e3cc7f1c0c0e4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -648,6 +667,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2455230296990587595, guid: ce003e7b00a3e0f40b9e3cc7f1c0c0e4, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737004757018628804, guid: ce003e7b00a3e0f40b9e3cc7f1c0c0e4, type: 3}
+      propertyPath: playerDieEvent
+      value: 
+      objectReference: {fileID: 1960542398}
     - target: {fileID: 3869078778871747454, guid: ce003e7b00a3e0f40b9e3cc7f1c0c0e4, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -24,16 +24,6 @@ public class Pauser : MonoBehaviour
         fade.SetActive(false);
     }
 
-    private void OnEnable()
-    {
-        playerDieEvent.OnDied += StopGameEvent;
-    }
-
-    private void OnDisable()
-    {
-        playerDieEvent.OnDied -= StopGameEvent;
-    }
-
     public void Pause()
     {
         if (isPaused)

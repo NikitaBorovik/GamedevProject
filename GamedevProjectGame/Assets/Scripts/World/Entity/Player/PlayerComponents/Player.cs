@@ -52,6 +52,7 @@ namespace App.World.Entity.Player.PlayerComponents
         #region Parameters
         private float movementSpeed;
         private int money;
+        private bool isDead; //TODO replace with more global "game stop"
         #endregion
 
         #region Properties
@@ -81,9 +82,11 @@ namespace App.World.Entity.Player.PlayerComponents
             weapon = curWeaponObj.GetComponent<Weapon>();
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
+            isDead = false;
         }
         public void Die()
         {
+            if (isDead) return;
             dieEvent.CallDieEvent();
         }
 
