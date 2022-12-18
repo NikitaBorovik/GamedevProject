@@ -9,12 +9,15 @@ namespace App.World.Items
     {
         [SerializeField]
         private float healing;
+
+        public override string PoolObjectType => "Healing";
+
         public override void Init(Vector3 position)
         {
             transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             base.Init(position);
         }
-        public override string PoolObjectType => "Healing";
+        
         
         private void OnTriggerEnter2D(Collider2D collision)
         {

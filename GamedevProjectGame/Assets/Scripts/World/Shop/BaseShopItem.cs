@@ -24,6 +24,11 @@ namespace App.World.Shop
         [SerializeField]
         protected GameObject merchantInfoField;
 
+        [SerializeField]
+        protected AudioClip buySound;
+
+        protected AudioSource audioSource;
+
 
         protected void Update()
         {
@@ -33,6 +38,7 @@ namespace App.World.Shop
         protected virtual void Awake()
         {
             player = container.Player.GetComponent<Player>();
+            audioSource = GetComponent<AudioSource>();
         }
         
         
@@ -50,7 +56,10 @@ namespace App.World.Shop
 
         public abstract void TryBuy(SellEvent ev);
 
-        public abstract void Buy();
+        public virtual void Buy()
+        {
+            audioSource.PlayOneShot(buySound);
+        }
         
     }
 }

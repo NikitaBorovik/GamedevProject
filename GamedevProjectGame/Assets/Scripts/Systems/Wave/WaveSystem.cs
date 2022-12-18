@@ -9,7 +9,7 @@ namespace App.Systems.Wave
 {
     public class WaveSystem : MonoBehaviour, IWaveSystem
     {
-        private int waveNum = 1;
+        private int waveNum = 5;
         private EnemySpawningSystem enemySpawningSystem;
         private GameStatesSystem gameStatesSystem;
         private int enemiesAlive = 0;

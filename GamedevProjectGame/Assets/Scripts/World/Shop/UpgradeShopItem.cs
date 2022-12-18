@@ -58,6 +58,7 @@ namespace App.World.Shop
 
         public override void Buy()
         {
+            base.Buy();
             player.Money -= currentUpgrade.Cost;
             var upgrade = Instantiate(currentUpgrade);
             player.GetComponent<UpgradeManager>().AddUpgrade(upgrade);

@@ -61,6 +61,7 @@ namespace App.World.Shops
 
         public override void Buy()
         {
+            base.Buy();
             player.Money -= currentWeapon.cost;
             player.GetComponent<UpgradeManager>().DisableAll();
             GameObject.Destroy(player.CurWeaponObj);

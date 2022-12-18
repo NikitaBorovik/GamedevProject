@@ -16,11 +16,13 @@ namespace World.Entity.Enemy
         public float damage;
         public float timeBetweenAttacks;
         public float moneyDropChance;
+        public float healingDropChance;
         public float attackRange;
         public float spawnAnimationDuration;
         public int minMoneyDrop;
         public int maxMoneyDrop;
         public MoneyDropItem moneyPrefab;
+        public HealingDropItem healingPrefab;
         public float minTimeBetweenGrunts = 10f;
         public float maxTimeBetweenGrunts = 15f;
         public List<AudioClip> gruntSounds;

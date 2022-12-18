@@ -20,11 +20,13 @@ MonoBehaviour:
   damage: 20
   timeBetweenAttacks: 3
   moneyDropChance: 1
+  healingDropChance: 0.1
   attackRange: 0
   spawnAnimationDuration: 0
   minMoneyDrop: 5
   maxMoneyDrop: 10
   moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}
+  healingPrefab: {fileID: 5726524925912292538, guid: 80e810be8149c62469658e555a2fe1cb, type: 3}
   minTimeBetweenGrunts: 10
   maxTimeBetweenGrunts: 15
   gruntSounds:
