@@ -306,6 +306,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb0871152ae93a4fbc7495792b03a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1960542406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5460093667424321851, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+  m_PrefabInstance: {fileID: 1815204854319204985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e99102d390f934281b20e8ecff6a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998002594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6560107190100513548, guid: d0a5baac97747624cbd6df7ba0432968, type: 3}
@@ -501,10 +512,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: World
       objectReference: {fileID: 0}
+    - target: {fileID: 1902400180878559698, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: textPrefix
+      value: 'Day '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902400180878559698, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: countUpdatedEvent
+      value: 
+      objectReference: {fileID: 1960542406}
     - target: {fileID: 2708009461631509235, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: dieEvent
       value: 
       objectReference: {fileID: 1960542398}
+    - target: {fileID: 3305311726645758116, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: textPrefix
+      value: x
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305311726645758116, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: countUpdatedEvent
+      value: 
+      objectReference: {fileID: 1960542406}
     - target: {fileID: 3402327480484632574, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_IsActive
       value: 1
