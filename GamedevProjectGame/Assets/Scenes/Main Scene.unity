@@ -645,6 +645,14 @@ PrefabInstance:
       propertyPath: playerDieEvent
       value: 
       objectReference: {fileID: 1960542398}
+    - target: {fileID: 6344212780551089513, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: container
+      value: 
+      objectReference: {fileID: 922307730}
+    - target: {fileID: 7202441517267576085, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8181317654943939332, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: money
       value: 100

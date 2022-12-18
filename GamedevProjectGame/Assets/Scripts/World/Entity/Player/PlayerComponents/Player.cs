@@ -96,7 +96,7 @@ namespace App.World.Entity.Player.PlayerComponents
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
             isDead = false;
-            Money = 0;
+            Money = 1000;
         }
         public void Die()
         {

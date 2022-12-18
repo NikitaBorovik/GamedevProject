@@ -514,8 +514,6 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 0
   blinkTime: 0.125
-  defaultMaterial: {fileID: 2100000, guid: a3495307d8bff0642b1df8e865746579, type: 2}
-  healthUpdateEvent: {fileID: 7878043739031538611}
 --- !u!114 &3668509245797177036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,15 +534,15 @@ MonoBehaviour:
   aimEvent: {fileID: -1549838980822176894}
   standEvent: {fileID: 2098125619001022077}
   movementEvent: {fileID: 4796191828594616004}
+  hpUpdateEvent: {fileID: 7878043739031538611}
+  dieEvent: {fileID: 3963659886847386946}
+  countUpdatedEvent: {fileID: 623448336690932979}
   stepSounds:
   - {fileID: 8300000, guid: c43f2bb9944983d4e95aa8a230209a6d, type: 3}
   - {fileID: 8300000, guid: c5897a0ccde14e34f987a387518752aa, type: 3}
   - {fileID: 8300000, guid: 1eed30955c05bcf488421f9c7cc5bad9, type: 3}
   - {fileID: 8300000, guid: d97a6370a2737e14089facf0ec7704eb, type: 3}
   - {fileID: 8300000, guid: a4a46f317ba89984cbef9c070f9a0cf3, type: 3}
-  hpUpdateEvent: {fileID: 7878043739031538611}
-  dieEvent: {fileID: 3963659886847386946}
-  countUpdatedEvent: {fileID: 623448336690932979}
 --- !u!114 &4983798085251034614
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ namespace World.Entity
 
         public void Awake()
         {
-            currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
             spriteRenderers = new Dictionary<SpriteRenderer, Color>();
             toDelete = new List<SpriteRenderer>();
             foreach (SpriteRenderer spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
@@ -46,7 +46,7 @@ namespace World.Entity
 
         public void TakeDamage(float damage)
         {
-            currentHealth -= damage;
+            CurrentHealth -= damage;
             Blink();
             if (CurrentHealth <= 0)
             {
