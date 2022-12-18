@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using App.World.Entity.Player.Events;
+using App.World.UI.Events;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTMP;
     [SerializeField] private Fader fader;
     [SerializeField] private DieEvent dieEvent;
+    [SerializeField] private DeathScreenAppearedEvent onDeathScreenAppeared;
     private int score;
+
+    public DeathScreenAppearedEvent OnDeathScreenAppeared => onDeathScreenAppeared;
 
     public int Score
     {
@@ -58,6 +62,7 @@ public class DeathScreen : MonoBehaviour
         deathScreenCanvas.SetActive(true);
         yield return fader.FadeToSecondsCoroutine(0f, halfTime);
         fader.gameObject.SetActive(false);
+        OnDeathScreenAppeared.CallAimEvent();
     }
 
     public void HideDeathScreen()

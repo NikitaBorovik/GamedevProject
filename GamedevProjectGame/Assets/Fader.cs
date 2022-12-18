@@ -37,7 +37,6 @@ public class Fader : MonoBehaviour
         for(; steps > 0; --steps)
         {
             Alpha = Alpha + speed * Time.fixedDeltaTime;
-            print(Alpha);
             yield return new WaitForFixedUpdate();
         }
 

@@ -1,11 +1,11 @@
-using App.World.Entity.Player.Events;
+using App.World.UI.Events;
 using UnityEngine;
 
 public class Pauser : MonoBehaviour
 {
     [SerializeField] private GameObject fade;
     [SerializeField] private Animator planksWithButtonsAnimator;
-    [SerializeField] private DieEvent playerDieEvent;
+    [SerializeField] private DeathScreenAppearedEvent onDeathScreenAppeared;
     private Animator fadeAnimator;
     private bool isPaused;
     private float prepauseTimeScale;
@@ -22,6 +22,16 @@ public class Pauser : MonoBehaviour
     private void Start()
     {
         fade.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        onDeathScreenAppeared.OnDeathScreenAppeared += StopGameEvent;
+    }
+
+    private void OnDisable()
+    {
+        onDeathScreenAppeared.OnDeathScreenAppeared -= StopGameEvent;
     }
 
     public void Pause()
@@ -56,6 +66,6 @@ public class Pauser : MonoBehaviour
         Time.timeScale = prepauseTimeScale;
     }
 
-    private void StopGameEvent(DieEvent ev) => StopGame();
+    private void StopGameEvent(DeathScreenAppearedEvent ev) => StopGame();
 
 }
