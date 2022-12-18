@@ -4,8 +4,9 @@ using UnityEngine;
 public class Pauser : MonoBehaviour
 {
     [SerializeField] private GameObject fade;
-    [SerializeField] private Animator planksWithButtonsAnimator;
+    [SerializeField] private GameObject planksWithButtons;
     [SerializeField] private DeathScreenAppearedEvent onDeathScreenAppeared;
+    private Animator planksWithButtonsAnimator;
     private Animator fadeAnimator;
     private bool isPaused;
     private float prepauseTimeScale;
@@ -14,6 +15,7 @@ public class Pauser : MonoBehaviour
 
     private void Awake()
     {
+        planksWithButtonsAnimator = planksWithButtons.GetComponent<Animator>();
         fadeAnimator = fade.GetComponent<Animator>();
         isPaused = false;
         prepauseTimeScale = Time.timeScale;
@@ -22,6 +24,7 @@ public class Pauser : MonoBehaviour
     private void Start()
     {
         fade.SetActive(false);
+        //planksWithButtons.SetActive(false);
     }
 
     private void OnEnable()
