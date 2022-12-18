@@ -6,7 +6,6 @@ public class HPBar : MonoBehaviour
     [SerializeField] private GameObject container;
     [SerializeField] private Transform hpBarTransform;
     [SerializeField] private HPUpdateEvent HPUpdateEvent;
-    [SerializeField] private DieEvent playerDieEvent;
     [Range(0f, 1f)]
     [SerializeField] private float currentPercentage;
 
@@ -25,13 +24,11 @@ public class HPBar : MonoBehaviour
     private void OnEnable()
     {
         HPUpdateEvent.OnHPUpdate += OnHPUpdate;
-        playerDieEvent.OnDied += DisappearOnPlayersDeath;
     }
 
     private void OnDisable()
     {
         HPUpdateEvent.OnHPUpdate -= OnHPUpdate;
-        playerDieEvent.OnDied -= DisappearOnPlayersDeath;
     }
 
     private void SetGUIPercentage(float percentage)
@@ -42,6 +39,4 @@ public class HPBar : MonoBehaviour
 
     private void OnHPUpdate(HPUpdateEvent ev, HPUpdateEventArgs args)
         => CurrentPercentage = args.newHP >= 0f ? args.newHP / args.maxHP : 0f;
-
-    private void DisappearOnPlayersDeath(DieEvent ev) => container.SetActive(false);
 }

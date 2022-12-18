@@ -3,7 +3,7 @@ using App.World.Entity.Player.Weapons;
 using UnityEngine;
 using World.Entity;
 using App.Upgrades;
-using UnityEngine.SceneManagement;
+using App.World.UI.Events;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -47,6 +47,8 @@ namespace App.World.Entity.Player.PlayerComponents
         private HPUpdateEvent hpUpdateEvent;
         [SerializeField]
         private DieEvent dieEvent;
+        [SerializeField]
+        private CountUpdatedEvent countUpdatedEvent;
         #endregion
 
         #region Parameters
@@ -66,7 +68,7 @@ namespace App.World.Entity.Player.PlayerComponents
         public HPUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public Weapon Weapon { get => weapon;}
-        public int Money { get => money; set => money = value; }
+        public int Money { get => money; set { money = value; countUpdatedEvent.CallCountUpdatedEvent(value); } }
         public Health Health { get => health; set => health = value; }
         #endregion
 
@@ -83,6 +85,7 @@ namespace App.World.Entity.Player.PlayerComponents
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
             isDead = false;
+            Money = 0;
         }
         public void Die()
         {
