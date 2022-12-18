@@ -40,3 +40,4 @@ public class HPBar : MonoBehaviour
     private void OnHPUpdate(HPUpdateEvent ev, HPUpdateEventArgs args)
         => CurrentPercentage = args.newHP >= 0f ? args.newHP / args.maxHP : 0f;
 }
+//
