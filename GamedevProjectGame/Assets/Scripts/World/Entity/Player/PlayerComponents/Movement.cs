@@ -15,7 +15,10 @@ namespace App.World.Entity.Player.PlayerComponents
         {
             moveEvent.OnMove += OnEntityMove;
         }
-
+        private void OnDisable()
+        {
+            moveEvent.OnMove -= OnEntityMove;
+        }
         private void OnEntityMove(MovementEvent ev, MovementEventArgs args)
         {
             Move(rb, args.direction, args.speed);

@@ -511,9 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca28bb44ce84bd45a7d234f5c5c66a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
   blinkTime: 0.125
+  healthUpdateEvent: {fileID: 7878043739031538611}
 --- !u!114 &3668509245797177036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +577,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d97a6370a2737e14089facf0ec7704eb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -1,6 +1,7 @@
 using App;
 using App.Systems.Wave;
 using App.World.Items.Gates;
+using App.World.UI.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,27 @@ namespace App.Systems.GameStates
         [SerializeField]
         private AudioClip restingMusic;
         private AudioSource audioSource;
+        [SerializeField]
+        private CountUpdatedEvent countUpdatedEvent;
+        private int daysCount;
+
+        public int DaysCount 
+        { 
+            get => daysCount; 
+            set 
+            {
+                if(daysCount < 0 )
+                {
+                    throw new System.InvalidOperationException("Days count can't be less than 0");
+                }
+                daysCount = value;
+                countUpdatedEvent?.CallCountUpdatedEvent(value);
+            } 
+        }
 
         public void Init(WaveSystem waveSystem, Gates gates, Light2D light)
         {
+            DaysCount = 0;
             AudioListener.volume = PlayerPrefs.GetFloat("Volume", 0.1f);
             audioSource = GetComponent<AudioSource>();
             this.waveSystem = waveSystem;

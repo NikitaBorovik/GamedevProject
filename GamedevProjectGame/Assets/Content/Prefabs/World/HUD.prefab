@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3190181251999057598}
   m_Layer: 0
-  m_Name: Hud
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,11 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 522
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -408,11 +408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 576
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -261
+      value: -32.9
       objectReference: {fileID: 0}
     - target: {fileID: 8270591406588258150, guid: a1d709c67ebd353498cf5796d112ab91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

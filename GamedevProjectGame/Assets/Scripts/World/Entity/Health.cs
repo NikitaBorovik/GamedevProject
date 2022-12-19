@@ -8,9 +8,7 @@ namespace World.Entity
     [RequireComponent(typeof(SpriteRenderer))]
     public class Health : MonoBehaviour
     {
-        [SerializeField]
         private float currentHealth;
-        [SerializeField]
         private float maxHealth;
         [SerializeField]
         private float blinkTime;
@@ -18,6 +16,7 @@ namespace World.Entity
         private Dictionary<SpriteRenderer,Color> spriteRenderers;
         private List<SpriteRenderer> toDelete;
         private Coroutine blinkRoutine;
+        [SerializeField]
         private HPUpdateEvent healthUpdateEvent;
 
 
@@ -26,10 +25,18 @@ namespace World.Entity
             get => currentHealth;
             private set
             {
-                healthUpdateEvent?.CallHPUpdateEvent(value, value - currentHealth, MaxHealth);
+                var prev = currentHealth;
+                if (value > MaxHealth)
+                    currentHealth = MaxHealth;
+                else if (value < 0)
+                    currentHealth = 0;
+                else
                 currentHealth = value;
+                healthUpdateEvent?.CallHPUpdateEvent(currentHealth, currentHealth - prev, MaxHealth);
+
             }
         }
+        
         public float MaxHealth { get; set; }
 
         public void Awake()

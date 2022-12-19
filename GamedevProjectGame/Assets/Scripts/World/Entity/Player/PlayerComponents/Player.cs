@@ -100,6 +100,10 @@ namespace App.World.Entity.Player.PlayerComponents
         }
         public void Die()
         {
+            Weapon.enabled = false;
+            GetComponent<Movement>().enabled = false;
+            GetComponent<Aim>().enabled = false;
+            GetComponent<PlayerAnimationsController>().enabled = false;
             if (isDead) return;
             dieEvent.CallDieEvent();
         }

@@ -28,6 +28,7 @@ namespace App.Systems.GameStates
         public void Enter()
         {
             gates.Open();
+            gameStatesSystem.DaysCount++;
             gameStatesSystem.StartCoroutine(StartMusic());
         }
 
