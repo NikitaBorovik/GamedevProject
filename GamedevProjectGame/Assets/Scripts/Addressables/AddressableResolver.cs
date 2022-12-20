@@ -12,18 +12,26 @@ public class AddressableResolver : MonoBehaviour
 
     private void Awake()
     {
-        Addressables.InitializeAsync().Completed += (handle) =>
+        if (PlayerPrefs.GetInt("DLCEnabled", 0) == 1)
         {
-            christmasTreeAssetReference.InstantiateAsync().Completed += (go) =>
+            Addressables.InitializeAsync().Completed += (handle) =>
             {
-                christmasTree = go.Result;
-                christmasTree.transform.position = new Vector3(0, 25, 0);
-            };
+                christmasTreeAssetReference.InstantiateAsync().Completed += (go) =>
+                {
+                    christmasTree = go.Result;
+                    christmasTree.transform.position = new Vector3(0, 25, 0);
+                };
 
-        };
+            };
+        }
+        
     }
     private void OnDestroy()
     {
-        Addressables.ReleaseInstance(christmasTree);
+        if (christmasTree != null)
+        {
+            Addressables.ReleaseInstance(christmasTree);
+        }
+        
     }
 }

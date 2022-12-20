@@ -18,6 +18,7 @@ namespace App.Utilities
 
             if(currTime > minimalLoadingTime)
             {
+                currTime = 0f;
                 SceneSwitcher.SwitchToNextLoadedScene?.Invoke();
             }
         }

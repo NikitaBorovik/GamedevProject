@@ -58,7 +58,7 @@ namespace App.Systems.GameStates
             while (currentTime < musicFadeTime)
             {
                 currentTime += Time.deltaTime;
-                audioSource.volume = Mathf.Lerp(start, 1f, currentTime / musicFadeTime);
+                audioSource.volume = Mathf.Lerp(start, 0.1f, currentTime / musicFadeTime);
                 yield return null;
             }
             yield break;
