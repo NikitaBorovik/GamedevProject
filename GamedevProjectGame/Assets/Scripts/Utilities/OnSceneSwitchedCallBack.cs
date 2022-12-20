@@ -10,6 +10,7 @@ namespace App.Utilities
         private void Awake()
         {
             currTime = 0f;
+            Time.timeScale = 1f;
         }
 
         private void FixedUpdate()

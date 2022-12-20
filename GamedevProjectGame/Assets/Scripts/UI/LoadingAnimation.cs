@@ -16,21 +16,25 @@ public class LoadingAnimation : MonoBehaviour
         text.text = defaultText;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (passedTime > oneDotAppearanceTime)
         {
+            Debug.Log("passedTime > oneDotAppearanceTime");
             passedTime = 0f;
             AddOneDot();
         }
         else
         {
-            passedTime += Time.fixedDeltaTime;
+
+            Debug.Log("passedTime <= oneDotAppearanceTime");
+            passedTime += Time.deltaTime;
         }
     }
 
     private void AddOneDot()
     {
+        Debug.Log("Add one dot");
         if(currentNumOfDots == maxNumOfDots)
         {
             text.text = defaultText;
