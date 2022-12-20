@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399677f4fd6af934490cc10d6ab69158, type: 3}
   m_Name: GranadeGunData
   m_EditorClassIdentifier: 
-  damage: 30
-  coolDown: 1
+  damage: 35
+  coolDown: 2
   bulletFlySpeed: 20
   bulletSpread: 4
   pearcingCount: 0

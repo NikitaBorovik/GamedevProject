@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399677f4fd6af934490cc10d6ab69158, type: 3}
   m_Name: ShotGunData
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 5
   coolDown: 0.5
   bulletFlySpeed: 33
   bulletSpread: 15
