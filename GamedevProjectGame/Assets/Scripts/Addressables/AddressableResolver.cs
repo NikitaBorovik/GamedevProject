@@ -7,7 +7,7 @@ public class AddressableResolver : MonoBehaviour
 {
     [SerializeField]
     private AssetReference christmasTreeAssetReference;
-    
+
     private GameObject christmasTree;
 
     private void Awake()

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
-  m_Name: MainLevelChristmas_BundledAssetGroupSchema
+  m_Name: MainLevelChristmass_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: fe2c7c434d7020a4ab03a343140f80bb, type: 2}
+  m_Group: {fileID: 11400000, guid: 975c537d5b3ab1345b4842a266fd7755, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1
