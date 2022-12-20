@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class AddressableResolver : MonoBehaviour
 {
+    
     [SerializeField]
     private AssetReference christmasTreeAssetReference;
 
