@@ -9,7 +9,7 @@ namespace App.Systems.Wave
 {
     public class WaveSystem : MonoBehaviour, IWaveSystem
     {
-        private int waveNum = 5;
+        private int waveNum = 1;
         private EnemySpawningSystem enemySpawningSystem;
         private GameStatesSystem gameStatesSystem;
         private int enemiesAlive = 0;
@@ -20,6 +20,8 @@ namespace App.Systems.Wave
         private Dictionary<BaseEnemy, float> enemyWeights;
         private float currentTotalEnemyWeight;
 
+        [SerializeField]
+        private float enemyHpIncrease;
         [SerializeField]
         private float minTimeBetweenSubwaves;
         [SerializeField]
@@ -74,9 +76,8 @@ namespace App.Systems.Wave
             int startingDangerLevel = dangerLevelLeft;
             while(dangerLevelLeft > startingDangerLevel - dangerDiff)
             {
-                //int enemyIndex = Random.Range(0, allowedEnemies.Count);
-                BaseEnemy randomEnemy = getRandomEnemy();// allowedEnemies[enemyIndex];
-                enemySpawningSystem.SpawnEnemy(randomEnemy.gameObject);
+                BaseEnemy randomEnemy = getRandomEnemy();
+                enemySpawningSystem.SpawnEnemy(randomEnemy.gameObject, 1 + waveNum * enemyHpIncrease);
                 dangerLevelLeft -= randomEnemy.EnemyData.dangerLevel;
                 enemiesAlive++;
             }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399677f4fd6af934490cc10d6ab69158, type: 3}
   m_Name: SniperData
   m_EditorClassIdentifier: 
-  damage: 20
-  coolDown: 0.5
+  damage: 25
+  coolDown: 1
   bulletFlySpeed: 50
   bulletSpread: 2
   pearcingCount: 50

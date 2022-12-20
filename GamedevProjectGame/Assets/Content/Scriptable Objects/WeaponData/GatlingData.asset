@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GatlingData
   m_EditorClassIdentifier: 
   damage: 5
-  coolDown: 0.2
+  coolDown: 0.125
   bulletFlySpeed: 20
   bulletSpread: 4
   pearcingCount: 0
