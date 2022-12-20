@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399677f4fd6af934490cc10d6ab69158, type: 3}
   m_Name: GatlingData
   m_EditorClassIdentifier: 
-  damage: 5
-  coolDown: 0.2
+  damage: 4
+  coolDown: 0.125
   bulletFlySpeed: 20
   bulletSpread: 4
   pearcingCount: 0

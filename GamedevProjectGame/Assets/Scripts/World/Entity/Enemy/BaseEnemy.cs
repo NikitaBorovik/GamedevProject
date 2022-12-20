@@ -64,12 +64,12 @@ namespace World.Entity.Enemy
                 stateMachine.CurrentState.Update();
         }
 
-        public virtual void Init(Vector3 position,Transform target, IWaveSystem waveSystem)
+        public virtual void Init(Vector3 position,Transform target, IWaveSystem waveSystem, float hpMultiplier)
         {
             this.target = target;
             this.waveSystem = waveSystem;
             transform.position = position;
-            health.MaxHealth = enemyData.maxHealth;
+            health.MaxHealth = enemyData.maxHealth * hpMultiplier;
             health.HealToMax();
             initialised = true;
             if(stateMachine.CurrentState == null)
