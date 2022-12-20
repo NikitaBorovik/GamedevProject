@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 10MaxHPUpgrade
   m_EditorClassIdentifier: 
   cost: 25
-  desctiption: Increases your max hp bound by certain amount.
+  desctiption: Makes you grow more muscle... Just don't ask how. More max hp.
   maxHPAddent: 10

@@ -16,10 +16,11 @@ MonoBehaviour:
   coolDown: 0.2
   bulletFlySpeed: 20
   bulletSpread: 4
+  pearcingCount: 0
   bullet: {fileID: 6699174986344805492, guid: a4119d5bcfeba9741b3450aff3ec77d0, type: 3}
   weaponPrefab: {fileID: 2632855254469951434, guid: 28dd6cd156bf3ec458b0c7c6019a9bba, type: 3}
   weaponSpriteForShop: {fileID: 21300000, guid: 3a6fdb9640ba8d44e9e50a2a4125b5de, type: 3}
   bulletCount: 1
   cost: 70
-  description: Gatling Gun does brrrrrrrr
+  description: Sometimes, you just need rate of fire
   shootSound: {fileID: 8300000, guid: 89c3a71ff39d58547b40bf6562215420, type: 3}

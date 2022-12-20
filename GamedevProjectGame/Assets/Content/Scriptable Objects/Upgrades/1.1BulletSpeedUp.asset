@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 1.1BulletSpeedUp
   m_EditorClassIdentifier: 
   cost: 12
-  desctiption: Makes bullets fly faster.
+  desctiption: You can never go overboard with gunpowder! Makes your bullets fly
+    faster.
   bulletFlySpeedMultiplier: 1.1

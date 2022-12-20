@@ -16,10 +16,11 @@ MonoBehaviour:
   coolDown: 1
   bulletFlySpeed: 20
   bulletSpread: 4
+  pearcingCount: 0
   bullet: {fileID: 6699174986344805492, guid: 5f765fc49db0dd84ba80568b89c31885, type: 3}
   weaponPrefab: {fileID: 2632855254469951434, guid: 2833967cc52724540b8603c3df2eefce, type: 3}
   weaponSpriteForShop: {fileID: 21300000, guid: 15d187e6e433a004e8de12437fed6412, type: 3}
   bulletCount: 1
   cost: 70
-  description: Meke hell in our wordl but funny
+  description: Made for explosive situations.
   shootSound: {fileID: 8300000, guid: d58b88c19869cb048a392a47e434b523, type: 3}

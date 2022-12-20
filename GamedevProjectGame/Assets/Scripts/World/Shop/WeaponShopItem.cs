@@ -36,7 +36,7 @@ namespace App.World.Shops
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
             base.OnTriggerEnter2D(collision);
-            merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentWeapon.cost} bones : {currentWeapon.description}";
+            merchantInfoField.GetComponentInChildren<TextMeshPro>().text = $"Press E to buy for {currentWeapon.cost} bones :\n{currentWeapon.description}";
         }
         protected override void OnTriggerExit2D(Collider2D collision)
         {
