@@ -45,8 +45,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: 0.39}
-  m_Size: {x: 0.51, y: 0.76}
+  m_Offset: {x: 0, y: 0.54}
+  m_Size: {x: 0.69, y: 1.3}
   m_Direction: 0
 --- !u!1 &5813351036652541608
 GameObject:
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: -848955857
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dbdfd3e8735523b4e8a20b2f689b148d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23de07bfde0316f4faea13f8ef4da8c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 5813351036652541613}
   health: {fileID: -1759537335943733263}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2815921349942853785}
   enemyData: {fileID: 11400000, guid: ab1c71ffee1f24343b53cd2eb6427d90, type: 2}
   myColliders:
   - {fileID: 6561132446275936185}
@@ -208,8 +208,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: 0.84}
-  m_Size: {x: 0.69, y: 1.64}
+  m_Offset: {x: 0, y: 1.33}
+  m_Size: {x: 1.11, y: 2.82}
   m_Direction: 0
 --- !u!95 &-2645511092386897780
 Animator:
@@ -221,7 +221,7 @@ Animator:
   m_GameObject: {fileID: 5813351036652541608}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 569ef84af18ca3143a2c9217a5b15993, type: 2}
+  m_Controller: {fileID: 9100000, guid: b707d8ff81ad56e49af803812d702a45, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -386,12 +386,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.6914034, y: -0.27858728}
-      - {x: 1.619307, y: -1.118727}
-      - {x: 1.8606112, y: -0.75151277}
-      - {x: 1.8956838, y: -0.26600882}
-      - {x: 1.8287642, y: 0.20490515}
-      - {x: 1.6689367, y: 0.53609097}
+    - - {x: 0.6914034, y: -0.13337636}
+      - {x: 2.21561, y: -1.2991871}
+      - {x: 2.6216817, y: -0.7593589}
+      - {x: 2.6802926, y: -0.046318382}
+      - {x: 2.629065, y: 0.46382597}
+      - {x: 2.3280082, y: 0.95193374}
 --- !u!114 &13438331631192653
 MonoBehaviour:
   m_ObjectHideFlags: 0
