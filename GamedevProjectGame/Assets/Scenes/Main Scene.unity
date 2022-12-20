@@ -451,6 +451,42 @@ PrefabInstance:
       propertyPath: countUpdatedEvent
       value: 
       objectReference: {fileID: 735170157}
+    - target: {fileID: 2708009461631509235, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: scoreUpdatedEvent
+      value: 
+      objectReference: {fileID: 735170157}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 959247237}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToSceneLoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: App.Utilities.SceneSwitcherWrapper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749090035740277230, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2857109474725248377, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_Camera
       value: 

@@ -6,52 +6,48 @@ using App.World.UI.Events;
 
 public class DeathScreen : MonoBehaviour
 {
+    #region Fields
     [SerializeField] private GameObject deathScreenCanvas;
     [SerializeField] private TextMeshProUGUI scoreTMP;
     [SerializeField] private Fader fader;
     [SerializeField] private DieEvent dieEvent;
     [SerializeField] private DeathScreenAppearedEvent onDeathScreenAppeared;
+    [SerializeField] private CountUpdatedEvent scoreUpdatedEvent;
     private int score;
+    #endregion
 
-    public DeathScreenAppearedEvent OnDeathScreenAppeared => onDeathScreenAppeared;
-
+    #region Properties
     public int Score
     {
         get => score;
-        set
+        private set
         {
             if (value < 0)
                 throw new System.InvalidOperationException("Score cannot be negative.");
             score = value;
-            scoreTMP.text = "Score: " + score.ToString();
+            scoreTMP.text = "Score: " + ScoreToString(value);
         }
     }
+    #endregion
 
+    #region MonoBehaviour
     private void Awake()
     {
-        score = 0;
+        Score = 0;
         fader.gameObject.SetActive(false);
     }
 
-    private void Start()
-    {
-        HideDeathScreen();
-    }
+    private void Start() => HideDeathScreen();
 
     private void OnEnable() => AddAllOnEvent();
     
     private void OnDisable() => RemoveAllOnEvent();
+    #endregion
 
-    public void ShowDeathScreenWithScore(int score)
-    {
-        Score = score;
-        ShowDeathScreen();
-    }
+    #region Main Behavioral Methods
+    public void ShowDeathScreen() => StartCoroutine(ShowDeathScreenCoroutine(5f));
 
-    public void ShowDeathScreen()
-    {
-        StartCoroutine(ShowDeathScreenCoroutine(5f));
-    }
+    public void HideDeathScreen() => deathScreenCanvas.SetActive(false);
 
     public IEnumerator ShowDeathScreenCoroutine(float seconds)
     {
@@ -62,23 +58,30 @@ public class DeathScreen : MonoBehaviour
         deathScreenCanvas.SetActive(true);
         yield return fader.FadeToSecondsCoroutine(0f, halfTime);
         fader.gameObject.SetActive(false);
-        OnDeathScreenAppeared.CallAimEvent();
+        onDeathScreenAppeared.CallDeathScreenAppearedEvent();
     }
 
-    public void HideDeathScreen()
-    {
-        deathScreenCanvas.SetActive(false);
-    }
+    private string ScoreToString(int v)
+        => v.ToString() + (score == 1 ? " day" : " days");
+    #endregion
 
+    #region EventFunctions
+    private void SetScoreEvent(CountUpdatedEvent ev, CountUpdatedEventArgs args) => Score = args.newCount;
+   
     private void ShowDeathScreenEvent(DieEvent ev) => ShowDeathScreen();
+    #endregion
 
+    #region ListenerAdders
     private void AddAllOnEvent()
     {
         dieEvent.OnDied += ShowDeathScreenEvent;
+        scoreUpdatedEvent.OnCountUpdated += SetScoreEvent;
     }
 
     private void RemoveAllOnEvent()
     {
         dieEvent.OnDied -= ShowDeathScreenEvent;
+        scoreUpdatedEvent.OnCountUpdated -= SetScoreEvent;
     }
+    #endregion
 }

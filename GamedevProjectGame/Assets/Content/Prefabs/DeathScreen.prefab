@@ -145,6 +145,7 @@ MonoBehaviour:
   fader: {fileID: 2416434397674589400}
   dieEvent: {fileID: 0}
   onDeathScreenAppeared: {fileID: 3514178394259663769}
+  scoreUpdatedEvent: {fileID: 0}
 --- !u!1 &6362175449828270619
 GameObject:
   m_ObjectHideFlags: 0

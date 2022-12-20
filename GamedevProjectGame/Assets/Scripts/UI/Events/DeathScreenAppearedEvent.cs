@@ -7,7 +7,7 @@ namespace App.World.UI.Events
     {
         public event Action<DeathScreenAppearedEvent> OnDeathScreenAppeared;
 
-        public void CallAimEvent()
+        public void CallDeathScreenAppearedEvent()
         {
             OnDeathScreenAppeared?.Invoke(this);
         }
