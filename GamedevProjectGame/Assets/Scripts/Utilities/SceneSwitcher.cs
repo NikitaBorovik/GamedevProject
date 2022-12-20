@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
+    public delegate void OnSceneSwitched();
+    public static OnSceneSwitched SwitchToNextLoadedScene;
+    private static readonly string LoadingSceneName = "Loading";
 
-
-    private void Awake()
+    public static void SwitchToSceneLoadingScreen(string sceneName)
     {
-        
+        SwitchToNextLoadedScene = () => SwitchToScene(sceneName);
+        SwitchToScene(LoadingSceneName);
     }
 
-    public void SwitchToScene(string sceneName) 
+    public static void SwitchToScene(string sceneName) 
     {
         if (!DoesSceneExist(sceneName))
             throw new ArgumentException ($"The scene {sceneName} does not exist in the build settings" +
@@ -25,12 +28,12 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     } 
 
-    public bool DoesSceneExist(string sceneName)
+    public static bool DoesSceneExist(string sceneName)
         => EditorBuildSettings.scenes.Any
         (
             scene => scene.enabled && scene.path.Contains("/" + sceneName + ".unity")
         );
 
-    public bool IsRunning(string sceneName)
+    public static bool IsRunning(string sceneName)
        => SceneManager.GetActiveScene().name == sceneName;
 }
