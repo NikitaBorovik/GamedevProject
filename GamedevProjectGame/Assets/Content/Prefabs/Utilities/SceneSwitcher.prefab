@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6578945937109356369}
-  - component: {fileID: 151416791931651414}
+  - component: {fileID: 2841388807535299362}
   m_Layer: 0
   m_Name: SceneSwitcher
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &151416791931651414
+--- !u!114 &2841388807535299362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,6 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6874905024610847619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fa987b591d534449e5bcce31db371e, type: 3}
+  m_Script: {fileID: 11500000, guid: 948b325426352a542980ee68faf5fe16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

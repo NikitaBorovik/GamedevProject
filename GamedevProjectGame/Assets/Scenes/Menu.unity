@@ -1184,9 +1184,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1931484524}
-        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SwitchToScene
+      - m_Target: {fileID: 1931484531}
+        m_TargetAssemblyTypeName: App.Utilities.SceneSwitcherWrapper, Assembly-CSharp
+        m_MethodName: SwitchToSceneLoadingScreen
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1302,32 +1302,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1931484523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6874905024610847619, guid: 4bee6b71fc5134447881f61455a06dc8, type: 3}
+--- !u!114 &1931484531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2841388807535299362, guid: 4bee6b71fc5134447881f61455a06dc8, type: 3}
   m_PrefabInstance: {fileID: 1596854600450100647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1931484524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 151416791931651414, guid: 4bee6b71fc5134447881f61455a06dc8, type: 3}
-  m_PrefabInstance: {fileID: 1596854600450100647}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931484523}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fa987b591d534449e5bcce31db371e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1931484526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931484523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cc0a190a03a2246a0f24bb89862321, type: 3}
+  m_Script: {fileID: 11500000, guid: 948b325426352a542980ee68faf5fe16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1596854600450100647
@@ -1385,7 +1368,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneSwitcher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 151416791931651414, guid: 4bee6b71fc5134447881f61455a06dc8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4bee6b71fc5134447881f61455a06dc8, type: 3}
 --- !u!1001 &2780287592804812900
 PrefabInstance:
