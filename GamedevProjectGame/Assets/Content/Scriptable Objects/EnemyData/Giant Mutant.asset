@@ -18,7 +18,7 @@ MonoBehaviour:
   firstSpawningWave: 5
   speed: 3
   damage: 20
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.8
   moneyDropChance: 1
   healingDropChance: 0.1
   attackRange: 2.5
