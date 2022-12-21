@@ -1,7 +1,6 @@
 using App.World.Entity.Player.Events;
 using App.World.Entity.Player.Weapons;
 using UnityEngine;
-using World.Entity;
 using App.Upgrades;
 using App.World.UI.Events;
 

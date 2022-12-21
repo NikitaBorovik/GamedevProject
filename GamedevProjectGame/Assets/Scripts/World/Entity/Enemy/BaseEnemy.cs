@@ -1,14 +1,15 @@
-using App;
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
 using App.World.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using World.Entity.Enemy.States;
 using App.Effects;
+using App.World.Entity.Enemy.States;
+using World.Entity;
+using World.Entity.Enemy;
 
-namespace World.Entity.Enemy
+namespace App.World.Entity.Enemy
 {
     public abstract class BaseEnemy : MonoBehaviour, IKillable, IEffectHolder, IObjectPoolItem
     {

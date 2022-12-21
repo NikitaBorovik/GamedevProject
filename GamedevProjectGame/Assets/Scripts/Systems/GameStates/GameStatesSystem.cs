@@ -1,9 +1,6 @@
-using App;
 using App.Systems.Wave;
 using App.World.Items.Gates;
 using App.World.UI.Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 

@@ -1,8 +1,4 @@
-using App.Upgrades;
 using App.World.Entity.Player.PlayerComponents;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace App.World.Shop

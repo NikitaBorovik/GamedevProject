@@ -1,9 +1,8 @@
 using App.World.Items;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace World.Entity.Enemy
+namespace App.World.Entity.Enemy
 {
     [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/Enemies/ Enemy Data")]
     public class EnemyData : ScriptableObject

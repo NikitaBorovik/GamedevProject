@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class AppManager : MonoBehaviour
+namespace App.Utilities
 {
-    public void Quit() => Application.Quit();
+    public class AppManager : MonoBehaviour
+    {
+        public void Quit() => Application.Quit();
+    }
 }
+

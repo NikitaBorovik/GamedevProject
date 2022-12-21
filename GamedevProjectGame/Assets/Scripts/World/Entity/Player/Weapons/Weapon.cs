@@ -1,6 +1,4 @@
 using App.Systems.EnemySpawning;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace App.World.Entity.Player.Weapons
 {

@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DLCEnabler : MonoBehaviour
+namespace App.World.UI
 {
-    private bool isDLCEnabled = false;
-    [SerializeField]
-    private TextMeshProUGUI buttonText;
-    
-
-    private void Awake()
+    public class DLCEnabler : MonoBehaviour
     {
-        isDLCEnabled = PlayerPrefs.GetInt("DLCEnabled", 0) == 1;
-        buttonText.text = isDLCEnabled ? "Enabled!" : "Disabled!";
+        private bool isDLCEnabled = false;
+        [SerializeField]
+        private TextMeshProUGUI buttonText;
+
+
+        private void Awake()
+        {
+            isDLCEnabled = PlayerPrefs.GetInt("DLCEnabled", 0) == 1;
+            buttonText.text = isDLCEnabled ? "Enabled!" : "Disabled!";
+        }
+
+        public void SwitchDLCEnabled()
+        {
+            if (isDLCEnabled)
+            {
+                isDLCEnabled = false;
+            }
+            else
+            {
+                isDLCEnabled = true;
+            }
+            buttonText.text = isDLCEnabled ? "Enabled!" : "Disabled!";
+            PlayerPrefs.SetInt("DLCEnabled", isDLCEnabled ? 1 : 0);
+        }
     }
 
-    public void SwitchDLCEnabled()
-    {
-        if (isDLCEnabled)
-        {
-            isDLCEnabled = false;
-        }
-        else
-        {
-            isDLCEnabled = true;
-        }
-        buttonText.text = isDLCEnabled ? "Enabled!" : "Disabled!";
-        PlayerPrefs.SetInt("DLCEnabled", isDLCEnabled ? 1 : 0);
-    }
 }

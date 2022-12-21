@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using App;
 using World.Entity.Enemy;
-namespace World.Entity.Enemy.States
+namespace App.World.Entity.Enemy.States
 {
     public class BaseEnemyState : IState
     {

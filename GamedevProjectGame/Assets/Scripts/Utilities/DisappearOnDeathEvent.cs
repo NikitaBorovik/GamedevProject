@@ -1,19 +1,23 @@
 using UnityEngine;
 using App.World.Entity.Player.Events;
 
-public class DisappearOnDeathEvent : MonoBehaviour
+namespace App.Utilities
 {
-    [SerializeField] private DieEvent dieEvent;
-
-    private void OnEnable()
+    public class DisappearOnDeathEvent : MonoBehaviour
     {
-        dieEvent.OnDied += Disappear;
-    }
+        [SerializeField] private DieEvent dieEvent;
 
-    private void OnDisable()
-    {
-        dieEvent.OnDied -= Disappear;
-    }
+        private void OnEnable()
+        {
+            dieEvent.OnDied += Disappear;
+        }
 
-    private void Disappear(DieEvent ev) => gameObject.SetActive(false);
+        private void OnDisable()
+        {
+            dieEvent.OnDied -= Disappear;
+        }
+
+        private void Disappear(DieEvent ev) => gameObject.SetActive(false);
+    }
 }
+

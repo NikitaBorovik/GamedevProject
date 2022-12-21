@@ -1,6 +1,4 @@
 using App.World.Entity.Player.PlayerComponents;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.World.Items

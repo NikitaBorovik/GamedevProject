@@ -2,34 +2,38 @@ using UnityEngine;
 using App.World.UI.Events;
 using TMPro;
 
-public class IconCounter : MonoBehaviour
+namespace App.World.UI
 {
-    [SerializeField] private CountUpdatedEvent countUpdatedEvent;
-    [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private string textPrefix;
-    private int count;
-
-    public int Count
+    public class IconCounter : MonoBehaviour
     {
-        get => count;
-        set
+        [SerializeField] private CountUpdatedEvent countUpdatedEvent;
+        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private string textPrefix;
+        private int count;
+
+        public int Count
         {
-            if(value < 0)
-                throw new System.ArgumentOutOfRangeException("Count cannot be less then 0");
-            count = value;
-            text.text = textPrefix + value.ToString();
+            get => count;
+            set
+            {
+                if (value < 0)
+                    throw new System.ArgumentOutOfRangeException("Count cannot be less then 0");
+                count = value;
+                text.text = textPrefix + value.ToString();
+            }
         }
+
+        private void OnEnable()
+        {
+            countUpdatedEvent.OnCountUpdated += UpdateCountAndText;
+        }
+
+        private void OnDisable()
+        {
+            countUpdatedEvent.OnCountUpdated -= UpdateCountAndText;
+        }
+
+        private void UpdateCountAndText(CountUpdatedEvent ev, CountUpdatedEventArgs args) => Count = args.newCount;
     }
 
-    private void OnEnable()
-    {
-        countUpdatedEvent.OnCountUpdated += UpdateCountAndText;
-    }
-
-    private void OnDisable()
-    {
-        countUpdatedEvent.OnCountUpdated -= UpdateCountAndText;
-    }
-
-    private void UpdateCountAndText(CountUpdatedEvent ev, CountUpdatedEventArgs args) => Count = args.newCount;
 }

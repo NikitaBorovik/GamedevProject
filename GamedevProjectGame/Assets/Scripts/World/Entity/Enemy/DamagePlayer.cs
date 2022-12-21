@@ -1,7 +1,6 @@
-using System.Collections;
+using App.World.Entity;
 using System.Collections.Generic;
 using UnityEngine;
-using World.Entity;
 
 public class DamagePlayer : MonoBehaviour
 {

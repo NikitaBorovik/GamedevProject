@@ -1,7 +1,3 @@
-using App.World.Entity.Player.Weapons;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace App.World.Entity.Player.Weapons

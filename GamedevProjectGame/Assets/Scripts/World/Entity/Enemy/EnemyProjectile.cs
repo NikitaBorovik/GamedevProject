@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace World.Entity.Enemy
+namespace App.World.Entity.Enemy
 {
     public class EnemyProjectile : MonoBehaviour, IObjectPoolItem
     {

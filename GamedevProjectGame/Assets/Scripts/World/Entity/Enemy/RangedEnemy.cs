@@ -1,9 +1,8 @@
 using App.Systems.EnemySpawning;
 using App.Systems.Wave;
-using System.Collections;
-using System.Collections.Generic;
+using App.World.Entity.Enemy;
+using App.World.Entity.Enemy.States;
 using UnityEngine;
-using World.Entity.Enemy.States;
 
 namespace World.Entity.Enemy
 {

@@ -1,9 +1,7 @@
-using App;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using World.Entity.Enemy;
 
-namespace World.Entity.Enemy.States
+namespace App.World.Entity.Enemy.States
 {
     public class DieState : BaseEnemyState
     {

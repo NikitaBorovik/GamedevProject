@@ -3,7 +3,7 @@ using App.World.Entity.Player.Events;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace World.Entity
+namespace App.World.Entity
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class Health : MonoBehaviour

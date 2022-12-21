@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using App.Effects;
+﻿using App.World.Entity;
+using App.World.Entity.Enemy;
 using UnityEngine;
-using World.Entity;
-using World.Entity.Enemy;
+
 
 namespace App.Effects.ConcreteEffects
 {
