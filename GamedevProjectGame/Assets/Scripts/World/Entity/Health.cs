@@ -17,7 +17,7 @@ namespace World.Entity
         private List<SpriteRenderer> toDelete;
         private Coroutine blinkRoutine;
         [SerializeField]
-        private HPUpdateEvent healthUpdateEvent;
+        private ValueUpdateEvent healthUpdateEvent;
 
 
         public float CurrentHealth 
@@ -32,7 +32,7 @@ namespace World.Entity
                     currentHealth = 0;
                 else
                 currentHealth = value;
-                healthUpdateEvent?.CallHPUpdateEvent(currentHealth, currentHealth - prev, MaxHealth);
+                healthUpdateEvent?.CallValueUpdateEvent(prev, currentHealth, MaxHealth);
 
             }
         }

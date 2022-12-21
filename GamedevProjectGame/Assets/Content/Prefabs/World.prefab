@@ -2504,9 +2504,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6909816136259085359}
   - {fileID: 1703249804145993387}
   - {fileID: 8975528017487780647}
-  - {fileID: 6909816136259085359}
   m_Father: {fileID: 1815204854696216296}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6248,6 +6248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 423331084241592792}
     m_Modifications:
+    - target: {fileID: 3540234164313833099, guid: c9a92eba064451543bbcf701915aa199, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3540234164584360948, guid: c9a92eba064451543bbcf701915aa199, type: 3}
       propertyPath: playerDieEvent
       value: 
@@ -6274,7 +6278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540234164584360951, guid: c9a92eba064451543bbcf701915aa199, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3540234164584360951, guid: c9a92eba064451543bbcf701915aa199, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6574,7 +6578,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1240212608518525501, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4795800579094863588, guid: 7250a7c906337f24fad232a5e244dd43, type: 3}
       propertyPath: m_Name
@@ -6690,11 +6694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 707325970803641199, guid: df044ae5f563f184283e0374459a222c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 121.1
+      value: 121.099976
       objectReference: {fileID: 0}
     - target: {fileID: 707325970803641199, guid: df044ae5f563f184283e0374459a222c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.3
+      value: -29.300049
       objectReference: {fileID: 0}
     - target: {fileID: 747772841944422621, guid: df044ae5f563f184283e0374459a222c, type: 3}
       propertyPath: m_Name
@@ -6722,7 +6726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3190181251999057598, guid: df044ae5f563f184283e0374459a222c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3190181251999057598, guid: df044ae5f563f184283e0374459a222c, type: 3}
       propertyPath: m_AnchorMax.x
