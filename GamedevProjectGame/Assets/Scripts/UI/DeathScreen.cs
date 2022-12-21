@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using App.World.Entity.Player.Events;
 using App.World.UI.Events;
+using App.World.UI;
 
 public class DeathScreen : MonoBehaviour
 {

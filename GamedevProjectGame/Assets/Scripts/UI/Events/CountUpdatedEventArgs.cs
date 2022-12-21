@@ -6,5 +6,4 @@ namespace App.World.UI.Events
     {
         public int newCount;
     }
-
 }

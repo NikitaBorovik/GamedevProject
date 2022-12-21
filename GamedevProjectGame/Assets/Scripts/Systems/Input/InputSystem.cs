@@ -1,7 +1,7 @@
 using UnityEngine;
 using App.World.Entity.Player.PlayerComponents;
 using App.World.Shop;
-using App.Systems.GameStates;
+using App.World.UI;
 
 namespace App.Systems.Input
 {

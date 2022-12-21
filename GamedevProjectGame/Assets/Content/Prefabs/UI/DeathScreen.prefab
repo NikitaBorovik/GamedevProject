@@ -783,6 +783,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1240212608518525501}
     m_Modifications:
+    - target: {fileID: 3448778567243916732, guid: 3ef34a1708afbcf48a6b69e7a53d3a24, type: 3}
+      propertyPath: fadingImage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448778567243916732, guid: 3ef34a1708afbcf48a6b69e7a53d3a24, type: 3}
+      propertyPath: fadingImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 6335877497574750648}
     - target: {fileID: 6465458904870768860, guid: 3ef34a1708afbcf48a6b69e7a53d3a24, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -886,6 +894,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 560d8044888103b4186f762c6e532bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6335877497574750648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6465458904870768860, guid: 3ef34a1708afbcf48a6b69e7a53d3a24, type: 3}
+  m_PrefabInstance: {fileID: 1032559742848870756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8887202031066193034 stripped
