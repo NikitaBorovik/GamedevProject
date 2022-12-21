@@ -21,6 +21,6 @@ MonoBehaviour:
   weaponPrefab: {fileID: 2632855254469951434, guid: 349711c92cfe20945bd469d066eb302c, type: 3}
   weaponSpriteForShop: {fileID: 21300000, guid: 5ae5d1a15ac4d8843905bcedef70793c, type: 3}
   bulletCount: 1
-  cost: 150
+  cost: 100
   description: Serious caliber for serious situations.
   shootSound: {fileID: 8300000, guid: 8c6961f332f8a6f40a625e00e37b917a, type: 3}

@@ -36,7 +36,7 @@ namespace App.Systems.GameStates
             } 
         }
 
-        public void Init(WaveSystem waveSystem, Gates gates, Light2D light)
+        public void Init(WaveSystem waveSystem, Gates gates, Light2D light, GameObject shop)
         {
             DaysCount = 0;
             AudioListener.volume = PlayerPrefs.GetFloat("Volume", 0.1f);
@@ -45,7 +45,7 @@ namespace App.Systems.GameStates
             this.gates = gates;
             gates.Init(this);
             gameStateMachine = new StateMachine();
-            fightingState = new FightingState(this, waveSystem, light,fightingMusic,audioSource);
+            fightingState = new FightingState(this, waveSystem, light,fightingMusic,audioSource,shop);
             restingState = new RestingState(this, gates, light,restingMusic, audioSource);
             gameStateMachine.Initialize(restingState);
         }

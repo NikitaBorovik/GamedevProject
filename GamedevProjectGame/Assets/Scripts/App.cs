@@ -37,7 +37,7 @@ namespace App
                 objectsContainer.Shop.GetComponent<Shop>(), objectsContainer.Pauser);
             enemySpawningSystem.Init(waveSystem,objectPool,objectsContainer.Player.transform);
             waveSystem.Init(enemySpawningSystem,gameStatesSystem);
-            gameStatesSystem.Init(waveSystem,objectsContainer.Gates.GetComponent<Gates>(),objectsContainer.GlobalLight);
+            gameStatesSystem.Init(waveSystem, objectsContainer.Gates.GetComponent<Gates>(), objectsContainer.GlobalLight, objectsContainer.Shop);
         }
 
     }

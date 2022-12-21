@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace App.World.Shops
+namespace App.World.Shop
 {
     public class WeaponShopItem : BaseShopItem
     {

@@ -21,6 +21,6 @@ MonoBehaviour:
   weaponPrefab: {fileID: 2632855254469951434, guid: 28dd6cd156bf3ec458b0c7c6019a9bba, type: 3}
   weaponSpriteForShop: {fileID: 21300000, guid: 3a6fdb9640ba8d44e9e50a2a4125b5de, type: 3}
   bulletCount: 1
-  cost: 70
+  cost: 50
   description: Sometimes, you just need rate of fire
   shootSound: {fileID: 8300000, guid: 89c3a71ff39d58547b40bf6562215420, type: 3}
