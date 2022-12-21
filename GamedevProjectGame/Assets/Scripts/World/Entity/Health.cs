@@ -26,18 +26,43 @@ namespace App.World.Entity
             private set
             {
                 var prev = currentHealth;
+
                 if (value > MaxHealth)
                     currentHealth = MaxHealth;
                 else if (value < 0)
                     currentHealth = 0;
                 else
-                currentHealth = value;
+                    currentHealth = value;
+
                 healthUpdateEvent?.CallValueUpdateEvent(prev, currentHealth, MaxHealth);
 
             }
         }
         
-        public float MaxHealth { get; set; }
+        public float MaxHealth 
+        {
+            get => maxHealth; 
+            set
+            {
+                if (MaxHealth < 0f)
+                {
+                    maxHealth = 0f;
+                    return;
+                }
+                
+                var prevMaxHealth = maxHealth;
+                maxHealth = value;
+
+                if(maxHealth > prevMaxHealth)
+                {
+                    CurrentHealth += maxHealth - prevMaxHealth;
+                }
+                else if(maxHealth < CurrentHealth)
+                {
+                    CurrentHealth = maxHealth;
+                }
+            }
+        }
 
         public void Awake()
         {
