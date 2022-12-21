@@ -31,10 +31,10 @@ namespace App.World.Entity.Player.Weapons
             objectPool.ReturnToPool(this);
         }
         
-        public override void Init(float damage,int pearcingCount)
-        {
-            base.Init(damage,pearcingCount);
+        //public override void Init(float damage,int pearcingCount)
+        //{
+        //    base.Init(damage,pearcingCount);
             
-        }
+        //}
     }
 }

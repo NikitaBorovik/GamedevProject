@@ -1,13 +1,17 @@
 using App.Systems.EnemySpawning;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using App.Effects;
+using App.Effects.ConcreteEffects;
+using App.World.Entity.Player.Events;
+
 namespace App.World.Entity.Player.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
         protected ObjectPool objectPool;
         #region Serialized Fields
+        [SerializeField] 
+        protected BulletHitEvent bulletHitEvent;
         [SerializeField]
         private ShootEvent shootEvent;
         [SerializeField]
@@ -31,6 +35,7 @@ namespace App.World.Entity.Player.Weapons
         protected float coolDown;
         private int pearcingCount;
         protected GameObject bulletPrefab;
+        private StatusEffectManager statusEffectManager;
         #endregion
 
         protected virtual void Awake()
@@ -45,6 +50,7 @@ namespace App.World.Entity.Player.Weapons
             shootSound = Data.shootSound;
             bulletCount = Data.bulletCount;
             pearcingCount = Data.pearcingCount;
+            statusEffectManager = FindObjectOfType<StatusEffectManager>();
         }
 
         public ShootEvent ShootEvent { get => shootEvent; }
@@ -54,20 +60,22 @@ namespace App.World.Entity.Player.Weapons
         public Transform ShootPosition { get => shootPosition; set => shootPosition = value; }
         public WeaponSO Data { get => data; set => data = value; }
         protected int PearcingCount { get => pearcingCount; set => pearcingCount = value; }
+        public BaseStatusEffect BulletEffect { get; set; } 
 
         private void OnEnable()
         {
             ShootEvent.OnShoot += Shoot;
+            bulletHitEvent.OnHit += EnableEffectOn;
         }
 
         private void OnDisable()
         {
             ShootEvent.OnShoot -= Shoot;
+            bulletHitEvent.OnHit -= EnableEffectOn;
         }
         void Start()
         {
             timeFromCoolDown = coolDown;
-
         }
         protected void Update()
         {
@@ -79,6 +87,13 @@ namespace App.World.Entity.Player.Weapons
         }
         public abstract void Shoot();
 
-
+        private void EnableEffectOn(BulletHitEvent target, BulletHitEventArgs args)
+        {
+            var holder = args.target.GetComponent<IEffectHolder>();
+            if (holder is null)
+                throw new System.InvalidOperationException("The target is not an Effect Holder.");
+            if (args.effect is null) return;
+            statusEffectManager.AddHolderToEffect(holder, args.effect);
+        }
     }
 }

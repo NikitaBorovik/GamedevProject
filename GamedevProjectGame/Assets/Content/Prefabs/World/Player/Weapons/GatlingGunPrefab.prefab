@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3718496072317461167}
   - component: {fileID: 5739291457665358033}
   - component: {fileID: 5923363926577829519}
+  - component: {fileID: 4365382226434103068}
   - component: {fileID: 2972497428752517309}
   - component: {fileID: 2810069954672830546}
   m_Layer: 0
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6d8253334b6344801ee13e72a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4365382226434103068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632855254469951434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5767704d6f9774b9d840efab8bb7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2972497428752517309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c888f2fc3f78184ea2439bf743338d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletHitEvent: {fileID: 4365382226434103068}
   shootEvent: {fileID: 5923363926577829519}
   shootPosition: {fileID: 7721640599223079083}
   data: {fileID: 11400000, guid: f52bcaf7f05436f40a2d2d67ec9e1357, type: 2}

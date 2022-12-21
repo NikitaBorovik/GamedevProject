@@ -9,6 +9,8 @@ namespace App.Effects
     {
         private Dictionary<BaseStatusEffect, ICollection<IEffectHolder>> holdersLists;
 
+        private void Awake() => holdersLists = new Dictionary<BaseStatusEffect, ICollection<IEffectHolder>>();
+
         private void FixedUpdate() => UpdateAllEffects();
 
         public void AddHolderToEffect(IEffectHolder holder, BaseStatusEffect effect)

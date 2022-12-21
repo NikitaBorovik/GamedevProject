@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using World.Entity;
+using App.World.Entity.Player.Events;
+using App.Effects;
 
 namespace App.World.Entity.Player.Weapons
 {
     public class BaseBullet : MonoBehaviour, IObjectPoolItem
     {
+        //public static BulletHitEvent bulletHitEvent;
+        private BulletHitEvent bulletHitEvent;
+
+        private BaseStatusEffect bulletEffect;
         protected float damage;
         protected float pearcingCount;
         protected ObjectPool objectPool;
@@ -30,6 +36,7 @@ namespace App.World.Entity.Player.Weapons
                 return;
             }
             targetHealt.TakeDamage(damage);
+            bulletHitEvent.CallBulletHitEvent(collision.gameObject, bulletEffect);
             if (pearcingCount > 0)
             {
                 pearcingCount--;
@@ -40,10 +47,12 @@ namespace App.World.Entity.Player.Weapons
             }
  
         }
-        public virtual void Init(float damage, int pearcingCount)
+        public virtual void Init(float damage, int pearcingCount, BaseStatusEffect bulletEffect, BulletHitEvent bulletHitEvent)
         {
             this.damage = damage;
             this.pearcingCount = pearcingCount;
+            this.bulletEffect = bulletEffect;
+            this.bulletHitEvent = bulletHitEvent;
             GetComponent<TimeToLive>().Init();
         }
 
