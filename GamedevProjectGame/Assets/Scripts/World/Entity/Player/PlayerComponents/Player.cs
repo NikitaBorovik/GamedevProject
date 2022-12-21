@@ -48,7 +48,7 @@ namespace App.World.Entity.Player.PlayerComponents
         [SerializeField]
         private MovementEvent movementEvent;
         [SerializeField]
-        private HPUpdateEvent hpUpdateEvent;
+        private ValueUpdateEvent hpUpdateEvent;
         [SerializeField]
         private DieEvent dieEvent;
         [SerializeField]
@@ -75,7 +75,7 @@ namespace App.World.Entity.Player.PlayerComponents
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
-        public HPUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
+        public ValueUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
         public int Money { get => money; set { money = value; countUpdatedEvent.CallCountUpdatedEvent(value); } }
         public Health Health { get => health; set => health = value; }
