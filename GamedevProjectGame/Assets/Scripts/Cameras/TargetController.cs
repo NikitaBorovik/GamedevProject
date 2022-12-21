@@ -4,25 +4,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class TargetController : MonoBehaviour
+namespace App.Cameras
 {
-
-    [SerializeField]
-    private CinemachineTargetGroup targetGroup;
-    [SerializeField]
-    private ObjectsContainer container;
-    private GameObject player;
-    void Start()
+    public class TargetController : MonoBehaviour
     {
-        player = container.Player;
-        SetTargets();
+
+        [SerializeField]
+        private CinemachineTargetGroup targetGroup;
+        [SerializeField]
+        private ObjectsContainer container;
+        private GameObject player;
+        void Start()
+        {
+            player = container.Player;
+            SetTargets();
+        }
+
+        private void SetTargets()
+        {
+            CinemachineTargetGroup.Target targetGroupPlayer = new CinemachineTargetGroup.Target { weight = 1, radius = 1, target = player.transform };
+            CinemachineTargetGroup.Target[] targets = new CinemachineTargetGroup.Target[] { targetGroupPlayer };
+            targetGroup.m_Targets = targets;
+        }
     }
 
-    private void SetTargets()
-    {
-        CinemachineTargetGroup.Target targetGroupPlayer = new CinemachineTargetGroup.Target { weight = 1,radius = 1, target = player.transform };
-        CinemachineTargetGroup.Target[] targets = new CinemachineTargetGroup.Target[] { targetGroupPlayer };
-        targetGroup.m_Targets = targets;
-    }
 }

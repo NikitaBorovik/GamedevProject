@@ -1,9 +1,10 @@
 using App;
+using App.World.Entity.Enemy.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace World.Entity.Enemy.States
+namespace App.World.Entity.Enemy.States
 {
     public class SpawningState : BaseEnemyState
     {

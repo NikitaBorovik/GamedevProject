@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32b0e759ace5114b94430bb90d13389, type: 3}
   m_Name: 10MaxHPUpgrade
   m_EditorClassIdentifier: 
-  cost: 25
-  desctiption: Increases your max hp bound by certain amount.
+  cost: 20
+  desctiption: Makes you grow more muscle... Just don't ask how. More max hp.
   maxHPAddent: 10

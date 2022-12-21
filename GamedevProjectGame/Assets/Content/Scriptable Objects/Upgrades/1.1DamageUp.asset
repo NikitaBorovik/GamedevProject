@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306d6e58ad646f743890e2e9c4809362, type: 3}
   m_Name: 1.1DamageUp
   m_EditorClassIdentifier: 
-  cost: 15
+  cost: 20
   desctiption: The harder you beat - the more enemies you kill. Increases damage
     of your weapon.
   damageAddent: 1.1

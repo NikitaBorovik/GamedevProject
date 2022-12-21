@@ -1,9 +1,8 @@
 using App.World.Entity.Player.Events;
 using App.World.Entity.Player.Weapons;
 using UnityEngine;
-using World.Entity;
 using App.Upgrades;
-using UnityEngine.SceneManagement;
+using App.World.UI.Events;
 
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -15,6 +14,7 @@ namespace App.World.Entity.Player.PlayerComponents
     [RequireComponent(typeof(Movement))]
     [RequireComponent(typeof(Aim))]
     [RequireComponent(typeof(Stand))]
+    [RequireComponent(typeof(UpgradeManager))]
     #endregion
     public class Player : MonoBehaviour , IKillable, IUpgradable
     {
@@ -22,6 +22,7 @@ namespace App.World.Entity.Player.PlayerComponents
         private Transform playerTransform;
         private Animator pAnimator;
         private Health health;
+        private UpgradeManager upgradeManager;
         [SerializeField]
         private PlayerDataSO playerData;
         #endregion
@@ -34,6 +35,8 @@ namespace App.World.Entity.Player.PlayerComponents
         [SerializeField]
         private GameObject curWeaponObj;
         private Weapon weapon;
+        [SerializeField]
+        private Transform weaponPoint;
         #endregion
 
         #region Events
@@ -43,25 +46,50 @@ namespace App.World.Entity.Player.PlayerComponents
         private StandEvent standEvent;
         [SerializeField]
         private MovementEvent movementEvent;
+        [SerializeField]
+        private ValueUpdateEvent hpUpdateEvent;
+        [SerializeField]
+        private DieEvent dieEvent;
+        [SerializeField]
+        private CountUpdatedEvent countUpdatedEvent;
+        #endregion
+
+        #region Sounds
+        [SerializeField]
+        private AudioClip[] stepSounds;
+        private AudioSource audioSource;
         #endregion
 
         #region Parameters
         private float movementSpeed;
         private int money;
+        private bool isDead; //TODO replace with more global "game stop"
         #endregion
 
         #region Properties
-        public Transform ShootPosition { get => shootPosition; }
+        public Transform ShootPosition { get => shootPosition; set => shootPosition = value; }
         public Animator PAnimator { get => pAnimator; }
         public Transform PlayerTransform { get => playerTransform;}
         public Transform WeaponAnchor { get => weaponAnchor;}
         public AimEvent AimEvent { get => aimEvent;}
         public StandEvent StandEvent { get => standEvent;}
         public MovementEvent MovementEvent { get => movementEvent;}
+        public ValueUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
-        public Weapon Weapon { get => weapon;}
-        public int Money { get => money; set => money = value; }
+        public int Money { get => money; set { money = value; countUpdatedEvent.CallCountUpdatedEvent(value); } }
         public Health Health { get => health; set => health = value; }
+        public GameObject CurWeaponObj { get => curWeaponObj; set => curWeaponObj = value; }
+        public Transform WeaponPoint { get => weaponPoint; set => weaponPoint = value; }
+        public Weapon Weapon 
+        { 
+            get => weapon; 
+            set
+            {
+                upgradeManager.DisableAll();
+                weapon = value;
+                upgradeManager.EnableAll();
+            }
+        }
         #endregion
 
         private void Awake()
@@ -73,13 +101,21 @@ namespace App.World.Entity.Player.PlayerComponents
             playerTransform = GetComponent<Transform>();
             pAnimator = GetComponent<Animator>();
             health = GetComponent<Health>();
-            weapon = curWeaponObj.GetComponent<Weapon>();
+            upgradeManager = GetComponent<UpgradeManager>();
+            weapon = CurWeaponObj.GetComponent<Weapon>();
+            audioSource = GetComponent<AudioSource>();
             movementSpeed = playerData.speed;
             health.MaxHealth = playerData.maxHealth;
+            isDead = false;
         }
         public void Die()
         {
-            SceneManager.LoadScene("Main Scene");
+            Weapon.enabled = false;
+            GetComponent<Movement>().enabled = false;
+            GetComponent<Aim>().enabled = false;
+            GetComponent<PlayerAnimationsController>().enabled = false;
+            if (isDead) return;
+            dieEvent.CallDieEvent();
         }
 
         public void EnableUpgrade(BaseUpgrade upgrade)
@@ -95,6 +131,13 @@ namespace App.World.Entity.Player.PlayerComponents
         public void DisableUpgrade(BaseUpgrade upgrade)
         {
             upgrade.Disable(this);
+        }
+        public void MakeStepSound()
+        {
+            if(!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+            }
         }
     }
 }

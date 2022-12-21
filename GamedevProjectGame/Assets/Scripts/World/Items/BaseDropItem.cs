@@ -1,6 +1,4 @@
 using App.Systems.EnemySpawning;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.World.Items
@@ -17,7 +15,7 @@ namespace App.World.Items
             rigidBody = GetComponent<Rigidbody2D>();
         }
 
-        public void Init(Vector3 position)
+        public virtual void Init(Vector3 position)
         {
             transform.position = position;
             Drop();

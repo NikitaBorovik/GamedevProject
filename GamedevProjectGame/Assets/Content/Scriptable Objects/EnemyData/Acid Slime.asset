@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b438949dae3c49a5db8d3778dec90, type: 3}
+  m_Name: Acid Slime
+  m_EditorClassIdentifier: 
+  type: Acid Slime
+  maxHealth: 25
+  dangerLevel: 8
+  firstSpawningWave: 3
+  speed: 5
+  damage: 10
+  timeBetweenAttacks: 1.5
+  moneyDropChance: 0.3
+  healingDropChance: 0.05
+  attackRange: 10
+  spawnAnimationDuration: 1
+  minMoneyDrop: 2
+  maxMoneyDrop: 3
+  moneyPrefab: {fileID: 5133134966575723053, guid: fe6f5b7162ee8c14687e14c18b6b84a9, type: 3}
+  healingPrefab: {fileID: 5726524925912292538, guid: 80e810be8149c62469658e555a2fe1cb, type: 3}
+  minTimeBetweenGrunts: 10
+  maxTimeBetweenGrunts: 15
+  gruntSounds:
+  - {fileID: 8300000, guid: 27e8bca189c105743889c03be636153f, type: 3}
+  - {fileID: 8300000, guid: b8f9dcd3077c00e4aa7ff1d99e6e6e4e, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: f5cb2dc874187404d8288b81441c761c, type: 3}

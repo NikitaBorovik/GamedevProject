@@ -1,40 +1,57 @@
 using App.Systems.EnemySpawning;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace App.World.Entity.Player.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
+        protected ObjectPool objectPool;
+        #region Serialized Fields
         [SerializeField]
         private ShootEvent shootEvent;
         [SerializeField]
-        protected Transform shootPosition;
-        protected GameObject bulletPrefab;
-        protected float coolDown;
+        private Transform shootPosition;
         [SerializeField]
         private WeaponSO data;
-        protected ObjectPool objectPool;
+        #endregion
+
+        #region Sounds
+        protected AudioSource audioSource;
+        [SerializeField]
+        protected AudioClip shootSound;
+        #endregion
+
+        #region Parameters
         protected float timeFromCoolDown;
         protected float damage;
         protected float bulletFlySpeed;
         protected float bulletSpread;
+        protected int bulletCount;
+        protected float coolDown;
+        private int pearcingCount;
+        protected GameObject bulletPrefab;
+        #endregion
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            damage = data.damage;
-            coolDown = data.coolDown;
-            bulletFlySpeed = data.bulletFlySpeed;
-            bulletPrefab = data.bullet;
-            bulletSpread = data.bulletSpread;
+            damage = Data.damage;
+            coolDown = Data.coolDown;
+            bulletFlySpeed = Data.bulletFlySpeed;
+            bulletPrefab = Data.bullet;
+            bulletSpread = Data.bulletSpread;
             objectPool = FindObjectOfType<ObjectPool>();
+            audioSource = GetComponent<AudioSource>();
+            shootSound = Data.shootSound;
+            bulletCount = Data.bulletCount;
+            pearcingCount = Data.pearcingCount;
         }
 
         public ShootEvent ShootEvent { get => shootEvent; }
         public float Cooldown { get => coolDown; set => coolDown = value; }
         public float Damage { get => damage; set => damage = value; }
         public float BulletFlySpeed { get => bulletFlySpeed; set => bulletFlySpeed = value; }
-
+        public Transform ShootPosition { get => shootPosition; set => shootPosition = value; }
+        public WeaponSO Data { get => data; set => data = value; }
+        protected int PearcingCount { get => pearcingCount; set => pearcingCount = value; }
 
         private void OnEnable()
         {
@@ -50,7 +67,7 @@ namespace App.World.Entity.Player.Weapons
             timeFromCoolDown = coolDown;
 
         }
-        void Update()
+        protected void Update()
         {
             timeFromCoolDown += Time.deltaTime;
         }
