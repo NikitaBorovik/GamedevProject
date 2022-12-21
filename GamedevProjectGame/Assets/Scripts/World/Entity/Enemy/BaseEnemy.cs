@@ -6,10 +6,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using World.Entity.Enemy.States;
+using App.Effects;
 
 namespace World.Entity.Enemy
 {
-    public abstract class BaseEnemy : MonoBehaviour, IKillable, IObjectPoolItem
+    public abstract class BaseEnemy : MonoBehaviour, IKillable, IEffectHolder, IObjectPoolItem
     {
         private bool initialised;
         private Transform target;
@@ -149,6 +150,21 @@ namespace World.Entity.Enemy
         public GameObject GetGameObject()
         {
             return(gameObject);
+        }
+
+        public void EnableEffect(BaseStatusEffect effect)
+        {
+            effect.EnableEffect(this);
+        }
+
+        public void UpdateEffect(BaseStatusEffect effect)
+        {
+            effect.UpdateEffect(this);
+        }
+
+        public void DisableEffect(BaseStatusEffect effect)
+        {
+            effect.DisableEffect(this);
         }
     }
 }
