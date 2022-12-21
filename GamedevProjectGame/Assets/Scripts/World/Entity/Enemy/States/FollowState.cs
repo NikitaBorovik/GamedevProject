@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using App;
-namespace World.Entity.Enemy.States
+using App.World.Entity.Enemy.States;
+
+namespace App.World.Entity.Enemy.States
 {
     public class FollowState : BaseEnemyState
     {
@@ -34,6 +36,8 @@ namespace World.Entity.Enemy.States
 
         private void SetMoveAnimationParams(float vx)
         {
+
+            //if(baseEnemy.transform.position.x > baseEnemy.Target.position.x)
             if (vx < 0)
             {
                 baseEnemy.Animator.SetBool("MovingRight", false);

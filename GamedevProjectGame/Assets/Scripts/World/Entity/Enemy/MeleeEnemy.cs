@@ -1,10 +1,8 @@
 using App.Systems.Wave;
-using System.Collections;
-using System.Collections.Generic;
+using App.World.Entity.Enemy.States;
 using UnityEngine;
-using World.Entity.Enemy.States;
 
-namespace World.Entity.Enemy
+namespace App.World.Entity.Enemy
 {
     public class MeleeEnemy : BaseEnemy
     {
@@ -17,9 +15,9 @@ namespace World.Entity.Enemy
             attackState = new MeleeAttackState(this, stateMachine);
         }
 
-        public override void Init(Vector3 position, Transform target, IWaveSystem waveSystem)
+        public override void Init(Vector3 position, Transform target, IWaveSystem waveSystem, float hpMultiplier)
         {
-            base.Init(position, target, waveSystem);
+            base.Init(position, target, waveSystem, hpMultiplier);
             attack.Init(enemyData.damage);
         }
     }

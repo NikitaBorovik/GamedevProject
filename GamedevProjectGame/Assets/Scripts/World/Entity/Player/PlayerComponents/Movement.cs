@@ -1,6 +1,4 @@
 using App.World.Entity.Player.Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace App.World.Entity.Player.PlayerComponents
 {
@@ -15,7 +13,10 @@ namespace App.World.Entity.Player.PlayerComponents
         {
             moveEvent.OnMove += OnEntityMove;
         }
-
+        private void OnDisable()
+        {
+            moveEvent.OnMove -= OnEntityMove;
+        }
         private void OnEntityMove(MovementEvent ev, MovementEventArgs args)
         {
             Move(rb, args.direction, args.speed);

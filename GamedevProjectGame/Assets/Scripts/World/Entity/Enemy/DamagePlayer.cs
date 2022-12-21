@@ -1,11 +1,14 @@
-using System.Collections;
+using App.World.Entity;
 using System.Collections.Generic;
 using UnityEngine;
-using World.Entity;
 
 public class DamagePlayer : MonoBehaviour
 {
     private float damage;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private List<AudioClip> hitSounds;
     public void Init(float damage)
     {
         this.damage = damage;
@@ -17,7 +20,8 @@ public class DamagePlayer : MonoBehaviour
         if (collisionHealth != null)
         {
             collisionHealth.TakeDamage(damage);
-            Debug.Log($"Player hit {collisionHealth.CurrentHealth}/{collisionHealth.MaxHealth}");
+            int index = Random.Range(0, hitSounds.Count);
+            audioSource.PlayOneShot(hitSounds[index]);
         }  
         else
             Debug.Log("Error: Trying to damage target without Health component");

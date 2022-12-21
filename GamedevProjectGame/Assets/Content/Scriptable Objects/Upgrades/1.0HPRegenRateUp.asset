@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 1.0HPRegenRateUp
   m_EditorClassIdentifier: 
   cost: 30
-  desctiption: Increases upgradable object's hp regen rate by certain amount.
+  desctiption: Regeneration! Makes you harder to eat, but you might grow new limbs.
   hpRegenRateAddent: 1

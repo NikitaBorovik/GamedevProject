@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MainLevelChristmass
+  m_EditorClassIdentifier: 
+  m_GroupName: MainLevelChristmass
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 95910625e44cd324487e72ba8543df86
+  m_SerializeEntries:
+  - m_GUID: e4c444967d12da4438eeb90c1b304748
+    m_Address: Assets/Content/Prefabs/ChristmassDLC/ChristmassTree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d2853d7bb88d43e4dac2df69b96ec387, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c3c3e26af80726647ba093873c657d0d, type: 2}
+    - {fileID: 11400000, guid: 28941dec95d9cf546873aeab55956ced, type: 2}

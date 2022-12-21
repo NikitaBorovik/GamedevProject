@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerDataSO", menuName = "Scriptable Objects/Player/ Player Data")]
-public class PlayerDataSO : ScriptableObject
+namespace App.World.Entity.Player.PlayerComponents
 {
-    public float speed;
-    public float maxHealth;
+    [CreateAssetMenu(fileName = "PlayerDataSO", menuName = "Scriptable Objects/Player/ Player Data")]
+    public class PlayerDataSO : ScriptableObject
+    {
+        public float speed;
+        public float maxHealth;
 
+    }
 }
+

@@ -1,8 +1,6 @@
 using App.Systems.Wave;
-using System.Collections;
-using System.Collections.Generic;
+using App.World.Entity.Enemy;
 using UnityEngine;
-using World.Entity.Enemy;
 
 namespace App.Systems.EnemySpawning
 {
@@ -23,7 +21,7 @@ namespace App.Systems.EnemySpawning
             this.enemyTarget = enemyTarget;
         }
 
-        public void SpawnEnemy(GameObject enemy)
+        public void SpawnEnemy(GameObject enemy, float enemyHpMultiplier)
         {
             BaseEnemy baseEnemy = enemy.GetComponent<BaseEnemy>();
             if (baseEnemy == null)
@@ -41,7 +39,7 @@ namespace App.Systems.EnemySpawning
                 Debug.Log("Error, took enemy out of object pool, but didn't find BaseEnemy script on it");
                 return;
             }
-            baseEnemy.Init(position, enemyTarget,waveSystem);
+            baseEnemy.Init(position, enemyTarget,waveSystem,enemyHpMultiplier);
         }
     }
 }

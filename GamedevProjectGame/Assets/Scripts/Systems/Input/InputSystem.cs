@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using App.World.Entity.Player.PlayerComponents;
 using App.World.Shop;
+using App.World.UI;
 
 namespace App.Systems.Input
 {
@@ -12,27 +11,34 @@ namespace App.Systems.Input
         private Camera mainCamera;
         private Player player;
         private Shop shop;
-        
+        private Pauser pauser;
 
-        // Start is called before the first frame update
-        void Start()
+        private void Update()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
+            if (HandlePauseInput()) return;
             HandleAimInput();
             HandleMoveInput();
             HandleShootInput();
             HandleBuyInput();
         }
-        public void Init(Camera mainCamera,Player player,Shop shop)
+        public void Init(Camera mainCamera,Player player,Shop shop, Pauser pauser)
         {
             this.mainCamera = mainCamera;
             this.player = player;
             this.shop = shop;
+            this.pauser = pauser;
+        }
+
+        private bool HandlePauseInput()
+        {
+            if (!UnityEngine.Input.GetKeyDown(KeyCode.Escape)) return pauser.IsPaused;
+
+            if(pauser.IsPaused)
+                pauser.Unpause();
+            else
+                pauser.Pause();
+
+            return pauser.IsPaused;
         }
 
         private Vector3 GetMousePositionInWorld() 
@@ -81,6 +87,7 @@ namespace App.Systems.Input
             else
             {
                 player.MovementEvent.CallMovementEvent(movingDirection,player.MovementSpeed);
+                player.MakeStepSound();
             }
         }
         private void HandleShootInput()

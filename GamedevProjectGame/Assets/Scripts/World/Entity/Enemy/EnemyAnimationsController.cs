@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using App.World.Entity.Enemy;
 using UnityEngine;
 
 namespace World.Entity.Enemy
