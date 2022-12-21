@@ -363,6 +363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 506742148507560276, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1703249804950715015, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -518,6 +522,14 @@ PrefabInstance:
     - target: {fileID: 7964644501427558413, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_Color.r
       value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823036424729602558, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 121.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823036424729602558, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29.300049
       objectReference: {fileID: 0}
     - target: {fileID: 8843566522957653228, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_hasFontAssetChanged
