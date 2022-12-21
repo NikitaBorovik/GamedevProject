@@ -735,6 +735,10 @@ PrefabInstance:
       propertyPath: valueUpdateEvent
       value: 
       objectReference: {fileID: 801768137}
+    - target: {fileID: 7777599590896928445, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: m_text
+      value: x0
+      objectReference: {fileID: 0}
     - target: {fileID: 7964644501427558413, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: m_Color.b
       value: 0.31764707
@@ -808,10 +812,6 @@ PrefabInstance:
       propertyPath: objectsContainer
       value: 
       objectReference: {fileID: 922307730}
-    - target: {fileID: 572984718101893810, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
-      propertyPath: totalDangerLevel
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 3099086894498719712, guid: 72b5d84d5716295438bab5b2e2b67585, type: 3}
       propertyPath: m_RootOrder
       value: 0

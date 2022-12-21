@@ -111,10 +111,6 @@ PrefabInstance:
       value: Systems
       objectReference: {fileID: 0}
     - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
-      propertyPath: enemies.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2666899172195558816, guid: 0dfce973ecb7edf41a8bc4755b5a6360, type: 3}
       propertyPath: maxTimeBetweenSpawns
       value: 7
       objectReference: {fileID: 0}
