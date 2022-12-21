@@ -307,8 +307,8 @@ PolygonCollider2D:
     - - {x: -0.26364028, y: -0.108839296}
       - {x: -0.4237762, y: -0.21826324}
       - {x: -0.32414502, y: -0.3360157}
-      - {x: 2.8519883, y: -0.59190154}
-      - {x: 2.85857, y: 0.2702465}
+      - {x: 2.8417673, y: -0.7860894}
+      - {x: 2.85857, y: 0.3009078}
 --- !u!114 &5292521426724702303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 2111155823146863486, guid: 23917b165dcb8514a8814097973e6084, type: 3}
       propertyPath: m_Name
       value: FlamethrowerParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131992832529061049, guid: 23917b165dcb8514a8814097973e6084, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4723216182021990491, guid: 23917b165dcb8514a8814097973e6084, type: 3}
       propertyPath: m_RootOrder
