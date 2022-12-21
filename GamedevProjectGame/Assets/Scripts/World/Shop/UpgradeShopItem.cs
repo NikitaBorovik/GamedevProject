@@ -14,7 +14,7 @@ namespace App.World.Shop
 
         private BaseUpgrade currentUpgrade;
 
-        private void SetRandomUpgrade()
+        public void SetRandomUpgrade()
         {
             currentUpgrade = upgrades[Random.Range(0, upgrades.Count)];
         }

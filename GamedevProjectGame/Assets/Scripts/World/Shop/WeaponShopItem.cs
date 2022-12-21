@@ -16,7 +16,7 @@ namespace App.World.Shops
 
         private WeaponSO currentWeapon;
 
-        private void SetRandomWeapon()
+        public void SetRandomWeapon()
         {
             do
             {

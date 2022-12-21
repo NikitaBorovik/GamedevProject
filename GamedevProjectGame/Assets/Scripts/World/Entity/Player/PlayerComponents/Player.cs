@@ -62,7 +62,7 @@ namespace App.World.Entity.Player.PlayerComponents
 
         #region Parameters
         private float movementSpeed;
-        private int money = 1000;
+        private int money;
         private bool isDead; //TODO replace with more global "game stop"
         #endregion
 
