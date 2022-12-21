@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399677f4fd6af934490cc10d6ab69158, type: 3}
   m_Name: FlameThrowerData
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 2.5
   coolDown: 0.1
   bulletFlySpeed: 33
   bulletSpread: 2
