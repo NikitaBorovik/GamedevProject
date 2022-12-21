@@ -22,7 +22,6 @@ public class DamagePlayer : MonoBehaviour
             collisionHealth.TakeDamage(damage);
             int index = Random.Range(0, hitSounds.Count);
             audioSource.PlayOneShot(hitSounds[index]);
-            Debug.Log($"Player hit {collisionHealth.CurrentHealth}/{collisionHealth.MaxHealth}");
         }  
         else
             Debug.Log("Error: Trying to damage target without Health component");

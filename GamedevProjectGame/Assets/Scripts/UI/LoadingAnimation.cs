@@ -22,21 +22,17 @@ namespace App.World.UI
         {
             if (passedTime > oneDotAppearanceTime)
             {
-                Debug.Log("passedTime > oneDotAppearanceTime");
                 passedTime = 0f;
                 AddOneDot();
             }
             else
             {
-
-                Debug.Log("passedTime <= oneDotAppearanceTime");
                 passedTime += Time.deltaTime;
             }
         }
 
         private void AddOneDot()
         {
-            Debug.Log("Add one dot");
             if (currentNumOfDots == maxNumOfDots)
             {
                 text.text = defaultText;

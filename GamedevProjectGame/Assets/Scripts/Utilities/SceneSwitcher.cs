@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 namespace App.Utilities
@@ -19,9 +18,9 @@ namespace App.Utilities
 
         public static void SwitchToScene(string sceneName)
         {
-            if (!DoesSceneExist(sceneName))
-                throw new ArgumentException($"The scene {sceneName} does not exist in the build settings" +
-                    $" or is not enabled. Add the one to build settings or enable.");
+            //if (!DoesSceneExist(sceneName))
+            //    throw new ArgumentException($"The scene {sceneName} does not exist in the build settings" +
+            //        $" or is not enabled. Add the one to build settings or enable.");
 
             if (IsRunning(sceneName))
                 throw new InvalidOperationException($"Cannot switch to scene {sceneName} that is currently running.");
@@ -29,11 +28,11 @@ namespace App.Utilities
             SceneManager.LoadScene(sceneName);
         }
 
-        public static bool DoesSceneExist(string sceneName)
-            => EditorBuildSettings.scenes.Any
-            (
-                scene => scene.enabled && scene.path.Contains("/" + sceneName + ".unity")
-            );
+        //public static bool DoesSceneExist(string sceneName)
+        //    => EditorBuildSettings.scenes.Any
+        //    (
+        //        scene => scene.enabled && scene.path.Contains("/" + sceneName + ".unity")
+        //    );
 
         public static bool IsRunning(string sceneName)
            => SceneManager.GetActiveScene().name == sceneName;

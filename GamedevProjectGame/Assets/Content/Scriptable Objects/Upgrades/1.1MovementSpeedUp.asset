@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70d591fde7881948bed75122209036f, type: 3}
   m_Name: 1.1MovementSpeedUp
   m_EditorClassIdentifier: 
-  cost: 30
+  cost: 25
   desctiption: Lets you fly with a speed of attacking wild owl! Increases your movement
     speed
   speedMultiplier: 1.05

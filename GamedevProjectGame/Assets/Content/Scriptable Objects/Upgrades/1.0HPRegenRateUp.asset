@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9431eb5e71e22e4dba2e94404345a21, type: 3}
   m_Name: 1.0HPRegenRateUp
   m_EditorClassIdentifier: 
-  cost: 40
+  cost: 30
   desctiption: Regeneration! Makes you harder to eat, but you might grow new limbs.
   hpRegenRateAddent: 1

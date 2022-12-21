@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d941bea30f4e5b4fbd02fad6fed617c, type: 3}
   m_Name: 0.9WpnCooldownUp
   m_EditorClassIdentifier: 
-  cost: 35
+  cost: 25
   desctiption: The more bullets the better! Makes your weapon shoot faster
   cooldownMultiplier: 0.95

@@ -37,15 +37,12 @@ namespace App.World.UI
 
         public IEnumerator FadeToSecondsCoroutine(float newAlpha, float seconds)
         {
-            Debug.Log($"Started fading");
             var steps = seconds / Time.fixedDeltaTime;
             var speed = (newAlpha - Alpha) / seconds;
 
-            Debug.Log($"steps = {steps}, speed = {speed}");
             for (; steps > 0; --steps)
             {
                 Alpha += speed * Time.fixedDeltaTime;
-                Debug.Log($"Faded alpha = {Alpha}");
                 yield return new WaitForFixedUpdate();
             }
 

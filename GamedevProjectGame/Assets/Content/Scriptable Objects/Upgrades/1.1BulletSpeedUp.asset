@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4864eebd28c146a48b20101bde5025f0, type: 3}
   m_Name: 1.1BulletSpeedUp
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 15
   desctiption: You can never go overboard with gunpowder! Makes your bullets fly
     faster.
-  bulletFlySpeedMultiplier: 1.1
+  bulletFlySpeedMultiplier: 1.06

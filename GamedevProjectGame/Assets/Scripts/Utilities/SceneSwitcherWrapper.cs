@@ -10,8 +10,8 @@ namespace App.Utilities
         public static void SwitchToScene(string sceneName)
             => SceneSwitcher.SwitchToScene(sceneName);
 
-        public static bool DoesSceneExist(string sceneName)
-            => SceneSwitcher.DoesSceneExist(sceneName);
+        //public static bool DoesSceneExist(string sceneName)
+        //    => SceneSwitcher.DoesSceneExist(sceneName);
 
         public static bool IsRunning(string sceneName)
            => SceneSwitcher.IsRunning(sceneName);
