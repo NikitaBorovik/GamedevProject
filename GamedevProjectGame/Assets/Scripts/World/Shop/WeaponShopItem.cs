@@ -63,13 +63,11 @@ namespace App.World.Shops
         {
             base.Buy();
             player.Money -= currentWeapon.cost;
-            player.GetComponent<UpgradeManager>().DisableAll();
             GameObject.Destroy(player.CurWeaponObj);
             player.CurWeaponObj = Instantiate(currentWeapon.weaponPrefab, player.WeaponPoint.position, Quaternion.identity, player.WeaponPoint);
             player.CurWeaponObj.transform.rotation = player.WeaponPoint.rotation;
             player.Weapon = player.CurWeaponObj.GetComponent<Weapon>();
             player.ShootPosition = player.Weapon.ShootPosition;
-            player.GetComponent<UpgradeManager>().EnableAll();
             SetRandomWeapon();
         }
 

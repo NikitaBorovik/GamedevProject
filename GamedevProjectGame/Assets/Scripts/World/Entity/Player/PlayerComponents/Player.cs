@@ -15,6 +15,7 @@ namespace App.World.Entity.Player.PlayerComponents
     [RequireComponent(typeof(Movement))]
     [RequireComponent(typeof(Aim))]
     [RequireComponent(typeof(Stand))]
+    [RequireComponent(typeof(UpgradeManager))]
     #endregion
     public class Player : MonoBehaviour , IKillable, IUpgradable
     {
@@ -22,6 +23,7 @@ namespace App.World.Entity.Player.PlayerComponents
         private Transform playerTransform;
         private Animator pAnimator;
         private Health health;
+        private UpgradeManager upgradeManager;
         [SerializeField]
         private PlayerDataSO playerData;
         #endregion
@@ -75,11 +77,20 @@ namespace App.World.Entity.Player.PlayerComponents
         public MovementEvent MovementEvent { get => movementEvent;}
         public HPUpdateEvent HPUpdateEvent { get => hpUpdateEvent; }
         public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
-        public Weapon Weapon { get => weapon; set => weapon = value; }
         public int Money { get => money; set { money = value; countUpdatedEvent.CallCountUpdatedEvent(value); } }
         public Health Health { get => health; set => health = value; }
         public GameObject CurWeaponObj { get => curWeaponObj; set => curWeaponObj = value; }
         public Transform WeaponPoint { get => weaponPoint; set => weaponPoint = value; }
+        public Weapon Weapon 
+        { 
+            get => weapon; 
+            set
+            {
+                upgradeManager.DisableAll();
+                weapon = value;
+                upgradeManager.EnableAll();
+            }
+        }
         #endregion
 
         private void Awake()
@@ -91,6 +102,7 @@ namespace App.World.Entity.Player.PlayerComponents
             playerTransform = GetComponent<Transform>();
             pAnimator = GetComponent<Animator>();
             health = GetComponent<Health>();
+            upgradeManager = GetComponent<UpgradeManager>();
             weapon = CurWeaponObj.GetComponent<Weapon>();
             audioSource = GetComponent<AudioSource>();
             movementSpeed = playerData.speed;
