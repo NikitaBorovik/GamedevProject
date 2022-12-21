@@ -731,6 +731,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3852318723656768416, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
+      propertyPath: upgrades.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fead25c8981bbb845aea2a2e19f1623d, type: 2}
     - target: {fileID: 6741855571695686423, guid: 2c40a3fc5722989499f3e5a9c99ad433, type: 3}
       propertyPath: valueUpdateEvent
       value: 

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ed03da147a94644b6fa5f647b2a0ac, type: 3}
   m_Name: BurningEffect
   m_EditorClassIdentifier: 
-  burningPeriod: 0
-  burningDamage: 0
+  burningPeriod: 0.5
+  burningDamage: 10

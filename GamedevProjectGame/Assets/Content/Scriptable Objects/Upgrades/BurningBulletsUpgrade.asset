@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2310757ab4fc8f94ebf1fa3f10d990ea, type: 3}
   m_Name: BurningBulletsUpgrade
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 10
   desctiption: 
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: ba7fa85888dc7444faaa882688384ec3, type: 2}
